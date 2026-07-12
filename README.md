@@ -1,5 +1,7 @@
 # @nightsquawktech/invoiceninja-mcp-server
 
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/NightSquawk/invoiceninja-mcp-server/badge)](https://scorecard.dev/viewer/?uri=github.com/NightSquawk/invoiceninja-mcp-server)
+
 MCP server for **Invoice Ninja v5** (self-hosted). Exposes **all 379 API endpoints**
 through **3 consolidated tools** backed by a generated endpoint catalog, rather than
 one tool per endpoint.
