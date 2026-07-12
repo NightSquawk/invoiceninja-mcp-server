@@ -1,0 +1,33 @@
+{
+  "slug": "edit_company",
+  "operationId": "editCompany",
+  "method": "GET",
+  "path": "/api/v1/companies/{id}/edit",
+  "name": "Shows an company for editting",
+  "category": "companies",
+  "mutating": false,
+  "description": "Displays an company by id",
+  "whenToUse": "GET one company by id prepared for editing (read-only); use to load current values before calling update_company, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Company Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Company"
+}

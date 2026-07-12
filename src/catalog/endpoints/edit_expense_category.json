@@ -1,0 +1,25 @@
+{
+  "slug": "edit_expense_category",
+  "operationId": "editExpenseCategory",
+  "method": "GET",
+  "path": "/api/v1/expense_categories/{id}/edit",
+  "name": "Shows a Expens Category for editting",
+  "category": "expense_categories",
+  "mutating": false,
+  "description": "Displays a Expens Category by id",
+  "whenToUse": "Fetch one expense category by id prepared for editing in a form; read-only, use update_expense_category to save.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The ExpenseCategory Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ExpenseCategory"
+}

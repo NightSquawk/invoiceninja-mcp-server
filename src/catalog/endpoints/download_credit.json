@@ -1,0 +1,32 @@
+{
+  "slug": "download_credit",
+  "operationId": "downloadCredit",
+  "method": "GET",
+  "path": "/api/v1/credit/{invitation_key}/download",
+  "name": "Download quote PDF",
+  "category": "quotes",
+  "mutating": false,
+  "description": "Downloads a specific quote",
+  "whenToUse": "Download a credit's PDF by its credit invitation key; use for credits, not the quote or invoice download endpoints.",
+  "pathParameters": [
+    {
+      "name": "invitation_key",
+      "type": "string",
+      "required": true,
+      "description": "The Credit Invitation Key",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

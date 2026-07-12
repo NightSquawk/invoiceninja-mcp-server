@@ -1,0 +1,24 @@
+{
+  "slug": "post_passkey_login_options",
+  "operationId": "postPasskeyLoginOptions",
+  "method": "POST",
+  "path": "/api/v1/passkeys/login/options",
+  "name": "Passkey login options",
+  "category": "auth",
+  "mutating": true,
+  "description": "Passkey login options",
+  "whenToUse": "Request WebAuthn challenge options for an email to begin passwordless passkey sign-in before calling post_login (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "email",
+        "type": "string",
+        "required": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "show_system_logs",
+  "operationId": "showSystemLogs",
+  "method": "GET",
+  "path": "/api/v1/system_logs/{id}",
+  "name": "Shows a system_logs",
+  "category": "system_logs",
+  "mutating": false,
+  "description": "Displays a system_logs by id",
+  "whenToUse": "Fetch one system log record by its hashed id; use when you already know the specific log entry rather than listing many.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The system_logs Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "SystemLog"
+}

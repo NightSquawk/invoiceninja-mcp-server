@@ -1,0 +1,90 @@
+{
+  "slug": "update_task_scheduler",
+  "operationId": "updateTaskScheduler",
+  "method": "PUT",
+  "path": "/api/v1/task_schedulers/{id}",
+  "name": "Update task scheduler",
+  "category": "task_schedulers",
+  "mutating": true,
+  "description": "Update task scheduler",
+  "whenToUse": "Modify an existing task scheduler by hashed id, changing pause state, interval, job, or dates (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Scheduler Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [
+    {
+      "name": "X-API-SECRET",
+      "type": "string",
+      "required": false,
+      "description": "The API secret as defined by the .env variable API_SECRET. Only needed for self hosted users, and only applicable on the login route.",
+      "example": "password"
+    }
+  ],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "paused",
+        "type": "boolean",
+        "required": false,
+        "description": "The scheduler paused state"
+      },
+      {
+        "name": "repeat_every",
+        "type": "string",
+        "required": false,
+        "description": "Accepted values (DAY,WEEK,MONTH,3MONTHS,YEAR)"
+      },
+      {
+        "name": "start_from",
+        "type": "integer",
+        "required": false,
+        "description": "Timestamp when we should start the scheduler, default is today"
+      },
+      {
+        "name": "job",
+        "type": "string",
+        "required": false,
+        "description": "Job, we can find list of available jobs in Scheduler model"
+      },
+      {
+        "name": "date_range",
+        "type": "string",
+        "required": false,
+        "description": "The string representation of the date range of data to be returned"
+      },
+      {
+        "name": "date_key",
+        "type": "string",
+        "required": false,
+        "description": "The date column to search between."
+      },
+      {
+        "name": "start_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date to search between"
+      },
+      {
+        "name": "end_date",
+        "type": "string",
+        "required": false,
+        "description": "The end date to search between"
+      },
+      {
+        "name": "report_keys",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "TaskSchedulerSchema"
+  }
+}

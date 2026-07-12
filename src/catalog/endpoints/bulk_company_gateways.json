@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_company_gateways",
+  "operationId": "bulkCompanyGateways",
+  "method": "POST",
+  "path": "/api/v1/company_gateways/bulk",
+  "name": "Performs bulk actions on an array of company_gateways",
+  "category": "company_gateways",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of company_gateways",
+  "whenToUse": "Apply one action across many company gateway ids at once; reach for it for batch archive/restore operations (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "CompanyGateway"
+}

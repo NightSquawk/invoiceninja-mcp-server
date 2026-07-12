@@ -1,0 +1,24 @@
+{
+  "slug": "store_group_setting",
+  "operationId": "storeGroupSetting",
+  "method": "POST",
+  "path": "/api/v1/group_settings",
+  "name": "Adds a GroupSetting",
+  "category": "group_settings",
+  "mutating": true,
+  "description": "Adds an GroupSetting to the system",
+  "whenToUse": "Create a new group setting record in the system; use when adding a fresh client group, not editing one (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "GroupSetting"
+}

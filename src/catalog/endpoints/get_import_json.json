@@ -1,0 +1,15 @@
+{
+  "slug": "get_import_json",
+  "operationId": "getImportJson",
+  "method": "POST",
+  "path": "/api/v1/import_json",
+  "name": "Import data from the system",
+  "category": "imports",
+  "mutating": true,
+  "description": "Import data from the system",
+  "whenToUse": "Call to bulk-import a previously exported Invoice Ninja JSON dataset into the company, restoring or migrating records (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

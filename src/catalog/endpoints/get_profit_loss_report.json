@@ -1,0 +1,64 @@
+{
+  "slug": "get_profit_loss_report",
+  "operationId": "getProfitLossReport",
+  "method": "POST",
+  "path": "/api/v1/reports/profitloss",
+  "name": "Profit loss reports",
+  "category": "reports",
+  "mutating": false,
+  "description": "Profit loss report",
+  "whenToUse": "Export a paginated profit-and-loss report netting revenue against expenses over a date range; use for overall P&L, not single-entity reports",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "date_range",
+        "type": "string",
+        "required": false,
+        "description": "The string representation of the date range of data to be returned"
+      },
+      {
+        "name": "date_key",
+        "type": "string",
+        "required": false,
+        "description": "The date column to search between."
+      },
+      {
+        "name": "start_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date to search between"
+      },
+      {
+        "name": "end_date",
+        "type": "string",
+        "required": false,
+        "description": "The end date to search between"
+      },
+      {
+        "name": "report_keys",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "GenericReportSchema"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "get_company_ledger",
+  "operationId": "getCompanyLedger",
+  "method": "GET",
+  "path": "/api/v1/company_ledger",
+  "name": "Gets a list of company_ledger",
+  "category": "company_ledger",
+  "mutating": false,
+  "description": "Lists the company_ledger.",
+  "whenToUse": "List the company ledger entries to review the chronological financial transaction record for the company; use for ledger reporting, not single records.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "CompanyLedger[]"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "store_company_gateway",
+  "operationId": "storeCompanyGateway",
+  "method": "POST",
+  "path": "/api/v1/company_gateways",
+  "name": "Adds a CompanyGateway",
+  "category": "company_gateways",
+  "mutating": true,
+  "description": "Adds an CompanyGateway to the system",
+  "whenToUse": "Create a new company payment gateway; reach for it when connecting a fresh payment provider to the company (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "CompanyGateway"
+}

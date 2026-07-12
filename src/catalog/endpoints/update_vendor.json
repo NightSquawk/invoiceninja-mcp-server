@@ -1,0 +1,140 @@
+{
+  "slug": "update_vendor",
+  "operationId": "updateVendor",
+  "method": "PUT",
+  "path": "/api/v1/vendors/{id}",
+  "name": "Update vendor",
+  "category": "vendors",
+  "mutating": true,
+  "description": "Handles the updating of a vendor by id",
+  "whenToUse": "Modify an existing vendor by id with new field values; use to change a vendor you already have, not to create one (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Vendor Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "description": "Vendor name"
+      },
+      {
+        "name": "address1",
+        "type": "string",
+        "required": false,
+        "description": "Primary address line"
+      },
+      {
+        "name": "address2",
+        "type": "string",
+        "required": false,
+        "description": "Secondary address line"
+      },
+      {
+        "name": "city",
+        "type": "string",
+        "required": false,
+        "description": "City"
+      },
+      {
+        "name": "state",
+        "type": "string",
+        "required": false,
+        "description": "State or province"
+      },
+      {
+        "name": "postal_code",
+        "type": "string",
+        "required": false,
+        "description": "Postal code"
+      },
+      {
+        "name": "country_id",
+        "type": "string",
+        "required": false,
+        "description": "Country ID"
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "required": false,
+        "description": "Phone number"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "required": false,
+        "description": "Email address"
+      },
+      {
+        "name": "website",
+        "type": "string",
+        "required": false,
+        "description": "Website URL"
+      },
+      {
+        "name": "custom_value1",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 1"
+      },
+      {
+        "name": "custom_value2",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 2"
+      },
+      {
+        "name": "custom_value3",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 3"
+      },
+      {
+        "name": "custom_value4",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 4"
+      },
+      {
+        "name": "is_deleted",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the vendor is deleted"
+      },
+      {
+        "name": "archived_at",
+        "type": "integer",
+        "required": false,
+        "description": "Timestamp when vendor was archived"
+      },
+      {
+        "name": "contacts",
+        "type": "array",
+        "required": false,
+        "description": "Array of vendor contacts"
+      }
+    ],
+    "schemaRef": "VendorRequest"
+  },
+  "responseSchema": "Vendor"
+}

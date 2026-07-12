@@ -1,0 +1,15 @@
+{
+  "slug": "get_last_error",
+  "operationId": "getLastError",
+  "method": "GET",
+  "path": "/api/v1/last_error",
+  "name": "Returns the last error",
+  "category": "ping",
+  "mutating": false,
+  "description": "Returns the last error from the API",
+  "whenToUse": "Fetch the API's most recent error message when diagnosing a prior failed request, rather than checking liveness.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

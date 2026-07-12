@@ -1,0 +1,32 @@
+{
+  "slug": "delete_bank_transaction_rule",
+  "operationId": "deleteBankTransactionRule",
+  "method": "DELETE",
+  "path": "/api/v1/bank_transaction_rules/{id}",
+  "name": "Deletes a bank_transaction rule",
+  "category": "bank_transaction_rules",
+  "mutating": true,
+  "description": "Handles the deletion of a bank_transaction rule by id",
+  "whenToUse": "Archive/soft-delete one bank transaction rule by id; reach for it to remove an existing rule (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Bank Transaction Rule Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

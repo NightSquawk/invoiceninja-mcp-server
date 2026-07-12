@@ -1,0 +1,32 @@
+{
+  "slug": "delete_payment",
+  "operationId": "deletePayment",
+  "method": "DELETE",
+  "path": "/api/v1/payments/{id}",
+  "name": "Delete payment",
+  "category": "payments",
+  "mutating": true,
+  "description": "Handles the deletion of an Payment by id",
+  "whenToUse": "Archive/soft-delete a single existing payment by its hashed id when removing it from active lists (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Payment Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

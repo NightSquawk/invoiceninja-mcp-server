@@ -1,0 +1,98 @@
+{
+  "slug": "update_purchase_order",
+  "operationId": "updatePurchaseOrder",
+  "method": "PUT",
+  "path": "/api/v1/purchase_orders/{id}",
+  "name": "Update purchase order",
+  "category": "purchase_orders",
+  "mutating": true,
+  "description": "Handles the updating of a purchase order by id",
+  "whenToUse": "Modify an existing purchase order by its hashed id, updating vendor, dates, or line items on a record that already exists (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The purchase order Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "vendor_id",
+        "type": "string",
+        "required": true,
+        "description": "The hashed ID of the vendor"
+      },
+      {
+        "name": "date",
+        "type": "string",
+        "required": true,
+        "description": "Purchase order date"
+      },
+      {
+        "name": "due_date",
+        "type": "string",
+        "required": true,
+        "description": "Due date for the purchase order"
+      },
+      {
+        "name": "private_notes",
+        "type": "string",
+        "required": false,
+        "description": "Private notes for the purchase order"
+      },
+      {
+        "name": "public_notes",
+        "type": "string",
+        "required": false,
+        "description": "Public notes for the purchase order"
+      },
+      {
+        "name": "custom_value1",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 1"
+      },
+      {
+        "name": "custom_value2",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 2"
+      },
+      {
+        "name": "custom_value3",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 3"
+      },
+      {
+        "name": "custom_value4",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 4"
+      },
+      {
+        "name": "line_items",
+        "type": "array",
+        "required": false,
+        "description": "Array of line items for the purchase order"
+      }
+    ],
+    "schemaRef": "PurchaseOrderRequest"
+  },
+  "responseSchema": "PurchaseOrder"
+}

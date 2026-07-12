@@ -1,0 +1,32 @@
+{
+  "slug": "delete_subscription",
+  "operationId": "deleteSubscription",
+  "method": "DELETE",
+  "path": "/api/v1/subscriptions/{id}",
+  "name": "Deletes a subscriptions",
+  "category": "subscriptions",
+  "mutating": true,
+  "description": "Handles the deletion of an subscriptions by id",
+  "whenToUse": "Archive/soft-delete one subscription by its hashed id when retiring a plan (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Subscription Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

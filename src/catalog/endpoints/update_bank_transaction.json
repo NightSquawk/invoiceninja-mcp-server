@@ -1,0 +1,33 @@
+{
+  "slug": "update_bank_transaction",
+  "operationId": "updateBankTransaction",
+  "method": "PUT",
+  "path": "/api/v1/bank_transactions/{id}",
+  "name": "Updates a bank_transaction",
+  "category": "bank_transactions",
+  "mutating": true,
+  "description": "Handles the updating of a bank_transaction by id",
+  "whenToUse": "Modify an existing bank transaction by its hashed id; use to change fields on one known transaction (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The BankTransaction Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankTransaction"
+}

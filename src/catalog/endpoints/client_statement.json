@@ -1,0 +1,77 @@
+{
+  "slug": "client_statement",
+  "operationId": "clientStatement",
+  "method": "POST",
+  "path": "/api/v1/client_statement",
+  "name": "Client statement PDF",
+  "category": "clients",
+  "mutating": true,
+  "description": "##  POST /api/v1/client_statement\n\nReturn a PDF of the client statement\n\nYou may also pass the query parameter `?send_email=true` to send the statement via email to the client.",
+  "whenToUse": "Generate a client's statement PDF for a date range, optionally emailing it; use over reports when you need one client's statement (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relationships of the Client Object. ie ?include=documents,system_logs\n\n```html\nAvailable includes:\n\ncontacts [All contacts related to the client]\ndocuments [All documents related to the client]\ngateway_tokens [All payment tokens related to the client]\nactivities [All activities related to the client]\nledger [The client ledger]\nsystem_logs [System logs related to the client]\ngroup_settings [The group settings object the client is assigned to]\n\n```\n\nUsage:\n\n```html\n/api/v1/clients?include=contacts,documents,activities\n```"
+    },
+    {
+      "name": "send_email",
+      "type": "boolean",
+      "required": false,
+      "description": "When set to true, the statement will also be sent via email to the client.",
+      "default": false
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "start_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date of the statement period - format Y-m-d"
+      },
+      {
+        "name": "end_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date of the statement period - format Y-m-d"
+      },
+      {
+        "name": "client_id",
+        "type": "string",
+        "required": false,
+        "description": "The hashed ID of the client"
+      },
+      {
+        "name": "show_payments_table",
+        "type": "boolean",
+        "required": false,
+        "description": "Flag which determines if the payments table is shown"
+      },
+      {
+        "name": "show_credits_table",
+        "type": "boolean",
+        "required": false,
+        "description": "Flag which determines if the credits table is shown"
+      },
+      {
+        "name": "show_aging_table",
+        "type": "boolean",
+        "required": false,
+        "description": "Flag which determines if the aging table is shown"
+      }
+    ]
+  },
+  "responseSchema": "Client"
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "get_chart_totals",
+  "operationId": "getChartTotals",
+  "method": "POST",
+  "path": "/api/v1/charts/totals",
+  "name": "Get chart data",
+  "category": "charts",
+  "mutating": false,
+  "description": "Get chart data",
+  "whenToUse": "Retrieve the v1 dashboard chart totals via POST for legacy total figures; prefer totals_v2 for newer reporting",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "rows",
+      "type": "number",
+      "required": false,
+      "description": "The chart",
+      "format": "integer",
+      "example": 50
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

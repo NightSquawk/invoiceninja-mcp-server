@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_vendors",
+  "operationId": "bulkVendors",
+  "method": "POST",
+  "path": "/api/v1/vendors/bulk",
+  "name": "Bulk vendor actions",
+  "category": "vendors",
+  "mutating": true,
+  "description": "Bulk vendor actions",
+  "whenToUse": "Apply a batch action across many vendor ids in one call; use for mass archive/restore/delete instead of acting on one record (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "Vendor"
+}

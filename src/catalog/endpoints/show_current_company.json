@@ -1,0 +1,24 @@
+{
+  "slug": "show_current_company",
+  "operationId": "showCurrentCompany",
+  "method": "POST",
+  "path": "/api/v1/companies/current",
+  "name": "Returns the current comapny",
+  "category": "companies",
+  "mutating": true,
+  "description": "Returns the current company based on the API token passed in",
+  "whenToUse": "Return the company tied to the current API token; use when you need the authenticated context's company without knowing its id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Company"
+}

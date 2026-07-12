@@ -1,0 +1,33 @@
+{
+  "slug": "set_default_company",
+  "operationId": "setDefaultCompany",
+  "method": "POST",
+  "path": "/api/v1/companies/{company}/default",
+  "name": "Sets the company as the default company.",
+  "category": "companies",
+  "mutating": true,
+  "description": "Sets the company as the default company.",
+  "whenToUse": "Mark an existing company (by hashed id) as the account's default company; use to switch the default, not to edit fields (mutating).",
+  "pathParameters": [
+    {
+      "name": "company",
+      "type": "string",
+      "required": true,
+      "description": "The Company Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Company"
+}

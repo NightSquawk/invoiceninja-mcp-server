@@ -1,0 +1,24 @@
+{
+  "slug": "get_account_transactions",
+  "operationId": "getAccountTransactions",
+  "method": "POST",
+  "path": "/api/v1/bank_integrations/get_transactions/account_id",
+  "name": "Retrieve transactions for a account",
+  "category": "bank_integrations",
+  "mutating": true,
+  "description": "Retrieve transactions for a account",
+  "whenToUse": "Trigger retrieval of transactions for a connected bank account; use to pull transaction data from a linked account (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankIntegration"
+}

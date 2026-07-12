@@ -1,0 +1,257 @@
+{
+  "slug": "store_invoice",
+  "operationId": "storeInvoice",
+  "method": "POST",
+  "path": "/api/v1/invoices",
+  "name": "Create invoice",
+  "category": "invoices",
+  "mutating": true,
+  "description": "## POST /api/v1/invoices\nCreates an invoice for a client.\n\nTriggered actions are available when updating or creating an invoice.\n\nThese are query parameters that can be chained in order to perform additional actions on the entity, these include:\n\n  ```\n  ?send_email=true [Saves and sends the invoice]\n  ?mark_sent=true [Saves and marks the invoice as sent]\n  ?paid=true [Saves and marks the invoice as paid]\n  ?amount_paid=100 [Saves and marks the invoice as paid with the given amount]\n  ?cancel=true [Saves and marks the invoice as cancelled]\n  ?save_default_footer=true [Saves the current footer as the default footer]\n  ?save_default_terms=true [Saves the current terms as the default terms]\n  ?retry_e_send=true [Saves and retries the e-send for the invoice]\n  ?redirect=https://example.com [Saves and redirects to the given url]\n  ```",
+  "whenToUse": "Create a new invoice for a client (client_id required), optionally chaining send/mark actions; use to make a new invoice, not update_invoice (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "user_id",
+        "type": "string",
+        "required": false,
+        "description": "The user hashed id"
+      },
+      {
+        "name": "assigned_user_id",
+        "type": "string",
+        "required": false,
+        "description": "The assigned user hashed id"
+      },
+      {
+        "name": "client_id",
+        "type": "string",
+        "required": true,
+        "description": "The client hashed id"
+      },
+      {
+        "name": "location_id",
+        "type": "string",
+        "required": false,
+        "description": "The location id of the client this request related to"
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "required": false,
+        "description": "The invoice number - is a unique alpha numeric number per invoice per company"
+      },
+      {
+        "name": "po_number",
+        "type": "string",
+        "required": false,
+        "description": "The purchase order associated with this invoice"
+      },
+      {
+        "name": "terms",
+        "type": "string",
+        "required": false,
+        "description": "The invoice terms"
+      },
+      {
+        "name": "public_notes",
+        "type": "string",
+        "required": false,
+        "description": "The public notes of the invoice"
+      },
+      {
+        "name": "private_notes",
+        "type": "string",
+        "required": false,
+        "description": "The private notes of the invoice"
+      },
+      {
+        "name": "footer",
+        "type": "string",
+        "required": false,
+        "description": "The invoice footer notes"
+      },
+      {
+        "name": "custom_value1",
+        "type": "string",
+        "required": false,
+        "description": "A custom field value"
+      },
+      {
+        "name": "custom_value2",
+        "type": "string",
+        "required": false,
+        "description": "A custom field value"
+      },
+      {
+        "name": "custom_value3",
+        "type": "string",
+        "required": false,
+        "description": "A custom field value"
+      },
+      {
+        "name": "custom_value4",
+        "type": "string",
+        "required": false,
+        "description": "A custom field value"
+      },
+      {
+        "name": "tax_name1",
+        "type": "string",
+        "required": false,
+        "description": "The tax name"
+      },
+      {
+        "name": "tax_name2",
+        "type": "string",
+        "required": false,
+        "description": "The tax name"
+      },
+      {
+        "name": "tax_rate1",
+        "type": "number",
+        "required": false,
+        "description": "The tax rate"
+      },
+      {
+        "name": "tax_rate2",
+        "type": "number",
+        "required": false,
+        "description": "The tax rate"
+      },
+      {
+        "name": "tax_name3",
+        "type": "string",
+        "required": false,
+        "description": "The tax name"
+      },
+      {
+        "name": "tax_rate3",
+        "type": "number",
+        "required": false,
+        "description": "The tax rate"
+      },
+      {
+        "name": "line_items",
+        "type": "array",
+        "required": false,
+        "description": "An array of objects which define the line items of the invoice"
+      },
+      {
+        "name": "invitations",
+        "type": "array",
+        "required": false,
+        "description": "An array of objects which define the invitations of the invoice"
+      },
+      {
+        "name": "discount",
+        "type": "number",
+        "required": false,
+        "description": "The invoice discount, can be an amount or a percentage"
+      },
+      {
+        "name": "partial",
+        "type": "number",
+        "required": false,
+        "description": "The deposit/partial amount"
+      },
+      {
+        "name": "is_amount_discount",
+        "type": "boolean",
+        "required": false,
+        "description": "Flag determining if the discount is an amount or a percentage"
+      },
+      {
+        "name": "uses_inclusive_taxes",
+        "type": "boolean",
+        "required": false,
+        "description": "Defines the type of taxes used as either inclusive or exclusive"
+      },
+      {
+        "name": "date",
+        "type": "string",
+        "required": false,
+        "description": "The Invoice Date"
+      },
+      {
+        "name": "partial_due_date",
+        "type": "string",
+        "required": false,
+        "description": "The due date for the deposit/partial amount"
+      },
+      {
+        "name": "due_date",
+        "type": "string",
+        "required": false,
+        "description": "The due date of the invoice"
+      },
+      {
+        "name": "custom_surcharge1",
+        "type": "number",
+        "required": false,
+        "description": "First Custom Surcharge"
+      },
+      {
+        "name": "custom_surcharge2",
+        "type": "number",
+        "required": false,
+        "description": "Second Custom Surcharge"
+      },
+      {
+        "name": "custom_surcharge3",
+        "type": "number",
+        "required": false,
+        "description": "Third Custom Surcharge"
+      },
+      {
+        "name": "custom_surcharge4",
+        "type": "number",
+        "required": false,
+        "description": "Fourth Custom Surcharge"
+      },
+      {
+        "name": "custom_surcharge_tax1",
+        "type": "boolean",
+        "required": false,
+        "description": "Toggles charging taxes on custom surcharge amounts"
+      },
+      {
+        "name": "custom_surcharge_tax2",
+        "type": "boolean",
+        "required": false,
+        "description": "Toggles charging taxes on custom surcharge amounts"
+      },
+      {
+        "name": "custom_surcharge_tax3",
+        "type": "boolean",
+        "required": false,
+        "description": "Toggles charging taxes on custom surcharge amounts"
+      },
+      {
+        "name": "custom_surcharge_tax4",
+        "type": "boolean",
+        "required": false,
+        "description": "Toggles charging taxes on custom surcharge amounts"
+      },
+      {
+        "name": "project_id",
+        "type": "string",
+        "required": false,
+        "description": "The project associated with this invoice"
+      }
+    ],
+    "schemaRef": "InvoiceRequest"
+  },
+  "responseSchema": "Invoice"
+}

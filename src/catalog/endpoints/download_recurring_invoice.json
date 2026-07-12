@@ -1,0 +1,32 @@
+{
+  "slug": "download_recurring_invoice",
+  "operationId": "downloadRecurringInvoice",
+  "method": "GET",
+  "path": "/api/v1/recurring_invoice/{invitation_key}/download",
+  "name": "Download recurring invoice PDF",
+  "category": "recurring_invoices",
+  "mutating": false,
+  "description": "Downloads a specific invoice",
+  "whenToUse": "Download a recurring invoice's PDF by its invitation_key; use when you need the rendered file, not JSON record data.",
+  "pathParameters": [
+    {
+      "name": "invitation_key",
+      "type": "string",
+      "required": true,
+      "description": "The Recurring Invoice Invitation Key",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

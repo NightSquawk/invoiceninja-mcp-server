@@ -1,0 +1,33 @@
+{
+  "slug": "show_bank_transaction",
+  "operationId": "showBankTransaction",
+  "method": "GET",
+  "path": "/api/v1/bank_transactions/{id}",
+  "name": "Shows a bank_transaction",
+  "category": "bank_transactions",
+  "mutating": false,
+  "description": "Displays a bank_transaction by id",
+  "whenToUse": "Fetch one bank transaction by its hashed id; use to view full details of a single known transaction, not to list many.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The BankTransaction Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankTransaction"
+}

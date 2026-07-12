@@ -1,0 +1,33 @@
+{
+  "slug": "show_expense",
+  "operationId": "showExpense",
+  "method": "GET",
+  "path": "/api/v1/expenses/{id}",
+  "name": "Shows a expense",
+  "category": "expenses",
+  "mutating": false,
+  "description": "Displays a expense by id",
+  "whenToUse": "Fetch one expense by id to read its full details when you already know the expense's id.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Expense Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Expense"
+}

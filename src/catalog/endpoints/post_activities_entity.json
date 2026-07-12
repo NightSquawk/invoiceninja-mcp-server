@@ -1,0 +1,18 @@
+{
+  "slug": "post_activities_entity",
+  "operationId": "postActivitiesEntity",
+  "method": "POST",
+  "path": "/api/v1/activities/entity",
+  "name": "Entity activity",
+  "category": "activities",
+  "mutating": true,
+  "description": "Returns activity for a given entity",
+  "whenToUse": "Fetch the activity history scoped to a specific entity via POST body when listing all company activities is too broad (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

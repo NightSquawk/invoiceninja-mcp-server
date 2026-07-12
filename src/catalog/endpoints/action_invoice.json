@@ -1,0 +1,41 @@
+{
+  "slug": "action_invoice",
+  "operationId": "actionInvoice",
+  "method": "GET",
+  "path": "/api/v1/invoices/{id}/{action}",
+  "name": "Custom invoice action",
+  "category": "invoices",
+  "mutating": true,
+  "description": "Performs a custom action on an invoice.\nThe current range of actions are as follows\n- clone_to_invoice\n- clone_to_quote\n- history\n- delivery_note\n- mark_paid\n- download\n- archive\n- delete\n- email",
+  "whenToUse": "Perform a named action on one invoice by id (clone_to_quote, mark_paid, email, archive, history); use for these verbs, not update_invoice (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Invoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "required": true,
+      "description": "The action string to be performed",
+      "format": "string",
+      "example": "clone_to_quote"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Invoice"
+}

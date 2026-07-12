@@ -1,0 +1,32 @@
+{
+  "slug": "get_claim_license",
+  "operationId": "getClaimLicense",
+  "method": "GET",
+  "path": "/api/v1/claim_license",
+  "name": "Attempts to claim a white label license",
+  "category": "claim_license",
+  "mutating": false,
+  "description": "Attempts to claim a white label license",
+  "whenToUse": "Claim a white-label license by passing a license_key and product_id; use to activate white labeling, not for general data retrieval.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "license_key",
+      "type": "string",
+      "required": true,
+      "description": "The license hash",
+      "format": "string",
+      "example": "d87sh-s755s-s7d76-sdsd8"
+    },
+    {
+      "name": "product_id",
+      "type": "string",
+      "required": true,
+      "description": "The ID of the product purchased.",
+      "format": "string",
+      "example": "1"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

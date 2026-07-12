@@ -1,0 +1,33 @@
+{
+  "slug": "edit_task_statuss",
+  "operationId": "editTaskStatuss",
+  "method": "GET",
+  "path": "/api/v1/task_statuses/{id}/edit",
+  "name": "Shows an TaskStatusfor editting",
+  "category": "task_status",
+  "mutating": false,
+  "description": "Displays an TaskStatusby id",
+  "whenToUse": "Fetch one task status by id prepared for an edit form; read-only, use before update_task_status, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The TaskStatusHashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaskStatus"
+}

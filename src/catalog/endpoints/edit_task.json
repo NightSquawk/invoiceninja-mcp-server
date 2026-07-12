@@ -1,0 +1,33 @@
+{
+  "slug": "edit_task",
+  "operationId": "editTask",
+  "method": "GET",
+  "path": "/api/v1/tasks/{id}/edit",
+  "name": "Edit task",
+  "category": "tasks",
+  "mutating": false,
+  "description": "Displays a task by id",
+  "whenToUse": "GET one task by id prepared for editing (read-only); use to load current values before calling update_task, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Task Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Task"
+}

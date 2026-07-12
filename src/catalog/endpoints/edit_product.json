@@ -1,0 +1,33 @@
+{
+  "slug": "edit_product",
+  "operationId": "editProduct",
+  "method": "GET",
+  "path": "/api/v1/products/{id}/edit",
+  "name": "Edit product",
+  "category": "products",
+  "mutating": false,
+  "description": "##  GET /api/v1/products/{id}/edit\nDisplays an Product by id",
+  "whenToUse": "Fetch one product by id prepared for editing (read-only); use to load current values before calling update_product, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Product Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Product"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "get_quotes_create",
+  "operationId": "getQuotesCreate",
+  "method": "GET",
+  "path": "/api/v1/quotes/create",
+  "name": "Blank quote",
+  "category": "quotes",
+  "mutating": false,
+  "description": "## GET /api/v1/quotes/create\n\nReturns a blank object with default values",
+  "whenToUse": "Fetch a blank quote object with default values (read-only); use to seed a new quote form before calling store_quote.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Quote"
+}

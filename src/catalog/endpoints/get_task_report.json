@@ -1,0 +1,64 @@
+{
+  "slug": "get_task_report",
+  "operationId": "getTaskReport",
+  "method": "POST",
+  "path": "/api/v1/reports/tasks",
+  "name": "Task reports",
+  "category": "reports",
+  "mutating": false,
+  "description": "Export task reports",
+  "whenToUse": "Export a paginated report of task and time-tracking records over a date range; use for logged work/billable time, not the projects above them",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "date_range",
+        "type": "string",
+        "required": false,
+        "description": "The string representation of the date range of data to be returned"
+      },
+      {
+        "name": "date_key",
+        "type": "string",
+        "required": false,
+        "description": "The date column to search between."
+      },
+      {
+        "name": "start_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date to search between"
+      },
+      {
+        "name": "end_date",
+        "type": "string",
+        "required": false,
+        "description": "The end date to search between"
+      },
+      {
+        "name": "report_keys",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "GenericReportSchema"
+  }
+}

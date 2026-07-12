@@ -1,0 +1,32 @@
+{
+  "slug": "delete_purchase_order",
+  "operationId": "deletePurchaseOrder",
+  "method": "DELETE",
+  "path": "/api/v1/purchase_orders/{id}",
+  "name": "Delete purchase order",
+  "category": "purchase_orders",
+  "mutating": true,
+  "description": "Handles the deletion of an purchase orders by id",
+  "whenToUse": "Archive/soft-delete a single existing purchase order by its hashed id when removing it from active lists (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The purhcase order Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

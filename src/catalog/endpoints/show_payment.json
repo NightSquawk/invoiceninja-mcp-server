@@ -1,0 +1,33 @@
+{
+  "slug": "show_payment",
+  "operationId": "showPayment",
+  "method": "GET",
+  "path": "/api/v1/payments/{id}",
+  "name": "Show payment",
+  "category": "payments",
+  "mutating": false,
+  "description": "Displays an Payment by id",
+  "whenToUse": "Fetch one payment's full details by its hashed id when you already know the specific payment you need.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Payment Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Payment"
+}

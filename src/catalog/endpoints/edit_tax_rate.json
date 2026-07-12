@@ -1,0 +1,25 @@
+{
+  "slug": "edit_tax_rate",
+  "operationId": "editTaxRate",
+  "method": "GET",
+  "path": "/api/v1/tax_rates/{id}/edit",
+  "name": "Shows a Tax Rate for editting",
+  "category": "tax_rates",
+  "mutating": false,
+  "description": "Displays a Tax Rate by id",
+  "whenToUse": "Fetch one tax rate by id prepared for an edit form (read-only); use update_tax_rate to actually save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The TaxRate Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaxRate"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "show_task_scheduler",
+  "operationId": "showTaskScheduler",
+  "method": "GET",
+  "path": "/api/v1/task_schedulers/{id}",
+  "name": "Show given scheduler",
+  "category": "task_schedulers",
+  "mutating": false,
+  "description": "Get scheduler with associated job",
+  "whenToUse": "Fetch one task scheduler with its job by hashed id; use get_task_schedulers to list across many instead.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Scheduler Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

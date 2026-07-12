@@ -1,0 +1,59 @@
+{
+  "slug": "store_payment_term",
+  "operationId": "storePaymentTerm",
+  "method": "POST",
+  "path": "/api/v1/payment_terms",
+  "name": "Adds a Payment",
+  "category": "payment_terms",
+  "mutating": true,
+  "description": "Adds a Payment Term to the system",
+  "whenToUse": "Create a new payment term defining a length in days and a display name (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "num_days",
+        "type": "integer",
+        "required": false,
+        "description": "The payment term length in days"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false,
+        "description": "The payment term length in string format"
+      },
+      {
+        "name": "created_at",
+        "type": "number",
+        "required": false,
+        "description": "Timestamp"
+      },
+      {
+        "name": "updated_at",
+        "type": "number",
+        "required": false,
+        "description": "Timestamp"
+      },
+      {
+        "name": "archived_at",
+        "type": "number",
+        "required": false,
+        "description": "Timestamp"
+      }
+    ],
+    "schemaRef": "PaymentTerm"
+  },
+  "responseSchema": "PaymentTerm"
+}

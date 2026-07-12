@@ -1,0 +1,32 @@
+{
+  "slug": "delete_quote",
+  "operationId": "deleteQuote",
+  "method": "DELETE",
+  "path": "/api/v1/quotes/{id}",
+  "name": "Delete quote",
+  "category": "quotes",
+  "mutating": true,
+  "description": "## DELETE /api/v1/quotes/{id}\n\nHandles the deletion of an Quote by id.",
+  "whenToUse": "Archive/soft-delete one quote by its hashed id; use to remove a quote, not to update it (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Quote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

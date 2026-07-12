@@ -1,0 +1,24 @@
+{
+  "slug": "get_remove_account",
+  "operationId": "getRemoveAccount",
+  "method": "POST",
+  "path": "/api/v1/bank_integrations/remove_account/account_id",
+  "name": "Removes an account from the integration",
+  "category": "bank_integrations",
+  "mutating": true,
+  "description": "Removes an account from the integration",
+  "whenToUse": "Remove a single account from a bank integration; use to detach one linked account, not to delete the whole integration (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankIntegration"
+}

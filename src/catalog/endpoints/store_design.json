@@ -1,0 +1,24 @@
+{
+  "slug": "store_design",
+  "operationId": "storeDesign",
+  "method": "POST",
+  "path": "/api/v1/designs",
+  "name": "Adds a design",
+  "category": "designs",
+  "mutating": true,
+  "description": "Adds an design to a company",
+  "whenToUse": "Create a brand-new design template from scratch when adding a custom layout to the company (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Design"
+}

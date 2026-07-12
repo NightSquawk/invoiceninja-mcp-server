@@ -1,0 +1,41 @@
+{
+  "slug": "action_recurring_invoice",
+  "operationId": "actionRecurringInvoice",
+  "method": "GET",
+  "path": "/api/v1/recurring_invoices/{id}/{action}",
+  "name": "Custom recurring invoice action",
+  "category": "recurring_invoices",
+  "mutating": true,
+  "description": "Performs a custom action on an RecurringInvoice.\n\n    The current range of actions are as follows\n    - clone_to_RecurringInvoice\n    - clone_to_quote\n    - history\n    - delivery_note\n    - mark_paid\n    - download\n    - archive\n    - delete\n    - email",
+  "whenToUse": "Run a named action (start, mark_paid, email, clone, download) on one recurring invoice by id; use for single-record operations (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringInvoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "required": true,
+      "description": "The action string to be performed",
+      "format": "string",
+      "example": "clone_to_quote"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringInvoice"
+}

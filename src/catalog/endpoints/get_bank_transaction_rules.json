@@ -1,0 +1,62 @@
+{
+  "slug": "get_bank_transaction_rules",
+  "operationId": "getBankTransactionRules",
+  "method": "GET",
+  "path": "/api/v1/bank_transaction_rules",
+  "name": "Gets a list of bank_transaction_rules",
+  "category": "bank_transaction_rules",
+  "mutating": false,
+  "description": "Lists all bank transaction rules",
+  "whenToUse": "List or filter many bank transaction rules with pagination and sorting; reach for it to browse all rules, not one by id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "rows",
+      "type": "number",
+      "required": false,
+      "description": "The number of bank integrations to return",
+      "format": "integer",
+      "example": 50
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=id|desc`.\n\n*Multiple sorts** — for example\n`sort[]=id|desc&sort[]=name|asc`.\n\nOnly columns defined for the bank transaction rules model are honored. Unsupported keys are ignored.",
+      "example": [
+        "id|desc"
+      ]
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankTransactionRule[]"
+}

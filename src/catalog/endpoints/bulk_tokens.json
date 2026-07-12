@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_tokens",
+  "operationId": "bulkTokens",
+  "method": "POST",
+  "path": "/api/v1/tokens/bulk",
+  "name": "Performs bulk actions on an array of tokens",
+  "category": "tokens",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of tokens",
+  "whenToUse": "Apply one batch action across an array of company token ids at once; use for multi-record archive or restore (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "CompanyToken"
+}

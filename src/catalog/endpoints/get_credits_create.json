@@ -1,0 +1,24 @@
+{
+  "slug": "get_credits_create",
+  "operationId": "getCreditsCreate",
+  "method": "GET",
+  "path": "/api/v1/credits/create",
+  "name": "Blank credit",
+  "category": "credits",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank credit template with default values (read-only); reach for it to seed a new-credit form before storing.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Credit"
+}

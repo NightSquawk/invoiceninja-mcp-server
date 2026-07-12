@@ -1,0 +1,152 @@
+{
+  "slug": "get_clients",
+  "operationId": "getClients",
+  "method": "GET",
+  "path": "/api/v1/clients",
+  "name": "List clients",
+  "category": "clients",
+  "mutating": false,
+  "description": "###  GET /api/v1/clients\nWhen retrieving a list of clients you can also chain query parameters in order to filter the dataset that is returned. For example, you can send a request to the following URL to retrieve clients that have a balance greater than 1000\n\n```\n/api/v1/clients?balance=gt:1000\n```\n\nYou can also sort the results by adding a sort parameter. The following example will sort the results by the client name in descending order\n\n```\n/api/v1/clients?sort=name|desc\n```\n\nYou can also combine multiple filters together. The following example will return clients that have a balance greater than 1000 and are not deleted and have a name that starts with \"Bob\"\n\n```\n/api/v1/clients?balance=gt:1000&name=Bob\n```\n\nIf you wish to retrieve child relations, you can also combine the query parameter `?include=` with a comma separated list of relationships\n\n```\n/api/v1/clients?include=activities,ledger,system_logs'\n```\n\nThe per_page and page variables allow pagination of the list of clients. The following example will return the second page of clients with 15 clients per page\n\n```\n/api/v1/clients?per_page=15&page=2\n```\n\nThe default per_page value is 20.",
+  "whenToUse": "Fetch and filter many clients by name, balance, email, status, or group with pagination; use to search or list, not to read one by id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relationships of the Client Object. ie ?include=documents,system_logs\n\n```html\nAvailable includes:\n\ncontacts [All contacts related to the client]\ndocuments [All documents related to the client]\ngateway_tokens [All payment tokens related to the client]\nactivities [All activities related to the client]\nledger [The client ledger]\nsystem_logs [System logs related to the client]\ngroup_settings [The group settings object the client is assigned to]\n\n```\n\nUsage:\n\n```html\n/api/v1/clients?include=contacts,documents,activities\n```"
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — pass one argument, for example `sort=id|desc`.\n\n*Multiple sorts** — chain ordering with repeated `sort[]` keys. The first is the main sort, the next breaks ties, and so on, for example\n`sort[]=id|desc&sort[]=number|asc`.\n\nFor clients, the API honors `clients` columns (such as `name`, `balance`, `number`), natural ordering for `number`, plus `contacts`, `contact_email`, and `name` / `display_name` (display name is normalized to `name`). Values that are not supported are ignored.",
+      "example": [
+        "name|desc",
+        "balance|asc"
+      ]
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "required": false,
+      "description": "Filter the entity based on their status. ie active / archived / deleted. Format is a comma separated string with any of the following options:\n- active\n- archived\n- deleted\n\n```html\nGET /api/v1/invoices?status=archived,deleted\nReturns only archived and deleted invoices\n```",
+      "example": "?status=archived,deleted"
+    },
+    {
+      "name": "created_at",
+      "type": "integer",
+      "required": false,
+      "description": "Filters the entity list by the created at timestamp. Parameter value can be a datetime string or unix timestamp\n\n```html\nGET /api/v1/invoices?created_at=2022-01-10\nReturns entities created on January 10th, 2022\n```",
+      "example": 1641772800
+    },
+    {
+      "name": "updated_at",
+      "type": "integer",
+      "required": false,
+      "description": "Filters the entity list by the updated at timestamp. Parameter value can be a datetime string or unix timestamp\n\n```html\nGET /api/v1/invoices?updated_at=2022-01-10\nReturns entities last updated on January 10th, 2022\n```",
+      "example": 1641772800
+    },
+    {
+      "name": "is_deleted",
+      "type": "boolean",
+      "required": false,
+      "description": "Filters the entity list by entities that have been deleted.\n\n```html\nGET /api/v1/invoices?is_deleted=true\nReturns only soft-deleted entities\n```",
+      "example": true
+    },
+    {
+      "name": "filter_deleted_clients",
+      "type": "string",
+      "required": false,
+      "description": "Filters the entity list and only returns entities for clients that have not been deleted\n\n```html\nGET /api/v1/invoices?filter_deleted_clients=true\nReturns only invoices for active (non-deleted) clients\n```",
+      "example": "?filter_deleted_clients=true"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "description": "Filter by client name\n\n```html\n?name=bob\n```",
+      "example": "Acme Corporation"
+    },
+    {
+      "name": "balance",
+      "type": "string",
+      "required": false,
+      "description": "Filter by client balance, format uses an operator and value separated by a colon. lt,lte, gt, gte, eq\n\n```html\n?balance=lt:10\n```\n\nie all clients whose balance is less than 10",
+      "example": "lt:10"
+    },
+    {
+      "name": "between_balance",
+      "type": "string",
+      "required": false,
+      "description": "Filter between client balances, format uses two values separated by a colon\n\n```html\n?between_balance=10:100\n```",
+      "example": "10:100"
+    },
+    {
+      "name": "email",
+      "type": "string",
+      "required": false,
+      "description": "Filter by client email\n\n```html\n?email=jane.doe@acme.com\n```",
+      "example": "jane.doe@acme.com"
+    },
+    {
+      "name": "id_number",
+      "type": "string",
+      "required": false,
+      "description": "Filter by client id_number\n\n```html\n?id_number=ACME-0001\n```",
+      "example": "ACME-0001"
+    },
+    {
+      "name": "number",
+      "type": "string",
+      "required": false,
+      "description": "Filter by client number\n\n```html\n?number=0002\n```",
+      "example": "0002"
+    },
+    {
+      "name": "filter",
+      "type": "string",
+      "required": false,
+      "description": "Broad filter which targets multiple client columns:\n\n  ```html\n    name,\n    id_number,\n    contact.first_name\n    contact.last_name,\n    contact.email,\n    contact.phone\n    custom_value1,\n    custom_value2,\n    custom_value3,\n    custom_value4,\n  ```\n\n  ```html\n  ?filter=Bobby\n  ```",
+      "example": "Bobby"
+    },
+    {
+      "name": "group",
+      "type": "string",
+      "required": false,
+      "description": "Returns the list of clients assigned to {group_id}\n\n```html\n  ?group=Wpmbk5ezJn\n```",
+      "example": "Wpmbk5ezJn"
+    },
+    {
+      "name": "client_id",
+      "type": "string",
+      "required": false,
+      "description": "Returns the list of clients with {client_id} - proxy call to retrieve a client_id wrapped in an array\n\n```html\n  ?client_id=Opnel5aKBz\n```",
+      "example": "Opnel5aKBz"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Client[]"
+}

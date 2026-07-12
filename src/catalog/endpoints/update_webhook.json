@@ -1,0 +1,33 @@
+{
+  "slug": "update_webhook",
+  "operationId": "updateWebhook",
+  "method": "PUT",
+  "path": "/api/v1/webhooks/{id}",
+  "name": "Updates a Webhook",
+  "category": "webhooks",
+  "mutating": true,
+  "description": "Handles the updating of a Webhook by id",
+  "whenToUse": "Modify an existing webhook by its hashed id to change its target URL or event triggers (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Webhook Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Webhook"
+}

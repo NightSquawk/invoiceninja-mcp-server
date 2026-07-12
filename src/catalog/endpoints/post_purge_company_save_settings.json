@@ -1,0 +1,24 @@
+{
+  "slug": "post_purge_company_save_settings",
+  "operationId": "postPurgeCompanySaveSettings",
+  "method": "POST",
+  "path": "/api/v1/migration/purge_save_settings/{company}",
+  "name": "Attempts to purge a companies child records but save the company record and its settings",
+  "category": "migration",
+  "mutating": true,
+  "description": "Attempts to purge a companies child records but save the company record and its settings",
+  "whenToUse": "Purge a company's child records by company id while preserving the company and its settings, when wiping data but keeping the account (mutating).",
+  "pathParameters": [
+    {
+      "name": "company",
+      "type": "string",
+      "required": true,
+      "description": "The Company Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

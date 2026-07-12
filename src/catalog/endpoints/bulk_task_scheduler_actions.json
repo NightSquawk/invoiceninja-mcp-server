@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_task_scheduler_actions",
+  "operationId": "bulkTaskSchedulerActions",
+  "method": "POST",
+  "path": "/api/v1/task_schedulers/bulk",
+  "name": "Performs bulk actions on an array of task_schedulers",
+  "category": "task_schedulers",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of task_schedulers",
+  "whenToUse": "Perform a bulk action (archive/restore/delete) over an array of task scheduler ids in one request (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "TaskSchedulerSchema"
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "update_company_gateway",
+  "operationId": "updateCompanyGateway",
+  "method": "PUT",
+  "path": "/api/v1/company_gateways/{id}",
+  "name": "Updates an CompanyGateway",
+  "category": "company_gateways",
+  "mutating": true,
+  "description": "Handles the updating of an CompanyGateway by id",
+  "whenToUse": "Modify an existing company gateway by id; reach for it to change a gateway's settings after creation (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The CompanyGateway Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "CompanyGateway"
+}

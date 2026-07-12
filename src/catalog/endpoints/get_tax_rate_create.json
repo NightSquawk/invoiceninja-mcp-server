@@ -1,0 +1,16 @@
+{
+  "slug": "get_tax_rate_create",
+  "operationId": "getTaxRateCreate",
+  "method": "GET",
+  "path": "/api/v1/tax_rates/create",
+  "name": "Gets a new blank Tax Rate object",
+  "category": "tax_rates",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank tax rate template with default values to prefill a new-rate form (read-only); use store flow to create it.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaxRate"
+}

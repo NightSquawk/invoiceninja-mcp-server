@@ -1,0 +1,33 @@
+{
+  "slug": "edit_bank_transaction_rule",
+  "operationId": "editBankTransactionRule",
+  "method": "GET",
+  "path": "/api/v1/bank_transaction_rules/{id}/edit",
+  "name": "Shows a bank_transaction for editing",
+  "category": "bank_transaction_rules",
+  "mutating": false,
+  "description": "Displays a bank_transaction by id",
+  "whenToUse": "Fetch one bank transaction rule by id prepared for editing (read-only); reach for it to preload a form, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Bank Transaction Rule Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankTransactionRule"
+}

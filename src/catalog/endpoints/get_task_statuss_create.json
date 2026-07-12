@@ -1,0 +1,24 @@
+{
+  "slug": "get_task_statuss_create",
+  "operationId": "getTaskStatussCreate",
+  "method": "GET",
+  "path": "/api/v1/task_statuses/create",
+  "name": "Gets a new blank TaskStatus object",
+  "category": "task_status",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Get a blank task status template with default values to prefill a create form; read-only, does not save anything.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaskStatus"
+}

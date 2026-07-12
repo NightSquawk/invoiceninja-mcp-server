@@ -1,0 +1,51 @@
+{
+  "slug": "bulk_tags",
+  "operationId": "bulkTags",
+  "method": "POST",
+  "path": "/api/v1/tags/bulk",
+  "name": "Bulk tag actions",
+  "category": "tags",
+  "mutating": true,
+  "description": "Archives, restores, or deletes multiple tags.",
+  "whenToUse": "Archive, restore, or delete many tags at once by passing an action plus an array of ids (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "action",
+      "type": "string",
+      "required": true,
+      "description": "Action to perform",
+      "enum": [
+        "archive",
+        "restore",
+        "delete"
+      ],
+      "example": "archive"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "ids",
+        "type": "array",
+        "required": true,
+        "description": "Array of hashed tag IDs to action"
+      },
+      {
+        "name": "action",
+        "type": "string",
+        "required": false,
+        "description": "Bulk action to perform. May be supplied in the query string or request body.",
+        "enum": [
+          "archive",
+          "restore",
+          "delete"
+        ]
+      }
+    ],
+    "schemaRef": "TagBulkAction"
+  },
+  "responseSchema": "Tag[]"
+}

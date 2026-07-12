@@ -1,0 +1,47 @@
+{
+  "slug": "get_company_gateways",
+  "operationId": "getCompanyGateways",
+  "method": "GET",
+  "path": "/api/v1/company_gateways",
+  "name": "Gets a list of company_gateways",
+  "category": "company_gateways",
+  "mutating": false,
+  "description": "Lists company_gateways, search and filters allow fine grained lists to be generated.\n\n        Query parameters can be added to performed more fine grained filtering of the company_gateways, these are handled by the CompanyGatewayFilters class which defines the methods available",
+  "whenToUse": "List or filter many configured company payment gateways with pagination and sorting; reach for it to browse all gateways, not one by id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=label|asc`.\n\n*Multiple sorts** — for example\n`sort[]=id|desc&sort[]=label|asc`.\n\nSorting is limited to columns on the company gateways table (for example `label`, `id`). Unsupported keys are ignored.",
+      "example": [
+        "label|asc"
+      ]
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "CompanyGateway[]"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "delete_recurring_expense",
+  "operationId": "deleteRecurringExpense",
+  "method": "DELETE",
+  "path": "/api/v1/recurring_expenses/{id}",
+  "name": "Deletes a recurring expense",
+  "category": "recurring_expenses",
+  "mutating": true,
+  "description": "Handles the deletion of a recurring expense by id",
+  "whenToUse": "Archive/soft-delete one recurring expense by its hashed id when retiring a repeating cost (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringExpense Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

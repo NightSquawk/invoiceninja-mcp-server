@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_webhooks",
+  "operationId": "bulkWebhooks",
+  "method": "POST",
+  "path": "/api/v1/webhooks/bulk",
+  "name": "Performs bulk actions on an array of Webhooks",
+  "category": "webhooks",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of Webhooks",
+  "whenToUse": "Run a batch action over an array of webhook ids at once when archiving or restoring many subscriptions together (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "Webhook"
+}

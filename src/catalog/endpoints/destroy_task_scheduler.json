@@ -1,0 +1,24 @@
+{
+  "slug": "destroy_task_scheduler",
+  "operationId": "destroyTaskScheduler",
+  "method": "DELETE",
+  "path": "/api/v1/task_schedulers/{id}",
+  "name": "Destroy Task Scheduler",
+  "category": "task_schedulers",
+  "mutating": true,
+  "description": "Destroy task scheduler and its associated job",
+  "whenToUse": "Delete one task scheduler and its associated job by hashed id (mutating); use bulk for many.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Scheduler Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

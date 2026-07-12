@@ -1,0 +1,49 @@
+{
+  "slug": "get_client_balance_report",
+  "operationId": "getClientBalanceReport",
+  "method": "POST",
+  "path": "/api/v1/reports/client_balance_report",
+  "name": "Client balance report",
+  "category": "reports",
+  "mutating": false,
+  "description": "Export client balance report",
+  "whenToUse": "Export a report of each client's current outstanding balance over a date range; use to see what clients owe, not their sales or contacts",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "date_range",
+        "type": "string",
+        "required": false,
+        "description": "The string representation of the date range of data to be returned"
+      },
+      {
+        "name": "date_key",
+        "type": "string",
+        "required": false,
+        "description": "The date column to search between."
+      },
+      {
+        "name": "start_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date to search between"
+      },
+      {
+        "name": "end_date",
+        "type": "string",
+        "required": false,
+        "description": "The end date to search between"
+      },
+      {
+        "name": "report_keys",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "GenericReportSchema"
+  }
+}

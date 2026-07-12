@@ -1,0 +1,47 @@
+{
+  "slug": "upload_expense",
+  "operationId": "uploadExpense",
+  "method": "POST",
+  "path": "/api/v1/expenses/{id}/upload",
+  "name": "Uploads a document to a expense",
+  "category": "expenses",
+  "mutating": true,
+  "description": "Handles the uploading of a document to a expense",
+  "whenToUse": "Attach one or more document files to an existing expense by its hashed id; use to add receipts to an expense record (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Expense Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "multipart/form-data",
+    "fields": [
+      {
+        "name": "_method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "documents",
+        "type": "array",
+        "required": false
+      }
+    ]
+  },
+  "responseSchema": "Expense"
+}

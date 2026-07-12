@@ -1,0 +1,33 @@
+{
+  "slug": "update_task_status",
+  "operationId": "updateTaskStatus",
+  "method": "PUT",
+  "path": "/api/v1/task_statuses/{id}",
+  "name": "Updates a TaskStatus Term",
+  "category": "task_status",
+  "mutating": true,
+  "description": "Handles the updating of an TaskStatus Termby id",
+  "whenToUse": "Modify an existing task status by its hashed id to change its name, color, or order (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The TaskStatusHashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaskStatus"
+}

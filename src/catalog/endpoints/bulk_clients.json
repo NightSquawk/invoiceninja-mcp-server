@@ -1,0 +1,46 @@
+{
+  "slug": "bulk_clients",
+  "operationId": "bulkClients",
+  "method": "POST",
+  "path": "/api/v1/clients/bulk",
+  "name": "Bulk client actions",
+  "category": "clients",
+  "mutating": true,
+  "description": "##  POST /api/v1/clients/bulk\n\nBulk actions allow to make changes to multiple clients in a single request the following actions are supported\n\n- archive\n- restore\n- delete\n- template _requires template,template_id properties also_\n- assign_group _requires group_settings_id also_\n- bulk_update _requires column,new_value also_\n\nAll of these actions require an array of client ids to perform the requested action on ie.\n\n\"ids\":['id1','id2']\n\nactions such as template, assign_group and bulk_update also require additional properties to be passed in the request\n\n- template\n\nThe template bulk action allows the creation of a custom template using the provided template_id to be run against the array of clients provided.\n\n- assign_group\n\nAllows setting multiple clients to a single group\n\n- bulk_update\n\nAllows updating certain columns on the client model in bulk. the current list of supported columns that can be updated archived_at:\n\n- public_notes\n- industry_id\n- size_id\n- country_id\n- custom_value1\n- custom_value2\n- custom_value3\n- custom_value4",
+  "whenToUse": "Run a batch action (archive, restore, delete, assign_group, bulk_update, template) over an array of client ids in one request (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relationships of the Client Object. ie ?include=documents,system_logs\n\n```html\nAvailable includes:\n\ncontacts [All contacts related to the client]\ndocuments [All documents related to the client]\ngateway_tokens [All payment tokens related to the client]\nactivities [All activities related to the client]\nledger [The client ledger]\nsystem_logs [System logs related to the client]\ngroup_settings [The group settings object the client is assigned to]\n\n```\n\nUsage:\n\n```html\n/api/v1/clients?include=contacts,documents,activities\n```"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "action",
+        "type": "string",
+        "required": false,
+        "description": "The action to perform ie. archive / restore / delete"
+      },
+      {
+        "name": "ids",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "GenericBulkAction"
+  },
+  "responseSchema": "Client"
+}

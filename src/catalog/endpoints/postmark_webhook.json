@@ -1,0 +1,24 @@
+{
+  "slug": "postmark_webhook",
+  "operationId": "postmarkWebhook",
+  "method": "POST",
+  "path": "/api/v1/postmark_webhook",
+  "name": "Processing webhooks from PostMark",
+  "category": "postmark",
+  "mutating": true,
+  "description": "Adds an credit to the system",
+  "whenToUse": "Receive Postmark email event webhooks (delivery/bounce) for inbound email processing, not Apple purchase events (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Credit"
+}

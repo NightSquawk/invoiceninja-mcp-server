@@ -1,0 +1,32 @@
+{
+  "slug": "delete_invoice",
+  "operationId": "deleteInvoice",
+  "method": "DELETE",
+  "path": "/api/v1/invoices/{id}",
+  "name": "Delete invoice",
+  "category": "invoices",
+  "mutating": true,
+  "description": "## DELETE /api/v1/invoices/{id}\n\nHandles the deletion of an invoice by id.",
+  "whenToUse": "Archive/soft-delete one invoice by id; use this over bulk_invoices when removing a single invoice (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Invoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

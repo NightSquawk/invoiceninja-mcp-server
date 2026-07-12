@@ -1,0 +1,24 @@
+{
+  "slug": "get_bank_transactions_create",
+  "operationId": "getBankTransactionsCreate",
+  "method": "GET",
+  "path": "/api/v1/bank_transactions/create",
+  "name": "Gets a new blank bank_transaction object",
+  "category": "bank_transactions",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank bank transaction template with default values; read-only, use to prefill before storing a new transaction.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankTransaction"
+}

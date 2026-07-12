@@ -1,0 +1,46 @@
+{
+  "slug": "bulk_products",
+  "operationId": "bulkProducts",
+  "method": "POST",
+  "path": "/api/v1/products/bulk",
+  "name": "Bulk product actions",
+  "category": "products",
+  "mutating": true,
+  "description": "##  POST /api/v1/products/bulk\nArchive / Restore / Delete  / Set tax id in bulk",
+  "whenToUse": "Run a named action over many product ids at once (archive, restore, delete, set tax); use for batch operations, not single edits (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "action",
+        "type": "string",
+        "required": true,
+        "description": "The action to perform ie. archive / restore / delete / set_tax_id"
+      },
+      {
+        "name": "ids",
+        "type": "array",
+        "required": true
+      },
+      {
+        "name": "tax_id",
+        "type": "string",
+        "required": false,
+        "description": "The tax rate id to set on the list of products\n\nThe following constants are available (default = '1')\n\n```\nPRODUCT_TYPE_PHYSICAL = '1'\nPRODUCT_TYPE_SERVICE = '2'\nPRODUCT_TYPE_DIGITAL = '3'\nPRODUCT_TYPE_SHIPPING = '4'\nPRODUCT_TYPE_EXEMPT = '"
+      }
+    ],
+    "schemaRef": "ProductBulkAction"
+  },
+  "responseSchema": "Product"
+}

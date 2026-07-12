@@ -1,0 +1,54 @@
+{
+  "slug": "get_locations",
+  "operationId": "getLocations",
+  "method": "GET",
+  "path": "/api/v1/locations",
+  "name": "List locations",
+  "category": "locations",
+  "mutating": false,
+  "description": "##  GET /api/v1/locations\n\nLocations are additional addresses that are applicable to a client. This is useful when a client has multiple addresses for shipping, billing, etc.\n\nWhen retrieving a list of locations you can chain query parameters to filter the dataset. For example:\n\n```html\n/api/v1/locations?name=warehouse*\n```\n\nSorting uses `column|asc` or `column|desc`. Use a single `sort` parameter for one column, or repeated `sort[]` parameters for multi-level ordering (first is primary):\n\n```html\n/api/v1/locations?sort=id|desc\n/api/v1/locations?sort[]=id|desc&sort[]=name|asc\n```\n\nFor pagination, use per_page and page parameters:\n\n```html\n/api/v1/locations?per_page=15&page=2\n```\n\nThe default per_page value is 20.",
+  "whenToUse": "List or filter many client/vendor address locations by name with sorting and pagination; use to find locations or browse the set.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=name|desc`.\n\n*Multiple sorts** — for example\n`sort[]=name|asc&sort[]=id|desc`.\n\nLocation ordering is limited by the filter: `name` is the primary supported case; other column names must exist on the locations schema to take effect.",
+      "example": [
+        "name|desc"
+      ]
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "required": false,
+      "description": "Filter by location name\n\n```html\n?name=warehouse\n```",
+      "example": "warehouse"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Location[]"
+}

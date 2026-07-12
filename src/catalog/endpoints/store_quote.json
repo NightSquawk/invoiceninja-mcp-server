@@ -1,0 +1,89 @@
+{
+  "slug": "store_quote",
+  "operationId": "storeQuote",
+  "method": "POST",
+  "path": "/api/v1/quotes",
+  "name": "Create quote",
+  "category": "quotes",
+  "mutating": true,
+  "description": "## POST /api/v1/quotes\nCreates an quote for a client.\n\nTriggered actions are available when updating or creating an quote.\n\nThese are query parameters that can be chained in order to perform additional actions on the entity, these include:\n\n```\n?send_email=true [Saves and sends the quote]\n?mark_sent=true [Saves and marks the quote as sent]\n?approve=true [Saves and approves the quote]\n?convert=true [Saves and converts the quote to an invoice]\n?save_default_footer=true [Saves the current footer as the default footer]\n?save_default_terms=true [Saves the current terms as the default terms]\n\n```",
+  "whenToUse": "Create a new quote for a client with line items; use when adding a quote that does not exist yet (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "client_id",
+        "type": "string",
+        "required": true,
+        "description": "The hashed ID of the client"
+      },
+      {
+        "name": "date",
+        "type": "string",
+        "required": true,
+        "description": "Quote date"
+      },
+      {
+        "name": "due_date",
+        "type": "string",
+        "required": true,
+        "description": "Due date for the quote"
+      },
+      {
+        "name": "private_notes",
+        "type": "string",
+        "required": false,
+        "description": "Private notes for the quote"
+      },
+      {
+        "name": "public_notes",
+        "type": "string",
+        "required": false,
+        "description": "Public notes for the quote"
+      },
+      {
+        "name": "custom_value1",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 1"
+      },
+      {
+        "name": "custom_value2",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 2"
+      },
+      {
+        "name": "custom_value3",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 3"
+      },
+      {
+        "name": "custom_value4",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 4"
+      },
+      {
+        "name": "line_items",
+        "type": "array",
+        "required": false,
+        "description": "An array of objects which define the line items of the quote"
+      }
+    ],
+    "schemaRef": "QuoteRequest"
+  },
+  "responseSchema": "Quote"
+}

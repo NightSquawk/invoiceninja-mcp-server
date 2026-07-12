@@ -1,0 +1,33 @@
+{
+  "slug": "update_recurring_quote",
+  "operationId": "updateRecurringQuote",
+  "method": "PUT",
+  "path": "/api/v1/recurring_quotes/{id}",
+  "name": "Updates an RecurringQuote",
+  "category": "recurring_quotes",
+  "mutating": true,
+  "description": "Handles the updating of an RecurringQuote by id",
+  "whenToUse": "Modify an existing recurring quote by id with new field values; use to change a recurring quote you already have, not to create one (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringQuote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringQuote"
+}

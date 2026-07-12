@@ -1,0 +1,38 @@
+{
+  "slug": "post_connected_account",
+  "operationId": "postConnectedAccount",
+  "method": "POST",
+  "path": "/api/v1/connected_account",
+  "name": "Connect an oauth user to an existing user",
+  "category": "connected_account",
+  "mutating": true,
+  "description": "Refreshes the dataset",
+  "whenToUse": "Link an OAuth identity to an existing user account and refresh the dataset; use for connecting Google/Microsoft sign-in, not creating users (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "include_static",
+      "type": "string",
+      "required": false,
+      "description": "This include will return the full set of static variables used in the application including:\n  - Currencies\n  - Countries\n  - Languages\n  - Payment Types\n  - Email Templatees\n  - Industries",
+      "example": "include_static=true"
+    },
+    {
+      "name": "clear_cache",
+      "type": "string",
+      "required": false,
+      "description": "Clears cache\n\nClears (and rebuilds) the static variable cache.",
+      "example": "clear_cache=true"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "User"
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "edit_client_gateway_token",
+  "operationId": "editClientGatewayToken",
+  "method": "GET",
+  "path": "/api/v1/client_gateway_tokens/{id}/edit",
+  "name": "Shows a client payment token for editting",
+  "category": "client_gateway_tokens",
+  "mutating": false,
+  "description": "Displays a client by id",
+  "whenToUse": "Fetch one client payment gateway token by id prepared for an edit form; read-only, use before update, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The ClientGatewayToken Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ClientGatewayToken"
+}

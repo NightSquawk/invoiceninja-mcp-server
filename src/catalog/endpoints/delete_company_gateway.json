@@ -1,0 +1,32 @@
+{
+  "slug": "delete_company_gateway",
+  "operationId": "deleteCompanyGateway",
+  "method": "DELETE",
+  "path": "/api/v1/company_gateways/{id}",
+  "name": "Deletes a CompanyGateway",
+  "category": "company_gateways",
+  "mutating": true,
+  "description": "Handles the deletion of an CompanyGateway by id",
+  "whenToUse": "Archive/soft-delete one company gateway by id; reach for it to remove an existing payment gateway (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The CompanyGateway Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

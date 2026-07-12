@@ -1,0 +1,33 @@
+{
+  "slug": "update_design",
+  "operationId": "updateDesign",
+  "method": "PUT",
+  "path": "/api/v1/designs/{id}",
+  "name": "Updates a design",
+  "category": "designs",
+  "mutating": true,
+  "description": "Handles the updating of a design by id",
+  "whenToUse": "Modify an existing design by id to change its layout or settings after you have its id (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Design Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Design"
+}

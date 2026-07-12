@@ -1,0 +1,41 @@
+{
+  "slug": "action_quote",
+  "operationId": "actionQuote",
+  "method": "GET",
+  "path": "/api/v1/quotes/{id}/{action}",
+  "name": "Performs a custom action on an Quote",
+  "category": "quotes",
+  "mutating": true,
+  "description": "Performs a custom action on an Quote.\n\n    The current range of actions are as follows\n    - clone_to_quote\n    - history\n    - delivery_note\n    - mark_paid\n    - download\n    - archive\n    - delete\n    - convert\n    - convert_to_invoice\n    - email",
+  "whenToUse": "Run a named action (clone, convert, mark_paid, email, archive) on one quote by id; use for quote workflow operations (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Quote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "required": true,
+      "description": "The action string to be performed",
+      "format": "string",
+      "example": "clone_to_quote"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Quote"
+}

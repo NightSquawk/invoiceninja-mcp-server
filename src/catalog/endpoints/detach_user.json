@@ -1,0 +1,32 @@
+{
+  "slug": "detach_user",
+  "operationId": "detachUser",
+  "method": "DELETE",
+  "path": "/api/v1/users/{user}/detach_from_company",
+  "name": "Detach an existing user to a company",
+  "category": "users",
+  "mutating": true,
+  "description": "Detach an existing user from a company",
+  "whenToUse": "Remove one user's link to the current company by id without deleting the account; use to revoke company access (mutating).",
+  "pathParameters": [
+    {
+      "name": "user",
+      "type": "string",
+      "required": true,
+      "description": "The user hashed_id",
+      "format": "string",
+      "example": "FD767dfd7"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

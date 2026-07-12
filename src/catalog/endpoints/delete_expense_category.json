@@ -1,0 +1,24 @@
+{
+  "slug": "delete_expense_category",
+  "operationId": "deleteExpenseCategory",
+  "method": "DELETE",
+  "path": "/api/v1/expense_categories/{id}",
+  "name": "Deletes a ExpenseCategory",
+  "category": "expense_categories",
+  "mutating": true,
+  "description": "Handles the deletion of an ExpenseCategory by id",
+  "whenToUse": "Archive/soft-delete one expense category by id when retiring a classification you no longer use (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The ExpenseCategory Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

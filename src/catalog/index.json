@@ -1,0 +1,4428 @@
+{
+  "generatedFrom": "openapi/api-docs.yaml (invoiceninja v5-stable)",
+  "endpointCount": 379,
+  "readCount": 186,
+  "mutatingCount": 193,
+  "enrichedCount": 379,
+  "categories": [
+    {
+      "name": "reports",
+      "count": 27
+    },
+    {
+      "name": "clients",
+      "count": 14
+    },
+    {
+      "name": "invoices",
+      "count": 12
+    },
+    {
+      "name": "quotes",
+      "count": 12
+    },
+    {
+      "name": "bank_integrations",
+      "count": 11
+    },
+    {
+      "name": "payments",
+      "count": 11
+    },
+    {
+      "name": "purchase_orders",
+      "count": 11
+    },
+    {
+      "name": "recurring_invoices",
+      "count": 11
+    },
+    {
+      "name": "users",
+      "count": 11
+    },
+    {
+      "name": "companies",
+      "count": 10
+    },
+    {
+      "name": "tasks",
+      "count": 10
+    },
+    {
+      "name": "bank_transactions",
+      "count": 9
+    },
+    {
+      "name": "credits",
+      "count": 9
+    },
+    {
+      "name": "expenses",
+      "count": 9
+    },
+    {
+      "name": "group_settings",
+      "count": 9
+    },
+    {
+      "name": "products",
+      "count": 9
+    },
+    {
+      "name": "projects",
+      "count": 9
+    },
+    {
+      "name": "recurring_expenses",
+      "count": 9
+    },
+    {
+      "name": "recurring_quotes",
+      "count": 9
+    },
+    {
+      "name": "vendors",
+      "count": 9
+    },
+    {
+      "name": "bank_transaction_rules",
+      "count": 8
+    },
+    {
+      "name": "company_gateways",
+      "count": 8
+    },
+    {
+      "name": "designs",
+      "count": 8
+    },
+    {
+      "name": "expense_categories",
+      "count": 8
+    },
+    {
+      "name": "payment_terms",
+      "count": 8
+    },
+    {
+      "name": "subscriptions",
+      "count": 8
+    },
+    {
+      "name": "tags",
+      "count": 8
+    },
+    {
+      "name": "task_status",
+      "count": 8
+    },
+    {
+      "name": "tokens",
+      "count": 8
+    },
+    {
+      "name": "webhooks",
+      "count": 8
+    },
+    {
+      "name": "client_gateway_tokens",
+      "count": 7
+    },
+    {
+      "name": "locations",
+      "count": 7
+    },
+    {
+      "name": "task_schedulers",
+      "count": 7
+    },
+    {
+      "name": "tax_rates",
+      "count": 7
+    },
+    {
+      "name": "auth",
+      "count": 6
+    },
+    {
+      "name": "activities",
+      "count": 4
+    },
+    {
+      "name": "charts",
+      "count": 4
+    },
+    {
+      "name": "imports",
+      "count": 3
+    },
+    {
+      "name": "migration",
+      "count": 3
+    },
+    {
+      "name": "postmark",
+      "count": 3
+    },
+    {
+      "name": "ping",
+      "count": 2
+    },
+    {
+      "name": "preview",
+      "count": 2
+    },
+    {
+      "name": "system_logs",
+      "count": 2
+    },
+    {
+      "name": "templates",
+      "count": 2
+    },
+    {
+      "name": "update",
+      "count": 2
+    },
+    {
+      "name": "claim_license",
+      "count": 1
+    },
+    {
+      "name": "company_ledger",
+      "count": 1
+    },
+    {
+      "name": "company_user",
+      "count": 1
+    },
+    {
+      "name": "connected_account",
+      "count": 1
+    },
+    {
+      "name": "documents",
+      "count": 1
+    },
+    {
+      "name": "emails",
+      "count": 1
+    },
+    {
+      "name": "export",
+      "count": 1
+    },
+    {
+      "name": "health_check",
+      "count": 1
+    },
+    {
+      "name": "logout",
+      "count": 1
+    },
+    {
+      "name": "one_time_token",
+      "count": 1
+    },
+    {
+      "name": "refresh",
+      "count": 1
+    },
+    {
+      "name": "scheduler",
+      "count": 1
+    },
+    {
+      "name": "search",
+      "count": 1
+    },
+    {
+      "name": "statics",
+      "count": 1
+    },
+    {
+      "name": "support",
+      "count": 1
+    },
+    {
+      "name": "webcron",
+      "count": 1
+    },
+    {
+      "name": "yodlee",
+      "count": 1
+    }
+  ],
+  "endpoints": [
+    {
+      "slug": "get_activities",
+      "name": "Returns a list of activities",
+      "method": "GET",
+      "path": "/api/v1/activities",
+      "category": "activities",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List and paginate the company's activity/audit log records when you need many activity entries, not a single one's PDF."
+    },
+    {
+      "slug": "get_activity_historical_entity_pdf",
+      "name": "Returns a PDF for the given activity",
+      "method": "GET",
+      "path": "/api/v1/activities/download_entity/{activity_id}",
+      "category": "activities",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Download the historical PDF snapshot of the entity tied to one activity, identified by activity_id, when you need that point-in-time document."
+    },
+    {
+      "slug": "post_activities_entity",
+      "name": "Entity activity",
+      "method": "POST",
+      "path": "/api/v1/activities/entity",
+      "category": "activities",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Fetch the activity history scoped to a specific entity via POST body when listing all company activities is too broad (mutating)."
+    },
+    {
+      "slug": "post_activities_notes",
+      "name": "Activity note",
+      "method": "POST",
+      "path": "/api/v1/activities/notes",
+      "category": "activities",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Create or update a note attached to an activity when you need to annotate the activity log (mutating)."
+    },
+    {
+      "slug": "post_login",
+      "name": "Login",
+      "method": "POST",
+      "path": "/api/v1/login",
+      "category": "auth",
+      "mutating": true,
+      "paramCount": 8,
+      "hasBody": true,
+      "summary": "Authenticate a user with email plus password, 2FA, or passkey assertion to obtain a CompanyUser session (mutating)."
+    },
+    {
+      "slug": "post_passkey_login_options",
+      "name": "Passkey login options",
+      "method": "POST",
+      "path": "/api/v1/passkeys/login/options",
+      "category": "auth",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": true,
+      "summary": "Request WebAuthn challenge options for an email to begin passwordless passkey sign-in before calling post_login (mutating)."
+    },
+    {
+      "slug": "get_settings_passkeys",
+      "name": "List passkeys",
+      "method": "GET",
+      "path": "/api/v1/settings/passkeys",
+      "category": "auth",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "List the current authenticated user's registered passkeys when reviewing or managing their saved credentials (read-only)."
+    },
+    {
+      "slug": "post_settings_passkeys",
+      "name": "Create passkey",
+      "method": "POST",
+      "path": "/api/v1/settings/passkeys",
+      "category": "auth",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": true,
+      "summary": "Register a new passkey for the signed-in user by submitting the challenge token and WebAuthn credential (mutating)."
+    },
+    {
+      "slug": "delete_settings_passkey",
+      "name": "Delete passkey",
+      "method": "DELETE",
+      "path": "/api/v1/settings/passkeys/{passkey}",
+      "category": "auth",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Remove one registered passkey by its identifier when revoking a credential from the signed-in user's account (mutating)."
+    },
+    {
+      "slug": "post_settings_passkeys_options",
+      "name": "Passkey registration options",
+      "method": "POST",
+      "path": "/api/v1/settings/passkeys/options",
+      "category": "auth",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Request WebAuthn registration challenge options to begin enrolling a new passkey before calling post_settings_passkeys (mutating)."
+    },
+    {
+      "slug": "get_bank_integrations",
+      "name": "Returns a list of Bank Integrations",
+      "method": "GET",
+      "path": "/api/v1/bank_integrations",
+      "category": "bank_integrations",
+      "mutating": false,
+      "paramCount": 6,
+      "hasBody": false,
+      "summary": "List or paginate all bank integrations; use to browse or find connected bank integrations, not to fetch one by id."
+    },
+    {
+      "slug": "store_bank_integration",
+      "name": "Adds a bank_integration",
+      "method": "POST",
+      "path": "/api/v1/bank_integrations",
+      "category": "bank_integrations",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new bank integration for the company; use when adding a bank connection that does not exist yet (mutating)."
+    },
+    {
+      "slug": "delete_bank_integration",
+      "name": "Deletes a bank_integration",
+      "method": "DELETE",
+      "path": "/api/v1/bank_integrations/{id}",
+      "category": "bank_integrations",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one bank integration by its hashed id; use to remove a bank integration, not to update it (mutating)."
+    },
+    {
+      "slug": "show_bank_integration",
+      "name": "Shows a bank_integration",
+      "method": "GET",
+      "path": "/api/v1/bank_integrations/{id}",
+      "category": "bank_integrations",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one bank integration's record by its hashed id; use when you already know the id, not for listing or editing."
+    },
+    {
+      "slug": "update_bank_integration",
+      "name": "Updates a bank_integration",
+      "method": "PUT",
+      "path": "/api/v1/bank_integrations/{id}",
+      "category": "bank_integrations",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing bank integration by its hashed id; use to save changes to a known bank integration (mutating)."
+    },
+    {
+      "slug": "edit_bank_integration",
+      "name": "Shows a bank_integration for editing",
+      "method": "GET",
+      "path": "/api/v1/bank_integrations/{id}/edit",
+      "category": "bank_integrations",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one bank integration by id prepared for editing (read-only); use to load form data before calling update_bank_integration."
+    },
+    {
+      "slug": "bulk_bank_integrations",
+      "name": "Performs bulk actions on an array of bank_integrations",
+      "method": "POST",
+      "path": "/api/v1/bank_integrations/bulk",
+      "category": "bank_integrations",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Run a batch action over an array of bank integration ids; use for multi-record bank integration operations (mutating)."
+    },
+    {
+      "slug": "get_bank_integrations_create",
+      "name": "Gets a new blank bank_integration object",
+      "method": "GET",
+      "path": "/api/v1/bank_integrations/create",
+      "category": "bank_integrations",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank bank integration object with default values (read-only); use to seed a new form before calling store_bank_integration."
+    },
+    {
+      "slug": "get_account_transactions",
+      "name": "Retrieve transactions for a account",
+      "method": "POST",
+      "path": "/api/v1/bank_integrations/get_transactions/account_id",
+      "category": "bank_integrations",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Trigger retrieval of transactions for a connected bank account; use to pull transaction data from a linked account (mutating)."
+    },
+    {
+      "slug": "get_refresh_accounts",
+      "name": "Gets the list of accounts from the remote server",
+      "method": "POST",
+      "path": "/api/v1/bank_integrations/refresh_accounts",
+      "category": "bank_integrations",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Refresh the list of accounts from the remote bank provider; use to re-sync available bank accounts into integrations (mutating)."
+    },
+    {
+      "slug": "get_remove_account",
+      "name": "Removes an account from the integration",
+      "method": "POST",
+      "path": "/api/v1/bank_integrations/remove_account/account_id",
+      "category": "bank_integrations",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Remove a single account from a bank integration; use to detach one linked account, not to delete the whole integration (mutating)."
+    },
+    {
+      "slug": "get_bank_transaction_rules",
+      "name": "Gets a list of bank_transaction_rules",
+      "method": "GET",
+      "path": "/api/v1/bank_transaction_rules",
+      "category": "bank_transaction_rules",
+      "mutating": false,
+      "paramCount": 6,
+      "hasBody": false,
+      "summary": "List or filter many bank transaction rules with pagination and sorting; reach for it to browse all rules, not one by id."
+    },
+    {
+      "slug": "store_bank_transaction_rule",
+      "name": "Adds a bank_transaction rule",
+      "method": "POST",
+      "path": "/api/v1/bank_transaction_rules",
+      "category": "bank_transaction_rules",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new bank transaction rule; reach for it when adding a fresh categorization rule to the company (mutating)."
+    },
+    {
+      "slug": "delete_bank_transaction_rule",
+      "name": "Deletes a bank_transaction rule",
+      "method": "DELETE",
+      "path": "/api/v1/bank_transaction_rules/{id}",
+      "category": "bank_transaction_rules",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one bank transaction rule by id; reach for it to remove an existing rule (mutating)."
+    },
+    {
+      "slug": "show_bank_transaction_rule",
+      "name": "Shows a bank_transaction",
+      "method": "GET",
+      "path": "/api/v1/bank_transaction_rules/{id}",
+      "category": "bank_transaction_rules",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one bank transaction rule by its id; reach for it when you already know the rule's id and need its details."
+    },
+    {
+      "slug": "update_bank_transaction_rule",
+      "name": "Updates a bank_transaction Rule",
+      "method": "PUT",
+      "path": "/api/v1/bank_transaction_rules/{id}",
+      "category": "bank_transaction_rules",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing bank transaction rule by id; reach for it to change a rule's fields after creation (mutating)."
+    },
+    {
+      "slug": "edit_bank_transaction_rule",
+      "name": "Shows a bank_transaction for editing",
+      "method": "GET",
+      "path": "/api/v1/bank_transaction_rules/{id}/edit",
+      "category": "bank_transaction_rules",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one bank transaction rule by id prepared for editing (read-only); reach for it to preload a form, not to save changes."
+    },
+    {
+      "slug": "bulk_bank_transaction_rules",
+      "name": "Performs bulk actions on an array of bank_transaction rules",
+      "method": "POST",
+      "path": "/api/v1/bank_transaction_rules/bulk",
+      "category": "bank_transaction_rules",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one action across many bank transaction rule ids at once; reach for it for batch archive/restore operations (mutating)."
+    },
+    {
+      "slug": "get_bank_transaction_rules_create",
+      "name": "Gets a new blank bank_transaction rule object",
+      "method": "GET",
+      "path": "/api/v1/bank_transaction_rules/create",
+      "category": "bank_transaction_rules",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank bank transaction rule template with default values (read-only); reach for it to seed a new-rule form before storing."
+    },
+    {
+      "slug": "get_bank_transactions",
+      "name": "Gets a list of bank_transactions",
+      "method": "GET",
+      "path": "/api/v1/bank_transactions",
+      "category": "bank_transactions",
+      "mutating": false,
+      "paramCount": 6,
+      "hasBody": false,
+      "summary": "List or filter many bank transactions with paging and sorting; use to browse, search, or find transactions when you lack a specific id."
+    },
+    {
+      "slug": "store_bank_transaction",
+      "name": "Adds a bank_transaction",
+      "method": "POST",
+      "path": "/api/v1/bank_transactions",
+      "category": "bank_transactions",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new bank transaction record for the company; use when adding a fresh transaction, not matching or editing one (mutating)."
+    },
+    {
+      "slug": "delete_bank_transaction",
+      "name": "Deletes a bank_transaction",
+      "method": "DELETE",
+      "path": "/api/v1/bank_transactions/{id}",
+      "category": "bank_transactions",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive or soft-delete one bank transaction by its hashed id; use to remove a single transaction you already identified (mutating)."
+    },
+    {
+      "slug": "show_bank_transaction",
+      "name": "Shows a bank_transaction",
+      "method": "GET",
+      "path": "/api/v1/bank_transactions/{id}",
+      "category": "bank_transactions",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one bank transaction by its hashed id; use to view full details of a single known transaction, not to list many."
+    },
+    {
+      "slug": "update_bank_transaction",
+      "name": "Updates a bank_transaction",
+      "method": "PUT",
+      "path": "/api/v1/bank_transactions/{id}",
+      "category": "bank_transactions",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing bank transaction by its hashed id; use to change fields on one known transaction (mutating)."
+    },
+    {
+      "slug": "edit_bank_transaction",
+      "name": "Shows a bank_transaction for editing",
+      "method": "GET",
+      "path": "/api/v1/bank_transactions/{id}/edit",
+      "category": "bank_transactions",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one bank transaction prepared for editing by hashed id; read-only retrieval to populate a form, not the update itself."
+    },
+    {
+      "slug": "bulk_bank_transactions",
+      "name": "Bulk actions",
+      "method": "POST",
+      "path": "/api/v1/bank_transactions/bulk",
+      "category": "bank_transactions",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Run a batch action over an array of bank transaction ids; use for actions across many transactions at once (mutating)."
+    },
+    {
+      "slug": "get_bank_transactions_create",
+      "name": "Gets a new blank bank_transaction object",
+      "method": "GET",
+      "path": "/api/v1/bank_transactions/create",
+      "category": "bank_transactions",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank bank transaction template with default values; read-only, use to prefill before storing a new transaction."
+    },
+    {
+      "slug": "match_bank_transactions",
+      "name": "Match transactions",
+      "method": "POST",
+      "path": "/api/v1/bank_transactions/match",
+      "category": "bank_transactions",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Link bank transactions to invoices, payments, or expenses by id; use to reconcile imported transactions against records (mutating)."
+    },
+    {
+      "slug": "get_chart_calculated_fields",
+      "name": "Get calculated fields",
+      "method": "POST",
+      "path": "/api/v1/charts/calculated_fields",
+      "category": "charts",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Retrieve dashboard chart calculated fields via POST when you need derived/computed chart metrics rather than raw totals or summaries"
+    },
+    {
+      "slug": "get_chart_summary_v2",
+      "name": "Get chart summary v2",
+      "method": "POST",
+      "path": "/api/v1/charts/chart_summary_v2",
+      "category": "charts",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Retrieve the v2 dashboard summary aggregates via POST when you want high-level summary figures rather than detailed totals rows"
+    },
+    {
+      "slug": "get_chart_totals",
+      "name": "Get chart data",
+      "method": "POST",
+      "path": "/api/v1/charts/totals",
+      "category": "charts",
+      "mutating": false,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Retrieve the v1 dashboard chart totals via POST for legacy total figures; prefer totals_v2 for newer reporting"
+    },
+    {
+      "slug": "get_chart_totals_v2",
+      "name": "Get chart data v2",
+      "method": "POST",
+      "path": "/api/v1/charts/totals_v2",
+      "category": "charts",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Retrieve the v2 dashboard chart totals via POST for current total figures; use over the v1 totals endpoint"
+    },
+    {
+      "slug": "get_claim_license",
+      "name": "Attempts to claim a white label license",
+      "method": "GET",
+      "path": "/api/v1/claim_license",
+      "category": "claim_license",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Claim a white-label license by passing a license_key and product_id; use to activate white labeling, not for general data retrieval."
+    },
+    {
+      "slug": "get_client_gateway_tokens",
+      "name": "List of client payment tokens",
+      "method": "GET",
+      "path": "/api/v1/client_gateway_tokens",
+      "category": "client_gateway_tokens",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List or filter many client payment gateway tokens with pagination and includes; use to browse them, not to fetch one by id."
+    },
+    {
+      "slug": "store_client_gateway_token",
+      "name": "Adds a client payment token",
+      "method": "POST",
+      "path": "/api/v1/client_gateway_tokens",
+      "category": "client_gateway_tokens",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new client payment gateway token for the company; reach for it to add a saved payment method (mutating)."
+    },
+    {
+      "slug": "delete_client_gateway_token",
+      "name": "Deletes a client",
+      "method": "DELETE",
+      "path": "/api/v1/client_gateway_tokens/{id}",
+      "category": "client_gateway_tokens",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive or soft-delete one existing client payment gateway token by its hashed id to remove a saved card (mutating)."
+    },
+    {
+      "slug": "show_client_gateway_token",
+      "name": "Shows a client payment token",
+      "method": "GET",
+      "path": "/api/v1/client_gateway_tokens/{id}",
+      "category": "client_gateway_tokens",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one client payment gateway token by its hashed id to read its details; use when you already know the id."
+    },
+    {
+      "slug": "update_client_gateway_token",
+      "name": "Updates a client payment token",
+      "method": "PUT",
+      "path": "/api/v1/client_gateway_tokens/{id}",
+      "category": "client_gateway_tokens",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing client payment gateway token by its hashed id to change its settings (mutating)."
+    },
+    {
+      "slug": "edit_client_gateway_token",
+      "name": "Shows a client payment token for editting",
+      "method": "GET",
+      "path": "/api/v1/client_gateway_tokens/{id}/edit",
+      "category": "client_gateway_tokens",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one client payment gateway token by id prepared for an edit form; read-only, use before update, not to save changes."
+    },
+    {
+      "slug": "get_client_gateway_tokens_create",
+      "name": "Gets a new blank client payment token object",
+      "method": "GET",
+      "path": "/api/v1/client_gateway_tokens/create",
+      "category": "client_gateway_tokens",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Get a blank client payment gateway token template with default values to prefill a create form; read-only, saves nothing."
+    },
+    {
+      "slug": "client_statement",
+      "name": "Client statement PDF",
+      "method": "POST",
+      "path": "/api/v1/client_statement",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 9,
+      "hasBody": true,
+      "summary": "Generate a client's statement PDF for a date range, optionally emailing it; use over reports when you need one client's statement (mutating)."
+    },
+    {
+      "slug": "get_clients",
+      "name": "List clients",
+      "method": "GET",
+      "path": "/api/v1/clients",
+      "category": "clients",
+      "mutating": false,
+      "paramCount": 19,
+      "hasBody": false,
+      "summary": "Fetch and filter many clients by name, balance, email, status, or group with pagination; use to search or list, not to read one by id."
+    },
+    {
+      "slug": "store_client",
+      "name": "Create client",
+      "method": "POST",
+      "path": "/api/v1/clients",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 36,
+      "hasBody": true,
+      "summary": "Create a new client record (contacts array required); use to add a client that does not yet exist, not to edit one (mutating)."
+    },
+    {
+      "slug": "update_client_tax_data",
+      "name": "Update tax data",
+      "method": "POST",
+      "path": "/api/v1/clients/{client}/updateTaxData",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Recalculate and refresh one client's tax data after their address changed; narrower than update_client which edits arbitrary fields (mutating)."
+    },
+    {
+      "slug": "delete_client",
+      "name": "Delete client",
+      "method": "DELETE",
+      "path": "/api/v1/clients/{id}",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one client by id, keeping data restorable; use this over purge_client when removal need not be permanent (mutating)."
+    },
+    {
+      "slug": "show_client",
+      "name": "Show client",
+      "method": "GET",
+      "path": "/api/v1/clients/{id}",
+      "category": "clients",
+      "mutating": false,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Fetch one client by id with optional includes; use when you already have the hashed id, not get_clients for searching."
+    },
+    {
+      "slug": "update_client",
+      "name": "Update client",
+      "method": "PUT",
+      "path": "/api/v1/clients/{id}",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 37,
+      "hasBody": true,
+      "summary": "Modify an existing client by id, sending full contacts array; use to change fields, not store_client which creates new (mutating)."
+    },
+    {
+      "slug": "merge_client",
+      "name": "Merge client",
+      "method": "POST",
+      "path": "/api/v1/clients/{id}/{mergeable_client_hashed_id}/merge",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "Merge a secondary client into a primary by their two ids (needs X-API-PASSWORD); use to consolidate duplicate client records (mutating)."
+    },
+    {
+      "slug": "edit_client",
+      "name": "Edit Client",
+      "method": "GET",
+      "path": "/api/v1/clients/{id}/edit",
+      "category": "clients",
+      "mutating": false,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "GET one client by id prepared for editing (alias of show); read-only, use before update_client, not the update itself."
+    },
+    {
+      "slug": "purge_client",
+      "name": "Purge client",
+      "method": "POST",
+      "path": "/api/v1/clients/{id}/purge",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Permanently and irreversibly wipe one client and all their records (needs X-API-PASSWORD); use over delete_client only when destruction is intended (mutating)."
+    },
+    {
+      "slug": "upload_client",
+      "name": "Add client document",
+      "method": "POST",
+      "path": "/api/v1/clients/{id}/upload",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Attach document files to one client via multipart upload; use to add files to a client, not update_client for field edits (mutating)."
+    },
+    {
+      "slug": "bulk_clients",
+      "name": "Bulk client actions",
+      "method": "POST",
+      "path": "/api/v1/clients/bulk",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Run a batch action (archive, restore, delete, assign_group, bulk_update, template) over an array of client ids in one request (mutating)."
+    },
+    {
+      "slug": "get_clients_create",
+      "name": "Blank Client",
+      "method": "GET",
+      "path": "/api/v1/clients/create",
+      "category": "clients",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "GET a blank client object with default values to seed a new-client form; read-only, use before store_client."
+    },
+    {
+      "slug": "reactivate_email",
+      "name": "Removes email suppression of a user in the system",
+      "method": "POST",
+      "path": "/api/v1/reactivate_email/{bounce_id}",
+      "category": "clients",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Remove a Postmark email suppression by bounce_id so a hard-bounced or complained address can receive mail again (mutating)."
+    },
+    {
+      "slug": "get_companies",
+      "name": "Gets a list of companies",
+      "method": "GET",
+      "path": "/api/v1/companies",
+      "category": "companies",
+      "mutating": false,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "List or filter many companies with pagination and includes; use when you need a set of company records, not one by id."
+    },
+    {
+      "slug": "store_company",
+      "name": "Adds a company",
+      "method": "POST",
+      "path": "/api/v1/companies",
+      "category": "companies",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a brand-new company record in the system; use when adding a company that does not yet exist (mutating)."
+    },
+    {
+      "slug": "set_default_company",
+      "name": "Sets the company as the default company.",
+      "method": "POST",
+      "path": "/api/v1/companies/{company}/default",
+      "category": "companies",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Mark an existing company (by hashed id) as the account's default company; use to switch the default, not to edit fields (mutating)."
+    },
+    {
+      "slug": "delete_company",
+      "name": "Deletes a company",
+      "method": "DELETE",
+      "path": "/api/v1/companies/{id}",
+      "category": "companies",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one company by id; use to remove a company while keeping its record recoverable (mutating)."
+    },
+    {
+      "slug": "show_company",
+      "name": "Shows an company",
+      "method": "GET",
+      "path": "/api/v1/companies/{id}",
+      "category": "companies",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one company by its hashed id; use when you already know the id and need that single record's details."
+    },
+    {
+      "slug": "update_company",
+      "name": "Updates an company",
+      "method": "PUT",
+      "path": "/api/v1/companies/{id}",
+      "category": "companies",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify fields on an existing company identified by id; use to change an already-created company (mutating)."
+    },
+    {
+      "slug": "edit_company",
+      "name": "Shows an company for editting",
+      "method": "GET",
+      "path": "/api/v1/companies/{id}/edit",
+      "category": "companies",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "GET one company by id prepared for editing (read-only); use to load current values before calling update_company, not to save changes."
+    },
+    {
+      "slug": "upload_companies",
+      "name": "Uploads a document to a company",
+      "method": "POST",
+      "path": "/api/v1/companies/{id}/upload",
+      "category": "companies",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document/file to an existing company by id via multipart upload; use to add attachments, not to edit company fields (mutating)."
+    },
+    {
+      "slug": "get_companies_create",
+      "name": "Gets a new blank company object",
+      "method": "GET",
+      "path": "/api/v1/companies/create",
+      "category": "companies",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "GET a blank company object with default values (read-only); use to pre-populate a create form before calling store_company."
+    },
+    {
+      "slug": "show_current_company",
+      "name": "Returns the current comapny",
+      "method": "POST",
+      "path": "/api/v1/companies/current",
+      "category": "companies",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Return the company tied to the current API token; use when you need the authenticated context's company without knowing its id."
+    },
+    {
+      "slug": "get_company_gateways",
+      "name": "Gets a list of company_gateways",
+      "method": "GET",
+      "path": "/api/v1/company_gateways",
+      "category": "company_gateways",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List or filter many configured company payment gateways with pagination and sorting; reach for it to browse all gateways, not one by id."
+    },
+    {
+      "slug": "store_company_gateway",
+      "name": "Adds a CompanyGateway",
+      "method": "POST",
+      "path": "/api/v1/company_gateways",
+      "category": "company_gateways",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new company payment gateway; reach for it when connecting a fresh payment provider to the company (mutating)."
+    },
+    {
+      "slug": "delete_company_gateway",
+      "name": "Deletes a CompanyGateway",
+      "method": "DELETE",
+      "path": "/api/v1/company_gateways/{id}",
+      "category": "company_gateways",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one company gateway by id; reach for it to remove an existing payment gateway (mutating)."
+    },
+    {
+      "slug": "show_company_gateway",
+      "name": "Shows an CompanyGateway",
+      "method": "GET",
+      "path": "/api/v1/company_gateways/{id}",
+      "category": "company_gateways",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one company gateway by its id; reach for it when you already know the gateway's id and need its configuration."
+    },
+    {
+      "slug": "update_company_gateway",
+      "name": "Updates an CompanyGateway",
+      "method": "PUT",
+      "path": "/api/v1/company_gateways/{id}",
+      "category": "company_gateways",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing company gateway by id; reach for it to change a gateway's settings after creation (mutating)."
+    },
+    {
+      "slug": "edit_company_gateway",
+      "name": "Shows an CompanyGateway for editting",
+      "method": "GET",
+      "path": "/api/v1/company_gateways/{id}/edit",
+      "category": "company_gateways",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one company gateway by id prepared for editing (read-only); reach for it to preload a form, not to save changes."
+    },
+    {
+      "slug": "bulk_company_gateways",
+      "name": "Performs bulk actions on an array of company_gateways",
+      "method": "POST",
+      "path": "/api/v1/company_gateways/bulk",
+      "category": "company_gateways",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one action across many company gateway ids at once; reach for it for batch archive/restore operations (mutating)."
+    },
+    {
+      "slug": "get_company_gateways_create",
+      "name": "Gets a new blank CompanyGateway object",
+      "method": "GET",
+      "path": "/api/v1/company_gateways/create",
+      "category": "company_gateways",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank company gateway template with default values (read-only); reach for it to seed a new-gateway form before storing."
+    },
+    {
+      "slug": "get_company_ledger",
+      "name": "Gets a list of company_ledger",
+      "method": "GET",
+      "path": "/api/v1/company_ledger",
+      "category": "company_ledger",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "List the company ledger entries to review the chronological financial transaction record for the company; use for ledger reporting, not single records."
+    },
+    {
+      "slug": "update_company_user",
+      "name": "Update a company user record",
+      "method": "POST",
+      "path": "/api/v1/company_users",
+      "category": "company_user",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Modify a company-user record's settings (full access for admins, own settings otherwise); use to change user/company preferences (mutating)."
+    },
+    {
+      "slug": "post_connected_account",
+      "name": "Connect an oauth user to an existing user",
+      "method": "POST",
+      "path": "/api/v1/connected_account",
+      "category": "connected_account",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Link an OAuth identity to an existing user account and refresh the dataset; use for connecting Google/Microsoft sign-in, not creating users (mutating)."
+    },
+    {
+      "slug": "get_credits",
+      "name": "List credits",
+      "method": "GET",
+      "path": "/api/v1/credits",
+      "category": "credits",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many credits by client, number, or balance with pagination; reach for it to browse credits, not one by id."
+    },
+    {
+      "slug": "store_credit",
+      "name": "Create credit",
+      "method": "POST",
+      "path": "/api/v1/credits",
+      "category": "credits",
+      "mutating": true,
+      "paramCount": 38,
+      "hasBody": true,
+      "summary": "Create a new credit with client and line items; reach for it when issuing a fresh credit to a client (mutating)."
+    },
+    {
+      "slug": "delete_credit",
+      "name": "Delete credit",
+      "method": "DELETE",
+      "path": "/api/v1/credits/{id}",
+      "category": "credits",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one credit by id; reach for it to remove an existing credit (mutating)."
+    },
+    {
+      "slug": "show_credit",
+      "name": "Show credit",
+      "method": "GET",
+      "path": "/api/v1/credits/{id}",
+      "category": "credits",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one credit by its id; reach for it when you already know the credit's id and need its full details."
+    },
+    {
+      "slug": "update_credit",
+      "name": "Update credit",
+      "method": "PUT",
+      "path": "/api/v1/credits/{id}",
+      "category": "credits",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing credit by its hashed id; use to edit a specific credit record's fields rather than create or list credits (mutating)."
+    },
+    {
+      "slug": "edit_credit",
+      "name": "Edit credit",
+      "method": "GET",
+      "path": "/api/v1/credits/{id}/edit",
+      "category": "credits",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one credit by id prepared for editing (read-only); reach for it to preload a credit form, not to save changes."
+    },
+    {
+      "slug": "upload_credits",
+      "name": "Upload a credit document",
+      "method": "POST",
+      "path": "/api/v1/credits/{id}/upload",
+      "category": "credits",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document/file to one credit by id via multipart upload; reach for it to add supporting attachments (mutating)."
+    },
+    {
+      "slug": "bulk_credits",
+      "name": "Bulk credit actions",
+      "method": "POST",
+      "path": "/api/v1/credits/bulk",
+      "category": "credits",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one action like email or mark_sent across many credit ids at once; reach for it for batch credit operations (mutating)."
+    },
+    {
+      "slug": "get_credits_create",
+      "name": "Blank credit",
+      "method": "GET",
+      "path": "/api/v1/credits/create",
+      "category": "credits",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank credit template with default values (read-only); reach for it to seed a new-credit form before storing."
+    },
+    {
+      "slug": "get_designs",
+      "name": "Gets a list of designs",
+      "method": "GET",
+      "path": "/api/v1/designs",
+      "category": "designs",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many invoice/quote templates with paging and sorting when you need to browse designs or find a design's id."
+    },
+    {
+      "slug": "store_design",
+      "name": "Adds a design",
+      "method": "POST",
+      "path": "/api/v1/designs",
+      "category": "designs",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a brand-new design template from scratch when adding a custom layout to the company (mutating)."
+    },
+    {
+      "slug": "delete_design",
+      "name": "Deletes a design",
+      "method": "DELETE",
+      "path": "/api/v1/designs/{id}",
+      "category": "designs",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one design by id when retiring a template you no longer want available (mutating)."
+    },
+    {
+      "slug": "show_design",
+      "name": "Shows a design",
+      "method": "GET",
+      "path": "/api/v1/designs/{id}",
+      "category": "designs",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one design by id to read its full template details when you already know the design's id."
+    },
+    {
+      "slug": "update_design",
+      "name": "Updates a design",
+      "method": "PUT",
+      "path": "/api/v1/designs/{id}",
+      "category": "designs",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing design by id to change its layout or settings after you have its id (mutating)."
+    },
+    {
+      "slug": "edit_design",
+      "name": "Shows a design for editting",
+      "method": "GET",
+      "path": "/api/v1/designs/{id}/edit",
+      "category": "designs",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one design by id prepared for editing in a form; read-only, use update_design to actually save changes."
+    },
+    {
+      "slug": "bulk_designs",
+      "name": "Performs bulk actions on an array of designs",
+      "method": "POST",
+      "path": "/api/v1/designs/bulk",
+      "category": "designs",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one action across an array of design ids in a single batch instead of per-record calls (mutating)."
+    },
+    {
+      "slug": "get_designs_create",
+      "name": "Gets a new blank design object",
+      "method": "GET",
+      "path": "/api/v1/designs/create",
+      "category": "designs",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank design object with default values to prefill a new-design form before calling store_design."
+    },
+    {
+      "slug": "get_documents",
+      "name": "Gets a list of documents",
+      "method": "GET",
+      "path": "/api/v1/documents",
+      "category": "documents",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List and filter many uploaded document records with pagination and sorting; use to browse or search attachments across entities, not fetch one."
+    },
+    {
+      "slug": "send_email_template",
+      "name": "Sends an email for an entity",
+      "method": "POST",
+      "path": "/api/v1/emails",
+      "category": "emails",
+      "mutating": true,
+      "paramCount": 6,
+      "hasBody": true,
+      "summary": "Email an entity (invoice, quote, credit, payment, reminder, PO) using a named template by entity and entity_id; use to dispatch templated client emails (mutating)."
+    },
+    {
+      "slug": "get_expense_categorys",
+      "name": "Gets a list of expense_categories",
+      "method": "GET",
+      "path": "/api/v1/expense_categories",
+      "category": "expense_categories",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List or filter many expense categories with paging and sorting when browsing categories or finding a category id."
+    },
+    {
+      "slug": "store_expense_category",
+      "name": "Adds a expense category",
+      "method": "POST",
+      "path": "/api/v1/expense_categories",
+      "category": "expense_categories",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new expense category when adding a classification bucket for expenses (mutating)."
+    },
+    {
+      "slug": "delete_expense_category",
+      "name": "Deletes a ExpenseCategory",
+      "method": "DELETE",
+      "path": "/api/v1/expense_categories/{id}",
+      "category": "expense_categories",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one expense category by id when retiring a classification you no longer use (mutating)."
+    },
+    {
+      "slug": "show_expense_category",
+      "name": "Shows a Expens Category",
+      "method": "GET",
+      "path": "/api/v1/expense_categories/{id}",
+      "category": "expense_categories",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch one expense category by id to read its details when you already know the category's id."
+    },
+    {
+      "slug": "update_expense_category",
+      "name": "Updates a tax rate",
+      "method": "PUT",
+      "path": "/api/v1/expense_categories/{id}",
+      "category": "expense_categories",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Modify an existing expense category by id to rename or adjust it after you have its id (mutating)."
+    },
+    {
+      "slug": "edit_expense_category",
+      "name": "Shows a Expens Category for editting",
+      "method": "GET",
+      "path": "/api/v1/expense_categories/{id}/edit",
+      "category": "expense_categories",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch one expense category by id prepared for editing in a form; read-only, use update_expense_category to save."
+    },
+    {
+      "slug": "bulk_expense_categorys",
+      "name": "Performs bulk actions on an array of ExpenseCategorys",
+      "method": "POST",
+      "path": "/api/v1/expense_categories/bulk",
+      "category": "expense_categories",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one action across an array of expense category ids in a single batch instead of per-record calls (mutating)."
+    },
+    {
+      "slug": "get_expense_category_create",
+      "name": "Gets a new blank Expens Category object",
+      "method": "GET",
+      "path": "/api/v1/expense_categories/create",
+      "category": "expense_categories",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Fetch a blank expense category object with defaults to prefill a new-category form before calling store_expense_category."
+    },
+    {
+      "slug": "get_expenses",
+      "name": "Gets a list of expenses",
+      "method": "GET",
+      "path": "/api/v1/expenses",
+      "category": "expenses",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many expenses with paging, sorting, and filters when browsing spending or finding an expense's id."
+    },
+    {
+      "slug": "store_expense",
+      "name": "Adds an expense",
+      "method": "POST",
+      "path": "/api/v1/expenses",
+      "category": "expenses",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new expense record when logging a company purchase or cost (mutating)."
+    },
+    {
+      "slug": "delete_expense",
+      "name": "Deletes a expense",
+      "method": "DELETE",
+      "path": "/api/v1/expenses/{id}",
+      "category": "expenses",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one expense by id when removing a logged cost (mutating)."
+    },
+    {
+      "slug": "show_expense",
+      "name": "Shows a expense",
+      "method": "GET",
+      "path": "/api/v1/expenses/{id}",
+      "category": "expenses",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one expense by id to read its full details when you already know the expense's id."
+    },
+    {
+      "slug": "update_expense",
+      "name": "Updates a expense",
+      "method": "PUT",
+      "path": "/api/v1/expenses/{id}",
+      "category": "expenses",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing expense by id to correct its amount, date, or details after you have its id (mutating)."
+    },
+    {
+      "slug": "edit_expense",
+      "name": "Shows a expense for editing",
+      "method": "GET",
+      "path": "/api/v1/expenses/{id}/edit",
+      "category": "expenses",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one expense by id prepared for editing in a form; read-only, use update_expense to actually save changes."
+    },
+    {
+      "slug": "upload_expense",
+      "name": "Uploads a document to a expense",
+      "method": "POST",
+      "path": "/api/v1/expenses/{id}/upload",
+      "category": "expenses",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach one or more document files to an existing expense by its hashed id; use to add receipts to an expense record (mutating)."
+    },
+    {
+      "slug": "bulk_expenses",
+      "name": "Performs bulk actions on an array of expenses",
+      "method": "POST",
+      "path": "/api/v1/expenses/bulk",
+      "category": "expenses",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one action across an array of expense ids in a single batch instead of per-record calls (mutating)."
+    },
+    {
+      "slug": "get_expenses_create",
+      "name": "Gets a new blank expense object",
+      "method": "GET",
+      "path": "/api/v1/expenses/create",
+      "category": "expenses",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank expense object with default values to prefill a new-expense form before calling store_expense."
+    },
+    {
+      "slug": "get_export",
+      "name": "Export data from the system",
+      "method": "POST",
+      "path": "/api/v1/export",
+      "category": "export",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Export system data out of Invoice Ninja for backup or migration; use to bulk-extract records rather than read individual entities (mutating)."
+    },
+    {
+      "slug": "get_group_settings",
+      "name": "Gets a list of group_settings",
+      "method": "GET",
+      "path": "/api/v1/group_settings",
+      "category": "group_settings",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List or filter many group settings with paging and sorting; use to browse or search groups when you lack a specific id."
+    },
+    {
+      "slug": "store_group_setting",
+      "name": "Adds a GroupSetting",
+      "method": "POST",
+      "path": "/api/v1/group_settings",
+      "category": "group_settings",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new group setting record in the system; use when adding a fresh client group, not editing one (mutating)."
+    },
+    {
+      "slug": "delete_group_setting",
+      "name": "Deletes a GroupSetting",
+      "method": "DELETE",
+      "path": "/api/v1/group_settings/{id}",
+      "category": "group_settings",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive or soft-delete one group setting by its hashed id; use to remove a single known group (mutating)."
+    },
+    {
+      "slug": "show_group_setting",
+      "name": "Shows an GroupSetting",
+      "method": "GET",
+      "path": "/api/v1/group_settings/{id}",
+      "category": "group_settings",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one group setting by its hashed id; use to view full details of a single known group, not to list many."
+    },
+    {
+      "slug": "update_group_setting",
+      "name": "Updates an GroupSetting",
+      "method": "PUT",
+      "path": "/api/v1/group_settings/{id}",
+      "category": "group_settings",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing group setting by its hashed id; use to change fields on one known group (mutating)."
+    },
+    {
+      "slug": "edit_group_setting",
+      "name": "Shows an GroupSetting for editting",
+      "method": "GET",
+      "path": "/api/v1/group_settings/{id}/edit",
+      "category": "group_settings",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one group setting prepared for editing by hashed id; read-only retrieval to populate a form, not the update itself."
+    },
+    {
+      "slug": "upload_group_setting",
+      "name": "Uploads a document to a group setting",
+      "method": "POST",
+      "path": "/api/v1/group_settings/{id}/upload",
+      "category": "group_settings",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document or file to one group setting by hashed id; use to add supporting documents to a group (mutating)."
+    },
+    {
+      "slug": "bulk_group_settings",
+      "name": "Performs bulk actions on an array of group_settings",
+      "method": "POST",
+      "path": "/api/v1/group_settings/bulk",
+      "category": "group_settings",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Run a batch action over an array of group setting ids; use for actions across many groups at once (mutating)."
+    },
+    {
+      "slug": "get_group_settings_create",
+      "name": "Gets a new blank GroupSetting object",
+      "method": "GET",
+      "path": "/api/v1/group_settings/create",
+      "category": "group_settings",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank group setting template with default values; read-only, use to prefill before storing a new group."
+    },
+    {
+      "slug": "get_health_check",
+      "name": "Attempts to get a health check from the API",
+      "method": "GET",
+      "path": "/api/v1/health_check",
+      "category": "health_check",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Ping the API health check to verify the instance is up and responding; use for liveness/diagnostics, not for any business data."
+    },
+    {
+      "slug": "post_import",
+      "name": "Import CSV data",
+      "method": "POST",
+      "path": "/api/v1/import",
+      "category": "imports",
+      "mutating": true,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Execute the actual CSV import using the hash and column_map from preimport; call only after preimport returns headers (mutating)."
+    },
+    {
+      "slug": "get_import_json",
+      "name": "Import data from the system",
+      "method": "POST",
+      "path": "/api/v1/import_json",
+      "category": "imports",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Call to bulk-import a previously exported Invoice Ninja JSON dataset into the company, restoring or migrating records (mutating)."
+    },
+    {
+      "slug": "preimport",
+      "name": "Pre Import CSV data",
+      "method": "POST",
+      "path": "/api/v1/preimport",
+      "category": "imports",
+      "mutating": true,
+      "paramCount": 8,
+      "hasBody": true,
+      "summary": "Upload CSV file(s) first to validate them and get column headers for mapping, before calling the import endpoint that runs the import (mutating)."
+    },
+    {
+      "slug": "download_invoice_by_invitation",
+      "name": "Download invoice PDF",
+      "method": "GET",
+      "path": "/api/v1/invoice/{invitation_key}/download",
+      "category": "invoices",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Download one invoice's PDF using its invitation_key (recipient link); use this client-facing route, not get_invoice_delivery_note or action download."
+    },
+    {
+      "slug": "get_invoices",
+      "name": "List invoices",
+      "method": "GET",
+      "path": "/api/v1/invoices",
+      "category": "invoices",
+      "mutating": false,
+      "paramCount": 22,
+      "hasBody": false,
+      "summary": "Fetch and filter many invoices by client, status, number, date, or overdue with pagination; use to search or list, not to read one by id."
+    },
+    {
+      "slug": "store_invoice",
+      "name": "Create invoice",
+      "method": "POST",
+      "path": "/api/v1/invoices",
+      "category": "invoices",
+      "mutating": true,
+      "paramCount": 39,
+      "hasBody": true,
+      "summary": "Create a new invoice for a client (client_id required), optionally chaining send/mark actions; use to make a new invoice, not update_invoice (mutating)."
+    },
+    {
+      "slug": "delete_invoice",
+      "name": "Delete invoice",
+      "method": "DELETE",
+      "path": "/api/v1/invoices/{id}",
+      "category": "invoices",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one invoice by id; use this over bulk_invoices when removing a single invoice (mutating)."
+    },
+    {
+      "slug": "show_invoice",
+      "name": "Show invoice",
+      "method": "GET",
+      "path": "/api/v1/invoices/{id}",
+      "category": "invoices",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one invoice by id with optional includes; use when you have the hashed id, not get_invoices for searching."
+    },
+    {
+      "slug": "update_invoice",
+      "name": "Update invoice",
+      "method": "PUT",
+      "path": "/api/v1/invoices/{id}",
+      "category": "invoices",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing invoice by id, optionally chaining ?send_email/?mark_sent/?paid actions; use to edit, not store_invoice which creates new (mutating)."
+    },
+    {
+      "slug": "action_invoice",
+      "name": "Custom invoice action",
+      "method": "GET",
+      "path": "/api/v1/invoices/{id}/{action}",
+      "category": "invoices",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Perform a named action on one invoice by id (clone_to_quote, mark_paid, email, archive, history); use for these verbs, not update_invoice (mutating)."
+    },
+    {
+      "slug": "get_invoice_delivery_note",
+      "name": "Download delivery note",
+      "method": "GET",
+      "path": "/api/v1/invoices/{id}/delivery_note",
+      "category": "invoices",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Download one invoice's delivery-note PDF by id; use for the delivery note specifically, not download_invoice_by_invitation for the invoice PDF."
+    },
+    {
+      "slug": "edit_invoice",
+      "name": "Edit invoice",
+      "method": "GET",
+      "path": "/api/v1/invoices/{id}/edit",
+      "category": "invoices",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "GET one invoice by id prepared for editing; read-only, use before update_invoice, not the update itself."
+    },
+    {
+      "slug": "upload_invoice_document",
+      "name": "Add invoice document",
+      "method": "POST",
+      "path": "/api/v1/invoices/{id}/upload",
+      "category": "invoices",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach document files to one invoice via multipart upload; use to add files, not update_invoice for field edits (mutating)."
+    },
+    {
+      "slug": "bulk_invoices",
+      "name": "Bulk invoice actions",
+      "method": "POST",
+      "path": "/api/v1/invoices/bulk",
+      "category": "invoices",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Run a batch action (email, bulk_download/print, archive, delete) over an array of invoice ids in one request (mutating)."
+    },
+    {
+      "slug": "get_invoice_create",
+      "name": "Blank invoice",
+      "method": "GET",
+      "path": "/api/v1/invoices/create",
+      "category": "invoices",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "GET a blank invoice object with default values to seed a new-invoice form; read-only, use before store_invoice."
+    },
+    {
+      "slug": "get_locations",
+      "name": "List locations",
+      "method": "GET",
+      "path": "/api/v1/locations",
+      "category": "locations",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many client/vendor address locations by name with sorting and pagination; use to find locations or browse the set."
+    },
+    {
+      "slug": "store_location",
+      "name": "Create location",
+      "method": "POST",
+      "path": "/api/v1/locations",
+      "category": "locations",
+      "mutating": true,
+      "paramCount": 16,
+      "hasBody": true,
+      "summary": "Create a new client or vendor address location with name, address, and country fields (mutating)."
+    },
+    {
+      "slug": "delete_location",
+      "name": "Delete location",
+      "method": "DELETE",
+      "path": "/api/v1/locations/{id}",
+      "category": "locations",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one location by its hashed id (mutating); use update_location to modify or bulk_locations for many."
+    },
+    {
+      "slug": "show_location",
+      "name": "Show location",
+      "method": "GET",
+      "path": "/api/v1/locations/{id}",
+      "category": "locations",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one location's full details by its hashed id; use get_locations to search across many instead."
+    },
+    {
+      "slug": "update_location",
+      "name": "Update location",
+      "method": "PUT",
+      "path": "/api/v1/locations/{id}",
+      "category": "locations",
+      "mutating": true,
+      "paramCount": 17,
+      "hasBody": true,
+      "summary": "Modify an existing location by hashed id, changing address, name, or shipping flag (mutating)."
+    },
+    {
+      "slug": "bulk_locations",
+      "name": "Bulk location actions",
+      "method": "POST",
+      "path": "/api/v1/locations/bulk",
+      "category": "locations",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": true,
+      "summary": "Archive, restore, or delete many locations at once by passing an array of ids plus an action (mutating)."
+    },
+    {
+      "slug": "get_locations_create",
+      "name": "Blank Location",
+      "method": "GET",
+      "path": "/api/v1/locations/create",
+      "category": "locations",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank location object with default values to prefill a new-location form before calling store_location."
+    },
+    {
+      "slug": "get_logout",
+      "name": "Logs the user out of their current session",
+      "method": "POST",
+      "path": "/api/v1/logout",
+      "category": "logout",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Call to log out the current user and invalidate their active session token when ending an authenticated session (mutating)."
+    },
+    {
+      "slug": "post_purge_company_save_settings",
+      "name": "Attempts to purge a companies child records but save the company record and its settings",
+      "method": "POST",
+      "path": "/api/v1/migration/purge_save_settings/{company}",
+      "category": "migration",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Purge a company's child records by company id while preserving the company and its settings, when wiping data but keeping the account (mutating)."
+    },
+    {
+      "slug": "post_purge_company",
+      "name": "Attempts to purge a company record and all its child records",
+      "method": "POST",
+      "path": "/api/v1/migration/purge/{company}",
+      "category": "migration",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Permanently purge a company and ALL its child records by company id; use only for full deletion, not the settings-preserving purge (mutating)."
+    },
+    {
+      "slug": "post_start_migration",
+      "name": "Starts the migration from previous version of Invoice Ninja",
+      "method": "POST",
+      "path": "/api/v1/migration/start",
+      "category": "migration",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Start importing a v4 Invoice Ninja migration file (requires X-API-PASSWORD) when migrating a whole prior install, not mapping a CSV (mutating)."
+    },
+    {
+      "slug": "post_one_time_token",
+      "name": "Attempts to create a one time token",
+      "method": "POST",
+      "path": "/api/v1/one_time_token",
+      "category": "one_time_token",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Call to mint a short-lived one-time token for a single privileged action like a redirect or hosted-page handoff (mutating)."
+    },
+    {
+      "slug": "get_payment_terms",
+      "name": "Gets a list of payment terms",
+      "method": "GET",
+      "path": "/api/v1/payment_terms",
+      "category": "payment_terms",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many payment terms with sorting and pagination; use to browse or find available net-day terms."
+    },
+    {
+      "slug": "store_payment_term",
+      "name": "Adds a Payment",
+      "method": "POST",
+      "path": "/api/v1/payment_terms",
+      "category": "payment_terms",
+      "mutating": true,
+      "paramCount": 6,
+      "hasBody": true,
+      "summary": "Create a new payment term defining a length in days and a display name (mutating)."
+    },
+    {
+      "slug": "delete_payment_term",
+      "name": "Deletes a Payment Term",
+      "method": "DELETE",
+      "path": "/api/v1/payment_terms/{id}",
+      "category": "payment_terms",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Call to archive/soft-delete one existing payment term by its hashed id; use list/show endpoints to read terms instead (mutating)."
+    },
+    {
+      "slug": "show_payment_term",
+      "name": "Shows a Payment Term",
+      "method": "GET",
+      "path": "/api/v1/payment_terms/{id}",
+      "category": "payment_terms",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one payment term's details by its hashed id; use get_payment_terms to search across many instead."
+    },
+    {
+      "slug": "update_payment_term",
+      "name": "Updates a Payment Term",
+      "method": "PUT",
+      "path": "/api/v1/payment_terms/{id}",
+      "category": "payment_terms",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing payment term by its hashed id (mutating); use edit_payment_terms to GET it prepared for editing."
+    },
+    {
+      "slug": "edit_payment_terms",
+      "name": "Shows an Payment Term for editting",
+      "method": "GET",
+      "path": "/api/v1/payment_terms/{id}/edit",
+      "category": "payment_terms",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "GET a single payment term by hashed id prepared for editing (read-only); use update_payment_term to actually save changes."
+    },
+    {
+      "slug": "bulk_payment_terms",
+      "name": "Performs bulk actions on an array of payment terms",
+      "method": "POST",
+      "path": "/api/v1/payment_terms/bulk",
+      "category": "payment_terms",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Archive, restore, or delete many payment terms at once over an array of ids (mutating)."
+    },
+    {
+      "slug": "get_payment_terms_create",
+      "name": "Gets a new blank PaymentTerm object",
+      "method": "GET",
+      "path": "/api/v1/payment_terms/create",
+      "category": "payment_terms",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank payment-term object with default values to prefill a new term before calling store_payment_term."
+    },
+    {
+      "slug": "get_payments",
+      "name": "List payments",
+      "method": "GET",
+      "path": "/api/v1/payments",
+      "category": "payments",
+      "mutating": false,
+      "paramCount": 14,
+      "hasBody": false,
+      "summary": "List and filter many payments by client, status, number, or date range when you need a set of records, not one by id."
+    },
+    {
+      "slug": "store_payment",
+      "name": "Create payment",
+      "method": "POST",
+      "path": "/api/v1/payments",
+      "category": "payments",
+      "mutating": true,
+      "paramCount": 14,
+      "hasBody": true,
+      "summary": "Create a new payment, optionally applying it to invoices/credits and emailing a receipt, when recording a fresh payment (mutating)."
+    },
+    {
+      "slug": "delete_payment",
+      "name": "Delete payment",
+      "method": "DELETE",
+      "path": "/api/v1/payments/{id}",
+      "category": "payments",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete a single existing payment by its hashed id when removing it from active lists (mutating)."
+    },
+    {
+      "slug": "show_payment",
+      "name": "Show payment",
+      "method": "GET",
+      "path": "/api/v1/payments/{id}",
+      "category": "payments",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one payment's full details by its hashed id when you already know the specific payment you need."
+    },
+    {
+      "slug": "update_payment",
+      "name": "Update payment",
+      "method": "PUT",
+      "path": "/api/v1/payments/{id}",
+      "category": "payments",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing payment by its hashed id when changing fields on a record that already exists (mutating)."
+    },
+    {
+      "slug": "action_payment",
+      "name": "Custom payment actions",
+      "method": "GET",
+      "path": "/api/v1/payments/{id}/{action}",
+      "category": "payments",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Run a named action (mark_paid, email, download, clone, archive) on one payment by id and action string (mutating)."
+    },
+    {
+      "slug": "edit_payment",
+      "name": "Edit payment",
+      "method": "GET",
+      "path": "/api/v1/payments/{id}/edit",
+      "category": "payments",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one payment by id prepared for editing in a form; read-only, use update_payment to actually save changes."
+    },
+    {
+      "slug": "upload_payment",
+      "name": "Upload a payment document",
+      "method": "POST",
+      "path": "/api/v1/payments/{id}/upload",
+      "category": "payments",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document/file to an existing payment by its hashed id via multipart upload (mutating)."
+    },
+    {
+      "slug": "bulk_payments",
+      "name": "Bulk payment actions",
+      "method": "POST",
+      "path": "/api/v1/payments/bulk",
+      "category": "payments",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one batch action across many payment ids at once instead of acting on a single payment (mutating)."
+    },
+    {
+      "slug": "get_payments_create",
+      "name": "Blank payment",
+      "method": "GET",
+      "path": "/api/v1/payments/create",
+      "category": "payments",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank payment object with default values to seed a new-payment form; read-only, does not create anything."
+    },
+    {
+      "slug": "store_refund",
+      "name": "Refund payment",
+      "method": "POST",
+      "path": "/api/v1/payments/refund",
+      "category": "payments",
+      "mutating": true,
+      "paramCount": 30,
+      "hasBody": true,
+      "summary": "Refund an existing payment, specifying amount and target invoices, when reversing funds rather than recording a new payment (mutating)."
+    },
+    {
+      "slug": "get_last_error",
+      "name": "Returns the last error",
+      "method": "GET",
+      "path": "/api/v1/last_error",
+      "category": "ping",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Fetch the API's most recent error message when diagnosing a prior failed request, rather than checking liveness."
+    },
+    {
+      "slug": "get_ping",
+      "name": "Attempts to ping the API",
+      "method": "GET",
+      "path": "/api/v1/ping",
+      "category": "ping",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Ping the API to verify connectivity and credentials with a lightweight health check, not to read error details."
+    },
+    {
+      "slug": "confirm_apple_purchase",
+      "name": "Processing webhooks from Apple for in app purchases",
+      "method": "POST",
+      "path": "/api/v1/apple/confirm_purchase",
+      "category": "postmark",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Confirm an Apple in-app purchase and credit the account when handling a one-time Apple purchase confirmation, not a subscription event (mutating)."
+    },
+    {
+      "slug": "process_apple_webhook",
+      "name": "Processing event webhooks from Apple for in purchase / subscription status update",
+      "method": "POST",
+      "path": "/api/v1/apple/process_webhook",
+      "category": "postmark",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Process Apple subscription/purchase-status event webhooks for ongoing updates, distinct from confirming a single purchase (mutating)."
+    },
+    {
+      "slug": "postmark_webhook",
+      "name": "Processing webhooks from PostMark",
+      "method": "POST",
+      "path": "/api/v1/postmark_webhook",
+      "category": "postmark",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Receive Postmark email event webhooks (delivery/bounce) for inbound email processing, not Apple purchase events (mutating)."
+    },
+    {
+      "slug": "get_preview",
+      "name": "Returns a pdf preview",
+      "method": "POST",
+      "path": "/api/v1/preview",
+      "category": "preview",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Generate an on-the-fly PDF preview of an invoice/quote/credit from posted entity data without saving it; use for general entities, not purchase orders"
+    },
+    {
+      "slug": "get_preview_purchase_order",
+      "name": "Returns a pdf preview for purchase order",
+      "method": "POST",
+      "path": "/api/v1/preview/purchase_order",
+      "category": "preview",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Generate an on-the-fly PDF preview specifically for a purchase order from posted data; use this instead of get_preview when the entity is a purchase order"
+    },
+    {
+      "slug": "get_products",
+      "name": "List products",
+      "method": "GET",
+      "path": "/api/v1/products",
+      "category": "products",
+      "mutating": false,
+      "paramCount": 14,
+      "hasBody": false,
+      "summary": "List and filter many products in your company, with search, sorting, and pagination; reach for it to browse or find products by criteria."
+    },
+    {
+      "slug": "store_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/api/v1/products",
+      "category": "products",
+      "mutating": true,
+      "paramCount": 26,
+      "hasBody": true,
+      "summary": "Create a brand-new product record with its details and pricing; use when adding a product that does not yet exist (mutating)."
+    },
+    {
+      "slug": "delete_product",
+      "name": "Delete product",
+      "method": "DELETE",
+      "path": "/api/v1/products/{id}",
+      "category": "products",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete a single product by id; use to remove or retire one product without permanently purging it (mutating)."
+    },
+    {
+      "slug": "show_product",
+      "name": "Show product",
+      "method": "GET",
+      "path": "/api/v1/products/{id}",
+      "category": "products",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one specific product by its id when you already know the id and need its full details, not a filtered list."
+    },
+    {
+      "slug": "update_product",
+      "name": "Update product",
+      "method": "PUT",
+      "path": "/api/v1/products/{id}",
+      "category": "products",
+      "mutating": true,
+      "paramCount": 27,
+      "hasBody": true,
+      "summary": "Modify an existing product's fields by id; use to change price, notes, or other attributes of a known product (mutating)."
+    },
+    {
+      "slug": "edit_product",
+      "name": "Edit product",
+      "method": "GET",
+      "path": "/api/v1/products/{id}/edit",
+      "category": "products",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one product by id prepared for editing (read-only); use to load current values before calling update_product, not to save changes."
+    },
+    {
+      "slug": "upload_product",
+      "name": "Add product document",
+      "method": "POST",
+      "path": "/api/v1/products/{id}/upload",
+      "category": "products",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document or file to an existing product by id; use to add supporting attachments to one product (mutating)."
+    },
+    {
+      "slug": "bulk_products",
+      "name": "Bulk product actions",
+      "method": "POST",
+      "path": "/api/v1/products/bulk",
+      "category": "products",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Run a named action over many product ids at once (archive, restore, delete, set tax); use for batch operations, not single edits (mutating)."
+    },
+    {
+      "slug": "get_products_create",
+      "name": "Blank product",
+      "method": "GET",
+      "path": "/api/v1/products/create",
+      "category": "products",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank product template with default values (read-only); use to prefill a new-product form before calling store_product."
+    },
+    {
+      "slug": "get_projects",
+      "name": "List projects",
+      "method": "GET",
+      "path": "/api/v1/projects",
+      "category": "projects",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List and filter many projects in your company, with search, sorting, and pagination; reach for it to browse or find projects by criteria."
+    },
+    {
+      "slug": "store_project",
+      "name": "Create project",
+      "method": "POST",
+      "path": "/api/v1/projects",
+      "category": "projects",
+      "mutating": true,
+      "paramCount": 15,
+      "hasBody": true,
+      "summary": "Create a brand-new project record with its details; use when adding a project that does not yet exist (mutating)."
+    },
+    {
+      "slug": "delete_project",
+      "name": "Delete project",
+      "method": "DELETE",
+      "path": "/api/v1/projects/{id}",
+      "category": "projects",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete a single project by id; use to remove or retire one project without permanently purging it (mutating)."
+    },
+    {
+      "slug": "show_project",
+      "name": "Show project",
+      "method": "GET",
+      "path": "/api/v1/projects/{id}",
+      "category": "projects",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one specific project by its id when you already know the id and need its full details, not a filtered list."
+    },
+    {
+      "slug": "update_project",
+      "name": "Update project",
+      "method": "PUT",
+      "path": "/api/v1/projects/{id}",
+      "category": "projects",
+      "mutating": true,
+      "paramCount": 16,
+      "hasBody": true,
+      "summary": "Modify an existing project's fields by id; use to change name, client, budget, or other attributes of a known project (mutating)."
+    },
+    {
+      "slug": "edit_project",
+      "name": "Edit project",
+      "method": "GET",
+      "path": "/api/v1/projects/{id}/edit",
+      "category": "projects",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one project by id prepared for editing (read-only); use to load current values before calling update_project, not to save changes."
+    },
+    {
+      "slug": "upload_project",
+      "name": "Uploads a project document",
+      "method": "POST",
+      "path": "/api/v1/projects/{id}/upload",
+      "category": "projects",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document or file to an existing project by id; use to add supporting attachments to one project (mutating)."
+    },
+    {
+      "slug": "bulk_projects",
+      "name": "Bulk project actions",
+      "method": "POST",
+      "path": "/api/v1/projects/bulk",
+      "category": "projects",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Run a named action over many project ids at once (archive, restore, delete); use for batch operations, not single edits (mutating)."
+    },
+    {
+      "slug": "get_projects_create",
+      "name": "Blank project",
+      "method": "GET",
+      "path": "/api/v1/projects/create",
+      "category": "projects",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank project template with default values (read-only); use to prefill a new-project form before calling store_project."
+    },
+    {
+      "slug": "download_purchase_order",
+      "name": "Download a purchase order PDF",
+      "method": "GET",
+      "path": "/api/v1/purchase_order/{invitation_key}/download",
+      "category": "purchase_orders",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Download a purchase order's PDF by its invitation key when you need the rendered document file rather than JSON data."
+    },
+    {
+      "slug": "get_purchase_orders",
+      "name": "List purchase orders",
+      "method": "GET",
+      "path": "/api/v1/purchase_orders",
+      "category": "purchase_orders",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List and filter many purchase orders with sorting/pagination when you need a set of records, not one by id."
+    },
+    {
+      "slug": "store_purchase_order",
+      "name": "Create purchase order",
+      "method": "POST",
+      "path": "/api/v1/purchase_orders",
+      "category": "purchase_orders",
+      "mutating": true,
+      "paramCount": 11,
+      "hasBody": true,
+      "summary": "Create a new purchase order for a vendor with dates and line items when recording a fresh PO (mutating)."
+    },
+    {
+      "slug": "delete_purchase_order",
+      "name": "Delete purchase order",
+      "method": "DELETE",
+      "path": "/api/v1/purchase_orders/{id}",
+      "category": "purchase_orders",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete a single existing purchase order by its hashed id when removing it from active lists (mutating)."
+    },
+    {
+      "slug": "show_purchase_order",
+      "name": "Show purchase order",
+      "method": "GET",
+      "path": "/api/v1/purchase_orders/{id}",
+      "category": "purchase_orders",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one purchase order's full details by its hashed id when you already know the specific PO you need."
+    },
+    {
+      "slug": "update_purchase_order",
+      "name": "Update purchase order",
+      "method": "PUT",
+      "path": "/api/v1/purchase_orders/{id}",
+      "category": "purchase_orders",
+      "mutating": true,
+      "paramCount": 12,
+      "hasBody": true,
+      "summary": "Modify an existing purchase order by its hashed id, updating vendor, dates, or line items on a record that already exists (mutating)."
+    },
+    {
+      "slug": "action_purchase_order",
+      "name": "Custom purchase order actions",
+      "method": "GET",
+      "path": "/api/v1/purchase_orders/{id}/{action}",
+      "category": "purchase_orders",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Run a named action (mark_paid, email, download, archive, delete) on one purchase order by id and action string (mutating)."
+    },
+    {
+      "slug": "edit_purchase_order",
+      "name": "Edit purchase order",
+      "method": "GET",
+      "path": "/api/v1/purchase_orders/{id}/edit",
+      "category": "purchase_orders",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one purchase order by id prepared for editing in a form; read-only, use update_purchase_order to actually save changes."
+    },
+    {
+      "slug": "upload_purchase_order",
+      "name": "Uploads a purchase order document",
+      "method": "POST",
+      "path": "/api/v1/purchase_orders/{id}/upload",
+      "category": "purchase_orders",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document/file to an existing purchase order by its hashed id via multipart upload (mutating)."
+    },
+    {
+      "slug": "bulk_purchase_orderss",
+      "name": "Bulk purchase order action",
+      "method": "POST",
+      "path": "/api/v1/purchase_orders/bulk",
+      "category": "purchase_orders",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one batch action across many purchase order ids at once instead of acting on a single PO (mutating)."
+    },
+    {
+      "slug": "get_purchase_order_create",
+      "name": "Blank purchase order",
+      "method": "GET",
+      "path": "/api/v1/purchase_orders/create",
+      "category": "purchase_orders",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank purchase order object with default values to seed a new-PO form; read-only, does not create anything."
+    },
+    {
+      "slug": "download_credit",
+      "name": "Download quote PDF",
+      "method": "GET",
+      "path": "/api/v1/credit/{invitation_key}/download",
+      "category": "quotes",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Download a credit's PDF by its credit invitation key; use for credits, not the quote or invoice download endpoints."
+    },
+    {
+      "slug": "download_quote",
+      "name": "Download quote PDF",
+      "method": "GET",
+      "path": "/api/v1/quote/{invitation_key}/download",
+      "category": "quotes",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Download a quote's PDF by its quote invitation key; use for quotes specifically, not credits or invoices."
+    },
+    {
+      "slug": "get_quotes",
+      "name": "List quotes",
+      "method": "GET",
+      "path": "/api/v1/quotes",
+      "category": "quotes",
+      "mutating": false,
+      "paramCount": 15,
+      "hasBody": false,
+      "summary": "List or filter many quotes by client, status, number, or date; use to find or browse quotes, not to fetch one by id."
+    },
+    {
+      "slug": "store_quote",
+      "name": "Create quote",
+      "method": "POST",
+      "path": "/api/v1/quotes",
+      "category": "quotes",
+      "mutating": true,
+      "paramCount": 11,
+      "hasBody": true,
+      "summary": "Create a new quote for a client with line items; use when adding a quote that does not exist yet (mutating)."
+    },
+    {
+      "slug": "delete_quote",
+      "name": "Delete quote",
+      "method": "DELETE",
+      "path": "/api/v1/quotes/{id}",
+      "category": "quotes",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one quote by its hashed id; use to remove a quote, not to update it (mutating)."
+    },
+    {
+      "slug": "show_quote",
+      "name": "Show quote",
+      "method": "GET",
+      "path": "/api/v1/quotes/{id}",
+      "category": "quotes",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one quote's full record by its hashed id; use when you already know the id, not for listing or editing."
+    },
+    {
+      "slug": "update_quote",
+      "name": "Update quote",
+      "method": "PUT",
+      "path": "/api/v1/quotes/{id}",
+      "category": "quotes",
+      "mutating": true,
+      "paramCount": 12,
+      "hasBody": true,
+      "summary": "Modify an existing quote by id, changing client, dates, notes, or line items; use to save edits to a known quote (mutating)."
+    },
+    {
+      "slug": "action_quote",
+      "name": "Performs a custom action on an Quote",
+      "method": "GET",
+      "path": "/api/v1/quotes/{id}/{action}",
+      "category": "quotes",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Run a named action (clone, convert, mark_paid, email, archive) on one quote by id; use for quote workflow operations (mutating)."
+    },
+    {
+      "slug": "edit_quote",
+      "name": "Edit quote",
+      "method": "GET",
+      "path": "/api/v1/quotes/{id}/edit",
+      "category": "quotes",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one quote by id prepared for editing (read-only); use to load form data before calling update_quote, not to save changes."
+    },
+    {
+      "slug": "upload_quote",
+      "name": "Upload a quote document",
+      "method": "POST",
+      "path": "/api/v1/quotes/{id}/upload",
+      "category": "quotes",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document/file to an existing quote by id via multipart upload; use to add supporting files to a quote (mutating)."
+    },
+    {
+      "slug": "bulk_quotes",
+      "name": "Bulk quote actions",
+      "method": "POST",
+      "path": "/api/v1/quotes/bulk",
+      "category": "quotes",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": true,
+      "summary": "Run a batch action (approve, convert, send_email, mark_sent) over an array of quote ids; use for multi-quote operations (mutating)."
+    },
+    {
+      "slug": "get_quotes_create",
+      "name": "Blank quote",
+      "method": "GET",
+      "path": "/api/v1/quotes/create",
+      "category": "quotes",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank quote object with default values (read-only); use to seed a new quote form before calling store_quote."
+    },
+    {
+      "slug": "get_recurring_expenses",
+      "name": "Gets a list of recurring_expenses",
+      "method": "GET",
+      "path": "/api/v1/recurring_expenses",
+      "category": "recurring_expenses",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many recurring expense templates, with pagination and sorting; use to browse, not to fetch one by id."
+    },
+    {
+      "slug": "store_recurring_expense",
+      "name": "Adds a recurring expense",
+      "method": "POST",
+      "path": "/api/v1/recurring_expenses",
+      "category": "recurring_expenses",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new recurring expense template for the company when adding a repeating cost (mutating)."
+    },
+    {
+      "slug": "delete_recurring_expense",
+      "name": "Deletes a recurring expense",
+      "method": "DELETE",
+      "path": "/api/v1/recurring_expenses/{id}",
+      "category": "recurring_expenses",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one recurring expense by its hashed id when retiring a repeating cost (mutating)."
+    },
+    {
+      "slug": "show_recurring_expense",
+      "name": "Shows a recurring expense",
+      "method": "GET",
+      "path": "/api/v1/recurring_expenses/{id}",
+      "category": "recurring_expenses",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one recurring expense by its hashed id to read its full details; use when you already know the id."
+    },
+    {
+      "slug": "update_recurring_expense",
+      "name": "Updates a recurring expense",
+      "method": "PUT",
+      "path": "/api/v1/recurring_expenses/{id}",
+      "category": "recurring_expenses",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing recurring expense by its hashed id to change amount, schedule, or other fields (mutating)."
+    },
+    {
+      "slug": "edit_recurring_expense",
+      "name": "Shows a recurring expense for editting",
+      "method": "GET",
+      "path": "/api/v1/recurring_expenses/{id}/edit",
+      "category": "recurring_expenses",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one recurring expense by id prepared for editing (read-only); use to preload a form, not to save changes."
+    },
+    {
+      "slug": "upload_recurring_expense",
+      "name": "Uploads a document to a recurring_expense",
+      "method": "POST",
+      "path": "/api/v1/recurring_expenses/{id}/upload",
+      "category": "recurring_expenses",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Call to attach a document file to one existing recurring expense by id via multipart upload, not to create or edit it (mutating)."
+    },
+    {
+      "slug": "bulk_recurring_expenses",
+      "name": "Performs bulk actions on an array of recurring_expenses",
+      "method": "POST",
+      "path": "/api/v1/recurring_expenses/bulk",
+      "category": "recurring_expenses",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Perform a batch action over many recurring expenses by passing an array of ids in one request (mutating)."
+    },
+    {
+      "slug": "get_recurring_expenses_create",
+      "name": "Gets a new blank recurring expense object",
+      "method": "GET",
+      "path": "/api/v1/recurring_expenses/create",
+      "category": "recurring_expenses",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank recurring expense object with default values (read-only) to seed a new-record form before storing."
+    },
+    {
+      "slug": "download_recurring_invoice",
+      "name": "Download recurring invoice PDF",
+      "method": "GET",
+      "path": "/api/v1/recurring_invoice/{invitation_key}/download",
+      "category": "recurring_invoices",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Download a recurring invoice's PDF by its invitation_key; use when you need the rendered file, not JSON record data."
+    },
+    {
+      "slug": "get_recurring_invoices",
+      "name": "List recurring invoices",
+      "method": "GET",
+      "path": "/api/v1/recurring_invoices",
+      "category": "recurring_invoices",
+      "mutating": false,
+      "paramCount": 17,
+      "hasBody": false,
+      "summary": "List or filter many recurring invoices by client, status, frequency, or next-send date; use to browse or search, not to fetch one."
+    },
+    {
+      "slug": "store_recurring_invoice",
+      "name": "Create recurring invoice",
+      "method": "POST",
+      "path": "/api/v1/recurring_invoices",
+      "category": "recurring_invoices",
+      "mutating": true,
+      "paramCount": 13,
+      "hasBody": true,
+      "summary": "Create a new recurring invoice from client, dates, frequency, and line items; use to set up recurring billing (mutating)."
+    },
+    {
+      "slug": "delete_recurring_invoice",
+      "name": "Delete recurring invoice",
+      "method": "DELETE",
+      "path": "/api/v1/recurring_invoices/{id}",
+      "category": "recurring_invoices",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one recurring invoice by id; use to remove a recurring schedule rather than edit or stop it (mutating)."
+    },
+    {
+      "slug": "show_recurring_invoice",
+      "name": "Show recurring invoice",
+      "method": "GET",
+      "path": "/api/v1/recurring_invoices/{id}",
+      "category": "recurring_invoices",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one recurring invoice's full record by id; use when you already know the id and need its current details."
+    },
+    {
+      "slug": "update_recurring_invoice",
+      "name": "Update recurring invoice",
+      "method": "PUT",
+      "path": "/api/v1/recurring_invoices/{id}",
+      "category": "recurring_invoices",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing recurring invoice by id (dates, frequency, line items); use to change an established schedule (mutating)."
+    },
+    {
+      "slug": "action_recurring_invoice",
+      "name": "Custom recurring invoice action",
+      "method": "GET",
+      "path": "/api/v1/recurring_invoices/{id}/{action}",
+      "category": "recurring_invoices",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Run a named action (start, mark_paid, email, clone, download) on one recurring invoice by id; use for single-record operations (mutating)."
+    },
+    {
+      "slug": "edit_recurring_invoice",
+      "name": "Edit recurring invoice",
+      "method": "GET",
+      "path": "/api/v1/recurring_invoices/{id}/edit",
+      "category": "recurring_invoices",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one recurring invoice prepared for editing by id; use to preload a form's values, not to save changes."
+    },
+    {
+      "slug": "upload_recurring_invoice",
+      "name": "Add recurring invoice document",
+      "method": "POST",
+      "path": "/api/v1/recurring_invoices/{id}/upload",
+      "category": "recurring_invoices",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach document files to a recurring invoice by id via multipart upload; use to add supporting documents to it (mutating)."
+    },
+    {
+      "slug": "bulk_recurring_invoices",
+      "name": "Bulk recurring invoice actions",
+      "method": "POST",
+      "path": "/api/v1/recurring_invoices/bulk",
+      "category": "recurring_invoices",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": true,
+      "summary": "Apply a batch action (start, archive, delete) across many recurring invoice ids at once; use for multi-record operations (mutating)."
+    },
+    {
+      "slug": "get_recurring_invoices_create",
+      "name": "Blank recurring invoice",
+      "method": "GET",
+      "path": "/api/v1/recurring_invoices/create",
+      "category": "recurring_invoices",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank recurring invoice with default values; use to pre-populate a new-record form before calling store."
+    },
+    {
+      "slug": "get_recurring_quotes",
+      "name": "Gets a list of recurring_quotes",
+      "method": "GET",
+      "path": "/api/v1/recurring_quotes",
+      "category": "recurring_quotes",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List or filter many recurring quotes with search, sort, and pagination; use when browsing or finding recurring quotes rather than fetching one by id."
+    },
+    {
+      "slug": "store_recurring_quote",
+      "name": "Adds a RecurringQuote",
+      "method": "POST",
+      "path": "/api/v1/recurring_quotes",
+      "category": "recurring_quotes",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new recurring quote from scratch; use when adding a recurring quote, not when editing an existing one (mutating)."
+    },
+    {
+      "slug": "delete_recurring_quote",
+      "name": "Deletes a RecurringQuote",
+      "method": "DELETE",
+      "path": "/api/v1/recurring_quotes/{id}",
+      "category": "recurring_quotes",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one recurring quote by id; use to remove a single recurring quote rather than batch-deleting many (mutating)."
+    },
+    {
+      "slug": "show_recurring_quote",
+      "name": "Shows an RecurringQuote",
+      "method": "GET",
+      "path": "/api/v1/recurring_quotes/{id}",
+      "category": "recurring_quotes",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one recurring quote by its hashed id; use when you already know the id and need that single record's details."
+    },
+    {
+      "slug": "update_recurring_quote",
+      "name": "Updates an RecurringQuote",
+      "method": "PUT",
+      "path": "/api/v1/recurring_quotes/{id}",
+      "category": "recurring_quotes",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing recurring quote by id with new field values; use to change a recurring quote you already have, not to create one (mutating)."
+    },
+    {
+      "slug": "action_recurring_quote",
+      "name": "Performs a custom action on an RecurringQuote",
+      "method": "GET",
+      "path": "/api/v1/recurring_quotes/{id}/{action}",
+      "category": "recurring_quotes",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Run a named action (email, mark_paid, clone, download, history) on one recurring quote by id; use for operations beyond plain CRUD (mutating)."
+    },
+    {
+      "slug": "edit_recurring_quote",
+      "name": "Shows an RecurringQuote for editting",
+      "method": "GET",
+      "path": "/api/v1/recurring_quotes/{id}/edit",
+      "category": "recurring_quotes",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one recurring quote by id prepared for editing; use to load current values before an update, not to perform the update itself."
+    },
+    {
+      "slug": "bulk_recurring_quotes",
+      "name": "Performs bulk actions on an array of recurring_quotes",
+      "method": "POST",
+      "path": "/api/v1/recurring_quotes/bulk",
+      "category": "recurring_quotes",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply a batch action across many recurring quote ids in one call; use for mass archive/delete/email instead of acting on one record (mutating)."
+    },
+    {
+      "slug": "get_recurring_quotes_create",
+      "name": "Gets a new blank RecurringQuote object",
+      "method": "GET",
+      "path": "/api/v1/recurring_quotes/create",
+      "category": "recurring_quotes",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank recurring quote with default values; use to prefill a new-record form before calling store_recurring_quote."
+    },
+    {
+      "slug": "post_refresh",
+      "name": "Refresh data by timestamp",
+      "method": "POST",
+      "path": "/api/v1/refresh",
+      "category": "refresh",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "Call to fetch only records changed since a given updated_at unix timestamp for incremental sync rather than re-pulling all data (mutating)."
+    },
+    {
+      "slug": "get_export_preview",
+      "name": "Export preview",
+      "method": "POST",
+      "path": "/api/v1/exports/preview/{hash}",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Preview the contents of a generated data export by its export hash before downloading or finalizing it"
+    },
+    {
+      "slug": "get_activity_report",
+      "name": "Activity reports",
+      "method": "POST",
+      "path": "/api/v1/reports/activities",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export an audit-style activity log report of user/entity actions over a date range; use for tracking who did what, not financials"
+    },
+    {
+      "slug": "get_ardetail_report",
+      "name": "AR detail report",
+      "method": "POST",
+      "path": "/api/v1/reports/ar_detail_report",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a line-by-line accounts-receivable detail report of outstanding invoices per client over a date range; use for granular AR aging"
+    },
+    {
+      "slug": "get_arsummary_report",
+      "name": "AR summary report",
+      "method": "POST",
+      "path": "/api/v1/reports/ar_summary_report",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a summarized accounts-receivable report of total balances owed per client over a date range; use for high-level AR totals, not line detail"
+    },
+    {
+      "slug": "get_client_balance_report",
+      "name": "Client balance report",
+      "method": "POST",
+      "path": "/api/v1/reports/client_balance_report",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a report of each client's current outstanding balance over a date range; use to see what clients owe, not their sales or contacts"
+    },
+    {
+      "slug": "get_client_contact_report",
+      "name": "Client contact reports",
+      "method": "POST",
+      "path": "/api/v1/reports/client_contacts",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a report of client contact people (names, emails) tied to clients over a date range; use for contact rosters, not balances or sales"
+    },
+    {
+      "slug": "get_client_sales_report",
+      "name": "Client sales report",
+      "method": "POST",
+      "path": "/api/v1/reports/client_sales_report",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a report of total sales/revenue grouped by client over a date range; use to rank clients by sales, not their balances owed"
+    },
+    {
+      "slug": "get_client_report",
+      "name": "Client reports",
+      "method": "POST",
+      "path": "/api/v1/reports/clients",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of client records and their attributes over a date range; use for a general client list, not sales or balances"
+    },
+    {
+      "slug": "get_contact_report",
+      "name": "Contact reports",
+      "method": "POST",
+      "path": "/api/v1/reports/contacts",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of all contact records over a date range; use for a full contact list across clients, not client-grouped contacts"
+    },
+    {
+      "slug": "get_credit_report",
+      "name": "Credit reports",
+      "method": "POST",
+      "path": "/api/v1/reports/credits",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a report of credit (credit note) records over a date range; use for credits issued, not invoices, payments, or quotes"
+    },
+    {
+      "slug": "get_document_report",
+      "name": "Document reports",
+      "method": "POST",
+      "path": "/api/v1/reports/documents",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of uploaded document/attachment records over a date range; use to inventory files, not the entities they attach to"
+    },
+    {
+      "slug": "get_expense_report",
+      "name": "Expense reports",
+      "method": "POST",
+      "path": "/api/v1/reports/expenses",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a report of expense records over a date range; use for money spent/costs, not revenue, invoices, or payments"
+    },
+    {
+      "slug": "get_invoice_item_report",
+      "name": "Invoice item reports",
+      "method": "POST",
+      "path": "/api/v1/reports/invoice_items",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of individual invoice line items over a date range; use for per-line-item detail, not whole-invoice totals"
+    },
+    {
+      "slug": "get_invoice_report",
+      "name": "Invoice reports",
+      "method": "POST",
+      "path": "/api/v1/reports/invoices",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of invoice records and totals over a date range; use for invoice-level summaries, not their individual line items"
+    },
+    {
+      "slug": "get_payment_report",
+      "name": "Payment reports",
+      "method": "POST",
+      "path": "/api/v1/reports/payments",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of payment records received over a date range; use for cash collected, not invoices billed or balances owed"
+    },
+    {
+      "slug": "get_report_preview",
+      "name": "Report preview",
+      "method": "POST",
+      "path": "/api/v1/reports/preview/{hash}",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Preview a generated report by its report hash before exporting or downloading it; use after queuing a report to inspect results"
+    },
+    {
+      "slug": "get_product_sales_report",
+      "name": "Product Salesreports",
+      "method": "POST",
+      "path": "/api/v1/reports/product_sales",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of sales volume and revenue per product over a date range; use to see which products sold, not the product catalog"
+    },
+    {
+      "slug": "get_product_report",
+      "name": "Product reports",
+      "method": "POST",
+      "path": "/api/v1/reports/products",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of product catalog records and attributes over a date range; use for the product list, not their sales performance"
+    },
+    {
+      "slug": "get_profit_loss_report",
+      "name": "Profit loss reports",
+      "method": "POST",
+      "path": "/api/v1/reports/profitloss",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated profit-and-loss report netting revenue against expenses over a date range; use for overall P&L, not single-entity reports"
+    },
+    {
+      "slug": "get_project_report",
+      "name": "Project reports",
+      "method": "POST",
+      "path": "/api/v1/reports/projects",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a report of project records over a date range; use for projects and their attributes, not the tasks logged within them"
+    },
+    {
+      "slug": "get_quote_item_report",
+      "name": "Quote item reports",
+      "method": "POST",
+      "path": "/api/v1/reports/quote_items",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of individual quote line items over a date range; use for per-line quote detail, not whole-quote totals"
+    },
+    {
+      "slug": "get_quote_report",
+      "name": "Quote reports",
+      "method": "POST",
+      "path": "/api/v1/reports/quotes",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of quote records and totals over a date range; use for quote-level summaries, not their individual line items"
+    },
+    {
+      "slug": "get_recurring_invoice_report",
+      "name": "Recurring Invoice reports",
+      "method": "POST",
+      "path": "/api/v1/reports/recurring_invoices",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of recurring-invoice templates/schedules over a date range; use for subscriptions, not one-off invoices issued"
+    },
+    {
+      "slug": "get_task_report",
+      "name": "Task reports",
+      "method": "POST",
+      "path": "/api/v1/reports/tasks",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 7,
+      "hasBody": true,
+      "summary": "Export a paginated report of task and time-tracking records over a date range; use for logged work/billable time, not the projects above them"
+    },
+    {
+      "slug": "get_tax_period_report",
+      "name": "Tax period report",
+      "method": "POST",
+      "path": "/api/v1/reports/tax_period_report",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a tax report broken out by reporting period over a date range; use for period-by-period tax filing, not a single rolled-up summary"
+    },
+    {
+      "slug": "get_tax_summary_report",
+      "name": "Tax summary report",
+      "method": "POST",
+      "path": "/api/v1/reports/tax_summary_report",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a rolled-up tax summary report of collected taxes over a date range; use for total tax owed, not a period-by-period breakdown"
+    },
+    {
+      "slug": "get_user_sales_report",
+      "name": "User sales report",
+      "method": "POST",
+      "path": "/api/v1/reports/user_sales_report",
+      "category": "reports",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": true,
+      "summary": "Export a report of sales/revenue attributed to each user (staff) over a date range; use to compare salesperson performance, not client sales"
+    },
+    {
+      "slug": "get_scheduler",
+      "name": "Get scheduler status",
+      "method": "GET",
+      "path": "/api/v1/scheduler",
+      "category": "scheduler",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Call to read the task scheduler status and its current job list; read-only, does not trigger or run any jobs."
+    },
+    {
+      "slug": "post_search",
+      "name": "Search",
+      "method": "POST",
+      "path": "/api/v1/search",
+      "category": "search",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Call to run a global keyword search spanning multiple entity types when you need cross-resource matches, not single-resource list filters"
+    },
+    {
+      "slug": "get_statics",
+      "name": "Gets a list of statics",
+      "method": "GET",
+      "path": "/api/v1/statics",
+      "category": "statics",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Call to fetch the app's static reference data (currencies, countries, languages, payment types, industries) for populating selectors; read-only."
+    },
+    {
+      "slug": "get_subscriptions",
+      "name": "Gets a list of subscriptions",
+      "method": "GET",
+      "path": "/api/v1/subscriptions",
+      "category": "subscriptions",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List or paginate many subscription products, sorted by column; use to browse, not to fetch one by id."
+    },
+    {
+      "slug": "store_subscription",
+      "name": "Adds a subscriptions",
+      "method": "POST",
+      "path": "/api/v1/subscriptions",
+      "category": "subscriptions",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new subscription product/plan in the system when setting up a recurring offering (mutating)."
+    },
+    {
+      "slug": "delete_subscription",
+      "name": "Deletes a subscriptions",
+      "method": "DELETE",
+      "path": "/api/v1/subscriptions/{id}",
+      "category": "subscriptions",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one subscription by its hashed id when retiring a plan (mutating)."
+    },
+    {
+      "slug": "show_subscription",
+      "name": "Shows an subscriptions",
+      "method": "GET",
+      "path": "/api/v1/subscriptions/{id}",
+      "category": "subscriptions",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one subscription by its hashed id to read its full details; use when you already know the id."
+    },
+    {
+      "slug": "update_subscription",
+      "name": "Updates an subscriptions",
+      "method": "PUT",
+      "path": "/api/v1/subscriptions/{id}",
+      "category": "subscriptions",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing subscription by its hashed id to change its plan settings or fields (mutating)."
+    },
+    {
+      "slug": "edit_subscription",
+      "name": "Shows an subscriptions for editting",
+      "method": "GET",
+      "path": "/api/v1/subscriptions/{id}/edit",
+      "category": "subscriptions",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one subscription by id prepared for editing (read-only); use to preload a form, not to save changes."
+    },
+    {
+      "slug": "bulk_subscriptions",
+      "name": "Performs bulk actions on an array of subscriptions",
+      "method": "POST",
+      "path": "/api/v1/subscriptions/bulk",
+      "category": "subscriptions",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Perform a batch action over many subscriptions by passing an array of ids in one request (mutating)."
+    },
+    {
+      "slug": "get_subscriptions_create",
+      "name": "Gets a new blank subscriptions object",
+      "method": "GET",
+      "path": "/api/v1/subscriptions/create",
+      "category": "subscriptions",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank subscription object with default values (read-only) to seed a new-record form before storing."
+    },
+    {
+      "slug": "support_message",
+      "name": "Sends a support message to Invoice Ninja team",
+      "method": "POST",
+      "path": "/api/v1/support/messages/send",
+      "category": "support",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": true,
+      "summary": "Call to send a free-text support message to the Invoice Ninja team on the user's behalf (mutating)."
+    },
+    {
+      "slug": "get_system_logs",
+      "name": "Gets a list of system logs",
+      "method": "GET",
+      "path": "/api/v1/system_logs",
+      "category": "system_logs",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List and filter many system log records with pagination and sorting; reach for it to audit events or search logs broadly rather than fetch one by id."
+    },
+    {
+      "slug": "show_system_logs",
+      "name": "Shows a system_logs",
+      "method": "GET",
+      "path": "/api/v1/system_logs/{id}",
+      "category": "system_logs",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one system log record by its hashed id; use when you already know the specific log entry rather than listing many."
+    },
+    {
+      "slug": "get_tags",
+      "name": "List tags",
+      "method": "GET",
+      "path": "/api/v1/tags",
+      "category": "tags",
+      "mutating": false,
+      "paramCount": 6,
+      "hasBody": false,
+      "summary": "List company tags for one required entity_type (task or project), with name filter and sort; use to browse tag pickers."
+    },
+    {
+      "slug": "store_tag",
+      "name": "Create tag",
+      "method": "POST",
+      "path": "/api/v1/tags",
+      "category": "tags",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": true,
+      "summary": "Create a new tag catalog entry with name, color, and immutable entity_type for a supported entity (mutating)."
+    },
+    {
+      "slug": "delete_tag",
+      "name": "Delete tag",
+      "method": "DELETE",
+      "path": "/api/v1/tags/{id}",
+      "category": "tags",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Soft-delete one tag by its hashed id, cascading its pivot assignments, when removing it from the catalog (mutating)."
+    },
+    {
+      "slug": "show_tag",
+      "name": "Show tag",
+      "method": "GET",
+      "path": "/api/v1/tags/{id}",
+      "category": "tags",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch one tag by its hashed id to read its details; use when you already know the id."
+    },
+    {
+      "slug": "update_tag",
+      "name": "Update tag",
+      "method": "PUT",
+      "path": "/api/v1/tags/{id}",
+      "category": "tags",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": true,
+      "summary": "Modify an existing tag's name or color by its hashed id; entity_type is immutable and not sent (mutating)."
+    },
+    {
+      "slug": "edit_tag",
+      "name": "Edit tag",
+      "method": "GET",
+      "path": "/api/v1/tags/{id}/edit",
+      "category": "tags",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch one tag by id prepared for editing (read-only); use to preload a form, not to save changes."
+    },
+    {
+      "slug": "bulk_tags",
+      "name": "Bulk tag actions",
+      "method": "POST",
+      "path": "/api/v1/tags/bulk",
+      "category": "tags",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": true,
+      "summary": "Archive, restore, or delete many tags at once by passing an action plus an array of ids (mutating)."
+    },
+    {
+      "slug": "get_tags_create",
+      "name": "Blank tag",
+      "method": "GET",
+      "path": "/api/v1/tags/create",
+      "category": "tags",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Fetch a blank tag object with default values (read-only) to seed a new-tag form before storing."
+    },
+    {
+      "slug": "get_task_schedulers",
+      "name": "Task Scheduler Index",
+      "method": "GET",
+      "path": "/api/v1/task_schedulers",
+      "category": "task_schedulers",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "List all task schedulers with their associated jobs; use to browse or find scheduled recurring jobs."
+    },
+    {
+      "slug": "create_task_scheduler",
+      "name": "Create task scheduler with job",
+      "method": "POST",
+      "path": "/api/v1/task_schedulers",
+      "category": "task_schedulers",
+      "mutating": true,
+      "paramCount": 9,
+      "hasBody": true,
+      "summary": "Create a new scheduler that runs a recurring job (e.g. report) on a repeat interval and start date (mutating)."
+    },
+    {
+      "slug": "destroy_task_scheduler",
+      "name": "Destroy Task Scheduler",
+      "method": "DELETE",
+      "path": "/api/v1/task_schedulers/{id}",
+      "category": "task_schedulers",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Delete one task scheduler and its associated job by hashed id (mutating); use bulk for many."
+    },
+    {
+      "slug": "show_task_scheduler",
+      "name": "Show given scheduler",
+      "method": "GET",
+      "path": "/api/v1/task_schedulers/{id}",
+      "category": "task_schedulers",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch one task scheduler with its job by hashed id; use get_task_schedulers to list across many instead."
+    },
+    {
+      "slug": "update_task_scheduler",
+      "name": "Update task scheduler",
+      "method": "PUT",
+      "path": "/api/v1/task_schedulers/{id}",
+      "category": "task_schedulers",
+      "mutating": true,
+      "paramCount": 10,
+      "hasBody": true,
+      "summary": "Modify an existing task scheduler by hashed id, changing pause state, interval, job, or dates (mutating)."
+    },
+    {
+      "slug": "bulk_task_scheduler_actions",
+      "name": "Performs bulk actions on an array of task_schedulers",
+      "method": "POST",
+      "path": "/api/v1/task_schedulers/bulk",
+      "category": "task_schedulers",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Perform a bulk action (archive/restore/delete) over an array of task scheduler ids in one request (mutating)."
+    },
+    {
+      "slug": "get_task_scheduler",
+      "name": "Gets a new blank scheduler object",
+      "method": "GET",
+      "path": "/api/v1/task_schedulers/create",
+      "category": "task_schedulers",
+      "mutating": false,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Fetch a blank scheduler object with default values to prefill a new scheduler before calling create_task_scheduler."
+    },
+    {
+      "slug": "get_task_statuses",
+      "name": "Gets a list of task statuses",
+      "method": "GET",
+      "path": "/api/v1/task_statuses",
+      "category": "task_status",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many task statuses with pagination, sorting, and includes; use to browse all statuses, not to fetch one by id."
+    },
+    {
+      "slug": "store_task_status",
+      "name": "Adds a TaskStatus",
+      "method": "POST",
+      "path": "/api/v1/task_statuses",
+      "category": "task_status",
+      "mutating": true,
+      "paramCount": 9,
+      "hasBody": true,
+      "summary": "Create a new task status with name, color, and order; reach for it to add a status that does not yet exist (mutating)."
+    },
+    {
+      "slug": "delete_task_status",
+      "name": "Deletes a TaskStatus Term",
+      "method": "DELETE",
+      "path": "/api/v1/task_statuses/{id}",
+      "category": "task_status",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive or soft-delete one existing task status by its hashed id when removing it from use (mutating)."
+    },
+    {
+      "slug": "show_task_status",
+      "name": "Shows a TaskStatus Term",
+      "method": "GET",
+      "path": "/api/v1/task_statuses/{id}",
+      "category": "task_status",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one task status by its hashed id to read its details; use instead of the list when you already know the id."
+    },
+    {
+      "slug": "update_task_status",
+      "name": "Updates a TaskStatus Term",
+      "method": "PUT",
+      "path": "/api/v1/task_statuses/{id}",
+      "category": "task_status",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing task status by its hashed id to change its name, color, or order (mutating)."
+    },
+    {
+      "slug": "edit_task_statuss",
+      "name": "Shows an TaskStatusfor editting",
+      "method": "GET",
+      "path": "/api/v1/task_statuses/{id}/edit",
+      "category": "task_status",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one task status by id prepared for an edit form; read-only, use before update_task_status, not to save changes."
+    },
+    {
+      "slug": "bulk_task_statuss",
+      "name": "Performs bulk actions on an array of task statuses",
+      "method": "POST",
+      "path": "/api/v1/task_statuses/bulk",
+      "category": "task_status",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one batch action across an array of task status ids at once; use for multi-record archive or restore (mutating)."
+    },
+    {
+      "slug": "get_task_statuss_create",
+      "name": "Gets a new blank TaskStatus object",
+      "method": "GET",
+      "path": "/api/v1/task_statuses/create",
+      "category": "task_status",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Get a blank task status template with default values to prefill a create form; read-only, does not save anything."
+    },
+    {
+      "slug": "get_tasks",
+      "name": "List tasks",
+      "method": "GET",
+      "path": "/api/v1/tasks",
+      "category": "tasks",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many tasks with pagination, includes, and sort; use when you need a set of task records, not one by id."
+    },
+    {
+      "slug": "store_task",
+      "name": "Create task",
+      "method": "POST",
+      "path": "/api/v1/tasks",
+      "category": "tasks",
+      "mutating": true,
+      "paramCount": 15,
+      "hasBody": true,
+      "summary": "Create a new task with a description and optional client/project/time fields; use when adding a task that does not yet exist (mutating)."
+    },
+    {
+      "slug": "delete_task",
+      "name": "Delete task",
+      "method": "DELETE",
+      "path": "/api/v1/tasks/{id}",
+      "category": "tasks",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one task by id; use to remove a single task while keeping it recoverable (mutating)."
+    },
+    {
+      "slug": "show_task",
+      "name": "Show task",
+      "method": "GET",
+      "path": "/api/v1/tasks/{id}",
+      "category": "tasks",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one task by its hashed id; use when you already know the id and need that single task's details."
+    },
+    {
+      "slug": "update_task",
+      "name": "Update task",
+      "method": "PUT",
+      "path": "/api/v1/tasks/{id}",
+      "category": "tasks",
+      "mutating": true,
+      "paramCount": 16,
+      "hasBody": true,
+      "summary": "Modify fields on an existing task identified by id; use to change an already-created task such as status or time log (mutating)."
+    },
+    {
+      "slug": "edit_task",
+      "name": "Edit task",
+      "method": "GET",
+      "path": "/api/v1/tasks/{id}/edit",
+      "category": "tasks",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "GET one task by id prepared for editing (read-only); use to load current values before calling update_task, not to save changes."
+    },
+    {
+      "slug": "upload_task",
+      "name": "Uploads a task document",
+      "method": "POST",
+      "path": "/api/v1/tasks/{id}/upload",
+      "category": "tasks",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach a document/file to an existing task by id via multipart upload; use to add attachments, not to edit task fields (mutating)."
+    },
+    {
+      "slug": "bulk_tasks",
+      "name": "Bulk task actions",
+      "method": "POST",
+      "path": "/api/v1/tasks/bulk",
+      "category": "tasks",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply a batch action over many task ids at once; use to archive, restore, or delete multiple tasks in one call (mutating)."
+    },
+    {
+      "slug": "get_tasks_create",
+      "name": "Blank task",
+      "method": "GET",
+      "path": "/api/v1/tasks/create",
+      "category": "tasks",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "GET a blank task object with default values (read-only); use to pre-populate a create form before calling store_task."
+    },
+    {
+      "slug": "sort_tasks",
+      "name": "Sort tasks on KanBan",
+      "method": "POST",
+      "path": "/api/v1/tasks/sort",
+      "category": "tasks",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Reorder tasks and set their KanBan status after a drag-and-drop; use to persist task ordering on the board, not to edit task content (mutating)."
+    },
+    {
+      "slug": "get_tax_rates",
+      "name": "Gets a list of tax_rates",
+      "method": "GET",
+      "path": "/api/v1/tax_rates",
+      "category": "tax_rates",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List or filter many tax rates with pagination, sorting, and indexing when you need to browse or search the company's tax rates."
+    },
+    {
+      "slug": "delete_tax_rate",
+      "name": "Deletes a TaxRate",
+      "method": "DELETE",
+      "path": "/api/v1/tax_rates/{id}",
+      "category": "tax_rates",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one tax rate by its hashed id when removing a single rate from active use (mutating)."
+    },
+    {
+      "slug": "show_tax_rate",
+      "name": "Shows a Tax Rate",
+      "method": "GET",
+      "path": "/api/v1/tax_rates/{id}",
+      "category": "tax_rates",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch one tax rate by its hashed id when you already know the id and need that single record's details."
+    },
+    {
+      "slug": "update_tax_rate",
+      "name": "Updates a tax rate",
+      "method": "PUT",
+      "path": "/api/v1/tax_rates/{id}",
+      "category": "tax_rates",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Modify an existing tax rate by its hashed id to change its name or rate value (mutating)."
+    },
+    {
+      "slug": "edit_tax_rate",
+      "name": "Shows a Tax Rate for editting",
+      "method": "GET",
+      "path": "/api/v1/tax_rates/{id}/edit",
+      "category": "tax_rates",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch one tax rate by id prepared for an edit form (read-only); use update_tax_rate to actually save changes."
+    },
+    {
+      "slug": "bulk_tax_rates",
+      "name": "Performs bulk actions on an array of TaxRates",
+      "method": "POST",
+      "path": "/api/v1/tax_rates/bulk",
+      "category": "tax_rates",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Run a batch action over an array of tax rate ids at once when archiving or restoring many rates together (mutating)."
+    },
+    {
+      "slug": "get_tax_rate_create",
+      "name": "Gets a new blank Tax Rate object",
+      "method": "GET",
+      "path": "/api/v1/tax_rates/create",
+      "category": "tax_rates",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Fetch a blank tax rate template with default values to prefill a new-rate form (read-only); use store flow to create it."
+    },
+    {
+      "slug": "get_show_template",
+      "name": "Returns a entity template with the template variables replaced with the Entities",
+      "method": "POST",
+      "path": "/api/v1/templates",
+      "category": "templates",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Render an entity template with its variables substituted from real entities; use to produce filled template output rather than a raw preview"
+    },
+    {
+      "slug": "get_template_preview",
+      "name": "Preview template by hash",
+      "method": "POST",
+      "path": "/api/v1/templates/preview/{hash}",
+      "category": "templates",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Preview a template identified by its hash with supplied data; use when you have a template hash and want to see its rendered result"
+    },
+    {
+      "slug": "get_tokens",
+      "name": "Gets a list of company tokens",
+      "method": "GET",
+      "path": "/api/v1/tokens",
+      "category": "tokens",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many company API tokens with pagination and sorting; use to browse tokens, not to fetch one by id."
+    },
+    {
+      "slug": "store_token",
+      "name": "Adds a token",
+      "method": "POST",
+      "path": "/api/v1/tokens",
+      "category": "tokens",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new company API token for the company; reach for it to issue a token that does not yet exist (mutating)."
+    },
+    {
+      "slug": "delete_token",
+      "name": "Deletes a token",
+      "method": "DELETE",
+      "path": "/api/v1/tokens/{id}",
+      "category": "tokens",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive or soft-delete one existing company API token by its hashed id to revoke it (mutating)."
+    },
+    {
+      "slug": "show_token",
+      "name": "Shows a token",
+      "method": "GET",
+      "path": "/api/v1/tokens/{id}",
+      "category": "tokens",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one company API token by its hashed id to read its details; use instead of the list when you already know the id."
+    },
+    {
+      "slug": "update_token",
+      "name": "Updates a token",
+      "method": "PUT",
+      "path": "/api/v1/tokens/{id}",
+      "category": "tokens",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing company API token by its hashed id to change its settings (mutating)."
+    },
+    {
+      "slug": "edit_token",
+      "name": "Shows a token for editting",
+      "method": "GET",
+      "path": "/api/v1/tokens/{id}/edit",
+      "category": "tokens",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one company API token by id prepared for an edit form; read-only, use before update_token, not to save changes."
+    },
+    {
+      "slug": "bulk_tokens",
+      "name": "Performs bulk actions on an array of tokens",
+      "method": "POST",
+      "path": "/api/v1/tokens/bulk",
+      "category": "tokens",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply one batch action across an array of company token ids at once; use for multi-record archive or restore (mutating)."
+    },
+    {
+      "slug": "get_tokens_create",
+      "name": "Gets a new blank token object",
+      "method": "GET",
+      "path": "/api/v1/tokens/create",
+      "category": "tokens",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Get a blank company token template with default values to prefill a create form; read-only, does not save anything."
+    },
+    {
+      "slug": "self_update",
+      "name": "Performs a system update",
+      "method": "POST",
+      "path": "/api/v1/self-update",
+      "category": "update",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Trigger the self-hosted Invoice Ninja system to install an available update; requires the X-API-PASSWORD header (mutating)."
+    },
+    {
+      "slug": "self_update_check_version",
+      "name": "Check for available update",
+      "method": "POST",
+      "path": "/api/v1/self-update/check_version",
+      "category": "update",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Check whether a newer Invoice Ninja version is available before deciding to run self_update; does not install anything (mutating)."
+    },
+    {
+      "slug": "get_users",
+      "name": "Gets a list of users",
+      "method": "GET",
+      "path": "/api/v1/users",
+      "category": "users",
+      "mutating": false,
+      "paramCount": 4,
+      "hasBody": false,
+      "summary": "List or filter many users with paging and sorting; use to browse or search the user directory, not to fetch one."
+    },
+    {
+      "slug": "store_user",
+      "name": "Adds a User",
+      "method": "POST",
+      "path": "/api/v1/users",
+      "category": "users",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new user in the system; use to add a team member account (mutating)."
+    },
+    {
+      "slug": "delete_user",
+      "name": "Deletes a User",
+      "method": "DELETE",
+      "path": "/api/v1/users/{id}",
+      "category": "users",
+      "mutating": true,
+      "paramCount": 3,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one user by id; use to remove a user account rather than detach them from a company (mutating)."
+    },
+    {
+      "slug": "show_user",
+      "name": "Shows an User",
+      "method": "GET",
+      "path": "/api/v1/users/{id}",
+      "category": "users",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one user's full record by id; use when you already know the id and need that user's details."
+    },
+    {
+      "slug": "update_user",
+      "name": "Updates an User",
+      "method": "PUT",
+      "path": "/api/v1/users/{id}",
+      "category": "users",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing user by id; use to change an established user's profile or settings (mutating)."
+    },
+    {
+      "slug": "edit_user",
+      "name": "Shows an User for editting",
+      "method": "GET",
+      "path": "/api/v1/users/{id}/edit",
+      "category": "users",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one user prepared for editing by id; use to preload a form's values, not to save changes."
+    },
+    {
+      "slug": "detach_user",
+      "name": "Detach an existing user to a company",
+      "method": "DELETE",
+      "path": "/api/v1/users/{user}/detach_from_company",
+      "category": "users",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Remove one user's link to the current company by id without deleting the account; use to revoke company access (mutating)."
+    },
+    {
+      "slug": "invite_user",
+      "name": "Reconfirm an existing user to a company",
+      "method": "POST",
+      "path": "/api/v1/users/{user}/invite",
+      "category": "users",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Send the initial invite to an existing user by id (the /invite endpoint); use for a first-time invitation rather than reconfirm (mutating)."
+    },
+    {
+      "slug": "invite_user_reconfirm",
+      "name": "Reconfirm an existing user to a company",
+      "method": "POST",
+      "path": "/api/v1/users/{user}/reconfirm",
+      "category": "users",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Resend a confirmation to an existing user by id (the /reconfirm endpoint); use to re-trigger confirmation rather than a fresh invite (mutating)."
+    },
+    {
+      "slug": "bulk_users",
+      "name": "Performs bulk actions on an array of users",
+      "method": "POST",
+      "path": "/api/v1/users/bulk",
+      "category": "users",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply a batch action across many user ids at once; use for multi-user operations instead of single-user calls (mutating)."
+    },
+    {
+      "slug": "get_users_create",
+      "name": "Gets a new blank User object",
+      "method": "GET",
+      "path": "/api/v1/users/create",
+      "category": "users",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank user with default values; use to pre-populate a new-user form before calling store."
+    },
+    {
+      "slug": "get_vendors",
+      "name": "List vendors",
+      "method": "GET",
+      "path": "/api/v1/vendors",
+      "category": "vendors",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many vendors with search, sort, and pagination; use when browsing or finding vendors rather than fetching one by id."
+    },
+    {
+      "slug": "store_vendor",
+      "name": "Create vendor",
+      "method": "POST",
+      "path": "/api/v1/vendors",
+      "category": "vendors",
+      "mutating": true,
+      "paramCount": 18,
+      "hasBody": true,
+      "summary": "Create a new vendor (name required) with address and contacts; use when adding a vendor, not when editing an existing one (mutating)."
+    },
+    {
+      "slug": "delete_vendor",
+      "name": "Delete vendor",
+      "method": "DELETE",
+      "path": "/api/v1/vendors/{id}",
+      "category": "vendors",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Archive/soft-delete one vendor by id; use to remove a single vendor rather than batch-deleting many (mutating)."
+    },
+    {
+      "slug": "show_vendor",
+      "name": "Show vendor",
+      "method": "GET",
+      "path": "/api/v1/vendors/{id}",
+      "category": "vendors",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one vendor by its hashed id; use when you already know the id and need that single vendor's details."
+    },
+    {
+      "slug": "update_vendor",
+      "name": "Update vendor",
+      "method": "PUT",
+      "path": "/api/v1/vendors/{id}",
+      "category": "vendors",
+      "mutating": true,
+      "paramCount": 19,
+      "hasBody": true,
+      "summary": "Modify an existing vendor by id with new field values; use to change a vendor you already have, not to create one (mutating)."
+    },
+    {
+      "slug": "edit_vendor",
+      "name": "Edit vendor",
+      "method": "GET",
+      "path": "/api/v1/vendors/{id}/edit",
+      "category": "vendors",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one vendor by id prepared for editing; use to load current values before an update, not to perform the update itself."
+    },
+    {
+      "slug": "upload_vendor",
+      "name": "Uploads a vendor document",
+      "method": "POST",
+      "path": "/api/v1/vendors/{id}/upload",
+      "category": "vendors",
+      "mutating": true,
+      "paramCount": 4,
+      "hasBody": true,
+      "summary": "Attach one or more documents/files to a vendor by id via multipart upload; use to add attachments, not to edit vendor fields (mutating)."
+    },
+    {
+      "slug": "bulk_vendors",
+      "name": "Bulk vendor actions",
+      "method": "POST",
+      "path": "/api/v1/vendors/bulk",
+      "category": "vendors",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Apply a batch action across many vendor ids in one call; use for mass archive/restore/delete instead of acting on one record (mutating)."
+    },
+    {
+      "slug": "get_vendors_create",
+      "name": "Blank vendor",
+      "method": "GET",
+      "path": "/api/v1/vendors/create",
+      "category": "vendors",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank vendor with default values; use to prefill a new-record form before calling store_vendor."
+    },
+    {
+      "slug": "get_webcron",
+      "name": "Executes the task scheduler via a webcron service",
+      "method": "GET",
+      "path": "/api/v1/webcron",
+      "category": "webcron",
+      "mutating": false,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Call to trigger execution of the task scheduler as a webcron tick, running due scheduled jobs now rather than just reading status."
+    },
+    {
+      "slug": "get_webhooks",
+      "name": "Gets a list of Webhooks",
+      "method": "GET",
+      "path": "/api/v1/webhooks",
+      "category": "webhooks",
+      "mutating": false,
+      "paramCount": 5,
+      "hasBody": false,
+      "summary": "List or filter many webhooks with pagination, sorting, and includes when browsing or searching configured webhook subscriptions."
+    },
+    {
+      "slug": "store_webhook",
+      "name": "Adds a Webhook",
+      "method": "POST",
+      "path": "/api/v1/webhooks",
+      "category": "webhooks",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Create a new webhook subscription for the company when registering an endpoint to receive event callbacks (mutating)."
+    },
+    {
+      "slug": "delete_webhook",
+      "name": "Deletes a Webhook",
+      "method": "DELETE",
+      "path": "/api/v1/webhooks/{id}",
+      "category": "webhooks",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Call to archive/soft-delete one existing webhook subscription by its hashed id; use list/show to inspect webhooks instead (mutating)."
+    },
+    {
+      "slug": "show_webhook",
+      "name": "Shows a Webhook",
+      "method": "GET",
+      "path": "/api/v1/webhooks/{id}",
+      "category": "webhooks",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one webhook by its hashed id when you know the id and need that single subscription's details."
+    },
+    {
+      "slug": "update_webhook",
+      "name": "Updates a Webhook",
+      "method": "PUT",
+      "path": "/api/v1/webhooks/{id}",
+      "category": "webhooks",
+      "mutating": true,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Modify an existing webhook by its hashed id to change its target URL or event triggers (mutating)."
+    },
+    {
+      "slug": "edit_webhook",
+      "name": "Shows a Webhook for editting",
+      "method": "GET",
+      "path": "/api/v1/webhooks/{id}/edit",
+      "category": "webhooks",
+      "mutating": false,
+      "paramCount": 2,
+      "hasBody": false,
+      "summary": "Fetch one webhook by id prepared for an edit form (read-only); use update_webhook to actually save changes."
+    },
+    {
+      "slug": "bulk_webhooks",
+      "name": "Performs bulk actions on an array of Webhooks",
+      "method": "POST",
+      "path": "/api/v1/webhooks/bulk",
+      "category": "webhooks",
+      "mutating": true,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Run a batch action over an array of webhook ids at once when archiving or restoring many subscriptions together (mutating)."
+    },
+    {
+      "slug": "get_webhooks_create",
+      "name": "Gets a new blank Webhook object",
+      "method": "GET",
+      "path": "/api/v1/webhooks/create",
+      "category": "webhooks",
+      "mutating": false,
+      "paramCount": 1,
+      "hasBody": false,
+      "summary": "Fetch a blank webhook template with default values to prefill a new-webhook form (read-only); use store_webhook to create it."
+    },
+    {
+      "slug": "yodlee_refresh_webhook",
+      "name": "Yodlee Webhook",
+      "method": "POST",
+      "path": "/api/v1/yodlee/refresh",
+      "category": "yodlee",
+      "mutating": true,
+      "paramCount": 0,
+      "hasBody": false,
+      "summary": "Call as the Yodlee bank-feed callback to notify the system that linked financial data is ready to refresh; not for normal data fetches (mutating)."
+    }
+  ]
+}

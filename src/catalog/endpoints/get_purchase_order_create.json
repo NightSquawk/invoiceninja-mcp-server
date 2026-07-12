@@ -1,0 +1,24 @@
+{
+  "slug": "get_purchase_order_create",
+  "operationId": "getPurchaseOrderCreate",
+  "method": "GET",
+  "path": "/api/v1/purchase_orders/create",
+  "name": "Blank purchase order",
+  "category": "purchase_orders",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank purchase order object with default values to seed a new-PO form; read-only, does not create anything.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "PurchaseOrder"
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "show_bank_integration",
+  "operationId": "showBankIntegration",
+  "method": "GET",
+  "path": "/api/v1/bank_integrations/{id}",
+  "name": "Shows a bank_integration",
+  "category": "bank_integrations",
+  "mutating": false,
+  "description": "Displays a bank_integration by id",
+  "whenToUse": "Fetch one bank integration's record by its hashed id; use when you already know the id, not for listing or editing.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The BankIntegration Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankIntegration"
+}

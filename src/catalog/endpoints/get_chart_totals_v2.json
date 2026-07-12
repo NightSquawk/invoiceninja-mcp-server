@@ -1,0 +1,18 @@
+{
+  "slug": "get_chart_totals_v2",
+  "operationId": "getChartTotalsV2",
+  "method": "POST",
+  "path": "/api/v1/charts/totals_v2",
+  "name": "Get chart data v2",
+  "category": "charts",
+  "mutating": false,
+  "description": "Get chart data (v2)",
+  "whenToUse": "Retrieve the v2 dashboard chart totals via POST for current total figures; use over the v1 totals endpoint",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

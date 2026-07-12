@@ -1,0 +1,25 @@
+{
+  "slug": "support_message",
+  "operationId": "supportMessage",
+  "method": "POST",
+  "path": "/api/v1/support/messages/send",
+  "name": "Sends a support message to Invoice Ninja team",
+  "category": "support",
+  "mutating": true,
+  "description": "Allows a user to send a support message to the Invoice Ninja Team",
+  "whenToUse": "Call to send a free-text support message to the Invoice Ninja team on the user's behalf (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "message",
+        "type": "string",
+        "required": false,
+        "description": "The support message"
+      }
+    ]
+  }
+}

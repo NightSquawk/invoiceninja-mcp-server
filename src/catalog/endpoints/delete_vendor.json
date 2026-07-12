@@ -1,0 +1,32 @@
+{
+  "slug": "delete_vendor",
+  "operationId": "deleteVendor",
+  "method": "DELETE",
+  "path": "/api/v1/vendors/{id}",
+  "name": "Delete vendor",
+  "category": "vendors",
+  "mutating": true,
+  "description": "Handles the deletion of a vendor by id",
+  "whenToUse": "Archive/soft-delete one vendor by id; use to remove a single vendor rather than batch-deleting many (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Vendor Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

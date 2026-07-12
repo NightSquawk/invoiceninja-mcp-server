@@ -1,0 +1,69 @@
+{
+  "slug": "preimport",
+  "operationId": "preimport",
+  "method": "POST",
+  "path": "/api/v1/preimport",
+  "name": "Pre Import CSV data",
+  "category": "imports",
+  "mutating": true,
+  "description": "The preimport endpoint is the first step when importing CSV data into Invoice Ninja. It validates your file(s) and returns the column headers found in each CSV, allowing you to map them to system fields before performing the actual import.\n\n*How it works**\n\n1. Set `import_type` to indicate the entity type (e.g. `invoice`, `quote`, `client`, `product`, `payment`, `vendor`, `expense`).\n2. Attach one or more CSV files using the `files[]` parameter, keyed by entity type:\n   - `files[invoice]` — invoice records\n   - `files[client]` — client records\n   - `files[product]` — product records\n   - `files[payment]` — payment records\n   - `files[vendor]` — vendor records\n   - `files[expense]` — expense records\n3. The response returns the detected column headers for each uploaded file so you can build a field mapping for the subsequent `/api/v1/import` call.\n\nYou may upload multiple entity files in a single request. Only include the entity types relevant to your import.\n\n*Example**\n\n```bash\ncurl -X POST 'https://invoiceninja.com/api/v1/preimport' \\\n  -H 'X-API-TOKEN: YOUR_API_TOKEN_HERE' \\\n  -H 'Accept: application/json' \\\n  -F 'import_type=invoice' \\\n  -F 'files[invoice]=@invoices.csv' \\\n  -F 'files[client]=@clients.csv'\n```",
+  "whenToUse": "Upload CSV file(s) first to validate them and get column headers for mapping, before calling the import endpoint that runs the import (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "multipart/form-data",
+    "fields": [
+      {
+        "name": "import_type",
+        "type": "string",
+        "required": true,
+        "description": "The type of import being performed"
+      },
+      {
+        "name": "files[invoice]",
+        "type": "string",
+        "required": false,
+        "description": "CSV file for invoices"
+      },
+      {
+        "name": "files[client]",
+        "type": "string",
+        "required": false,
+        "description": "CSV file for clients"
+      },
+      {
+        "name": "files[product]",
+        "type": "string",
+        "required": false,
+        "description": "CSV file for products"
+      },
+      {
+        "name": "files[payment]",
+        "type": "string",
+        "required": false,
+        "description": "CSV file for payments"
+      },
+      {
+        "name": "files[vendor]",
+        "type": "string",
+        "required": false,
+        "description": "CSV file for vendors"
+      },
+      {
+        "name": "files[expense]",
+        "type": "string",
+        "required": false,
+        "description": "CSV file for expenses"
+      }
+    ]
+  }
+}

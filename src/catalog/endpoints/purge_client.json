@@ -1,0 +1,32 @@
+{
+  "slug": "purge_client",
+  "operationId": "purgeClient",
+  "method": "POST",
+  "path": "/api/v1/clients/{id}/purge",
+  "name": "Purge client",
+  "category": "clients",
+  "mutating": true,
+  "description": "##  POST /api/v1/clients/{id}/purge\n\nHandles purging a client.\n\n> ❗ Note\nThis is a destructive action.\nThis action will remove all data associated with the client and cannot be undone.",
+  "whenToUse": "Permanently and irreversibly wipe one client and all their records (needs X-API-PASSWORD); use over delete_client only when destruction is intended (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Client Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [
+    {
+      "name": "X-API-PASSWORD",
+      "type": "string",
+      "required": true,
+      "description": "The login password when challenged on certain protected routes",
+      "example": "supersecretpassword"
+    }
+  ],
+  "requestBody": null
+}

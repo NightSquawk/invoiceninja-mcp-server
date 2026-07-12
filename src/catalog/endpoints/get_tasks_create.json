@@ -1,0 +1,24 @@
+{
+  "slug": "get_tasks_create",
+  "operationId": "getTasksCreate",
+  "method": "GET",
+  "path": "/api/v1/tasks/create",
+  "name": "Blank task",
+  "category": "tasks",
+  "mutating": false,
+  "description": "Returns a blank task with default values",
+  "whenToUse": "GET a blank task object with default values (read-only); use to pre-populate a create form before calling store_task.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Task"
+}

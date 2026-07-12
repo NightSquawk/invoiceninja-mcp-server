@@ -1,0 +1,26 @@
+{
+  "slug": "bulk_bank_transaction_rules",
+  "operationId": "bulkBankTransactionRules",
+  "method": "POST",
+  "path": "/api/v1/bank_transaction_rules/bulk",
+  "name": "Performs bulk actions on an array of bank_transaction rules",
+  "category": "bank_transaction_rules",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of bank_transaction rules",
+  "whenToUse": "Apply one action across many bank transaction rule ids at once; reach for it for batch archive/restore operations (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

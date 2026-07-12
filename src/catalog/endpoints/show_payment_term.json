@@ -1,0 +1,33 @@
+{
+  "slug": "show_payment_term",
+  "operationId": "showPaymentTerm",
+  "method": "GET",
+  "path": "/api/v1/payment_terms/{id}",
+  "name": "Shows a Payment Term",
+  "category": "payment_terms",
+  "mutating": false,
+  "description": "Displays an Payment Term by id",
+  "whenToUse": "Fetch one payment term's details by its hashed id; use get_payment_terms to search across many instead.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Payment Term Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "PaymentTerm"
+}

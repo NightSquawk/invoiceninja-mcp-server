@@ -1,0 +1,41 @@
+{
+  "slug": "action_recurring_quote",
+  "operationId": "actionRecurringQuote",
+  "method": "GET",
+  "path": "/api/v1/recurring_quotes/{id}/{action}",
+  "name": "Performs a custom action on an RecurringQuote",
+  "category": "recurring_quotes",
+  "mutating": true,
+  "description": "Performs a custom action on an RecurringQuote.\n\n    The current range of actions are as follows\n    - clone_to_RecurringQuote\n    - clone_to_quote\n    - history\n    - delivery_note\n    - mark_paid\n    - download\n    - archive\n    - delete\n    - email",
+  "whenToUse": "Run a named action (email, mark_paid, clone, download, history) on one recurring quote by id; use for operations beyond plain CRUD (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringQuote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "required": true,
+      "description": "The action string to be performed",
+      "format": "string",
+      "example": "clone_to_quote"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringQuote"
+}

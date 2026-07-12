@@ -1,0 +1,23 @@
+{
+  "slug": "confirm_apple_purchase",
+  "operationId": "confirmApplePurchase",
+  "method": "POST",
+  "path": "/api/v1/apple/confirm_purchase",
+  "name": "Processing webhooks from Apple for in app purchases",
+  "category": "postmark",
+  "mutating": true,
+  "description": "Adds an credit to the system",
+  "whenToUse": "Confirm an Apple in-app purchase and credit the account when handling a one-time Apple purchase confirmation, not a subscription event (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

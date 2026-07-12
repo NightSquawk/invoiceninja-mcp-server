@@ -1,0 +1,38 @@
+{
+  "slug": "delete_client",
+  "operationId": "deleteClient",
+  "method": "DELETE",
+  "path": "/api/v1/clients/{id}",
+  "name": "Delete client",
+  "category": "clients",
+  "mutating": true,
+  "description": "##  DELETE /api/v1/clients/{id}\n\nHandles the deletion of a client by id\n\n> ❗ Note\nDeleting a client does not purge the client from the system. The delete action will remove the clients data from all\nviews in the application but keep it on file in case it needs to be restored.\n\nA Client can be later restored reversing this action.\n\nTo permanently wipe a client and all of their records from the system, use the [/purge route](/#tag/clients/POST/api/v1/clients/{id}/purge)",
+  "whenToUse": "Archive/soft-delete one client by id, keeping data restorable; use this over purge_client when removal need not be permanent (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Client Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relationships of the Client Object. ie ?include=documents,system_logs\n\n```html\nAvailable includes:\n\ncontacts [All contacts related to the client]\ndocuments [All documents related to the client]\ngateway_tokens [All payment tokens related to the client]\nactivities [All activities related to the client]\nledger [The client ledger]\nsystem_logs [System logs related to the client]\ngroup_settings [The group settings object the client is assigned to]\n\n```\n\nUsage:\n\n```html\n/api/v1/clients?include=contacts,documents,activities\n```"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

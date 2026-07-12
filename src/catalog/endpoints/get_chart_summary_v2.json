@@ -1,0 +1,18 @@
+{
+  "slug": "get_chart_summary_v2",
+  "operationId": "getChartSummaryV2",
+  "method": "POST",
+  "path": "/api/v1/charts/chart_summary_v2",
+  "name": "Get chart summary v2",
+  "category": "charts",
+  "mutating": false,
+  "description": "Get chart summary (v2)",
+  "whenToUse": "Retrieve the v2 dashboard summary aggregates via POST when you want high-level summary figures rather than detailed totals rows",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

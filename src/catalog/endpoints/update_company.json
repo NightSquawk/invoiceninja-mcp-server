@@ -1,0 +1,33 @@
+{
+  "slug": "update_company",
+  "operationId": "updateCompany",
+  "method": "PUT",
+  "path": "/api/v1/companies/{id}",
+  "name": "Updates an company",
+  "category": "companies",
+  "mutating": true,
+  "description": "Handles the updating of an company by id",
+  "whenToUse": "Modify fields on an existing company identified by id; use to change an already-created company (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Company Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Company"
+}

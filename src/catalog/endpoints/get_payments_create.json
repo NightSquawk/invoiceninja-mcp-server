@@ -1,0 +1,24 @@
+{
+  "slug": "get_payments_create",
+  "operationId": "getPaymentsCreate",
+  "method": "GET",
+  "path": "/api/v1/payments/create",
+  "name": "Blank payment",
+  "category": "payments",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank payment object with default values to seed a new-payment form; read-only, does not create anything.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Payment"
+}

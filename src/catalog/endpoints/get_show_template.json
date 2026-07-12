@@ -1,0 +1,47 @@
+{
+  "slug": "get_show_template",
+  "operationId": "getShowTemplate",
+  "method": "POST",
+  "path": "/api/v1/templates",
+  "name": "Returns a entity template with the template variables replaced with the Entities",
+  "category": "templates",
+  "mutating": false,
+  "description": "Returns a entity template with the template variables replaced with the Entities",
+  "whenToUse": "Render an entity template with its variables substituted from real entities; use to produce filled template output rather than a raw preview",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "subject",
+        "type": "string",
+        "required": false,
+        "description": "The email template subject"
+      },
+      {
+        "name": "body",
+        "type": "string",
+        "required": false,
+        "description": "The email template body"
+      }
+    ]
+  },
+  "responseSchema": "Template"
+}

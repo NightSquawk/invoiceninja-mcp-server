@@ -1,0 +1,47 @@
+{
+  "slug": "get_recurring_quotes",
+  "operationId": "getRecurringQuotes",
+  "method": "GET",
+  "path": "/api/v1/recurring_quotes",
+  "name": "Gets a list of recurring_quotes",
+  "category": "recurring_quotes",
+  "mutating": false,
+  "description": "Lists recurring_quotes, search and filters allow fine grained lists to be generated.\n\n        Query parameters can be added to performed more fine grained filtering of the recurring_quotes, these are handled by the RecurringQuoteFilters class which defines the methods available",
+  "whenToUse": "List or filter many recurring quotes with search, sort, and pagination; use when browsing or finding recurring quotes rather than fetching one by id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=next_send_date|desc`.\n\n*Multiple sorts** — for example\n`sort[]=number|asc&sort[]=id|desc`.\n\nRecurring quotes use their table columns and related sorts from `RecurringQuoteFilters`. Unsupported keys are ignored.",
+      "example": [
+        "number|asc"
+      ]
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringQuote[]"
+}

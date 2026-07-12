@@ -1,0 +1,15 @@
+{
+  "slug": "get_ping",
+  "operationId": "getPing",
+  "method": "GET",
+  "path": "/api/v1/ping",
+  "name": "Attempts to ping the API",
+  "category": "ping",
+  "mutating": false,
+  "description": "Attempts to ping the API",
+  "whenToUse": "Ping the API to verify connectivity and credentials with a lightweight health check, not to read error details.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

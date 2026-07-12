@@ -1,0 +1,24 @@
+{
+  "slug": "delete_tag",
+  "operationId": "deleteTag",
+  "method": "DELETE",
+  "path": "/api/v1/tags/{id}",
+  "name": "Delete tag",
+  "category": "tags",
+  "mutating": true,
+  "description": "Soft-deletes a tag catalog entry and cascades its pivot assignments.",
+  "whenToUse": "Soft-delete one tag by its hashed id, cascading its pivot assignments, when removing it from the catalog (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The tag hashed ID",
+      "example": "Opnel5aKBz"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Tag"
+}

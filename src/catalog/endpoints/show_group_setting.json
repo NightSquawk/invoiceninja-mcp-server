@@ -1,0 +1,33 @@
+{
+  "slug": "show_group_setting",
+  "operationId": "showGroupSetting",
+  "method": "GET",
+  "path": "/api/v1/group_settings/{id}",
+  "name": "Shows an GroupSetting",
+  "category": "group_settings",
+  "mutating": false,
+  "description": "Displays an GroupSetting by id",
+  "whenToUse": "Fetch one group setting by its hashed id; use to view full details of a single known group, not to list many.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The GroupSetting Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "GroupSetting"
+}

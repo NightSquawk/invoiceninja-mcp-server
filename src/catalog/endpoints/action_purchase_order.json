@@ -1,0 +1,41 @@
+{
+  "slug": "action_purchase_order",
+  "operationId": "actionPurchaseOrder",
+  "method": "GET",
+  "path": "/api/v1/purchase_orders/{id}/{action}",
+  "name": "Custom purchase order actions",
+  "category": "purchase_orders",
+  "mutating": true,
+  "description": "Performs a custom action on an purchase order.\n\n       The current range of actions are as follows\n       - mark_paid\n       - download\n       - archive\n       - delete\n       - email",
+  "whenToUse": "Run a named action (mark_paid, email, download, archive, delete) on one purchase order by id and action string (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Purchase Order Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "required": true,
+      "description": "The action string to be performed",
+      "format": "string",
+      "example": "clone_to_quote"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "PurchaseOrder"
+}

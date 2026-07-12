@@ -1,0 +1,25 @@
+{
+  "slug": "show_tax_rate",
+  "operationId": "showTaxRate",
+  "method": "GET",
+  "path": "/api/v1/tax_rates/{id}",
+  "name": "Shows a Tax Rate",
+  "category": "tax_rates",
+  "mutating": false,
+  "description": "Displays an TaxRate by id",
+  "whenToUse": "Fetch one tax rate by its hashed id when you already know the id and need that single record's details.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The TaxRate Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaxRate"
+}

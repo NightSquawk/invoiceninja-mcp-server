@@ -1,0 +1,24 @@
+{
+  "slug": "get_recurring_expenses_create",
+  "operationId": "getRecurringExpensesCreate",
+  "method": "GET",
+  "path": "/api/v1/recurring_expenses/create",
+  "name": "Gets a new blank recurring expense object",
+  "category": "recurring_expenses",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank recurring expense object with default values (read-only) to seed a new-record form before storing.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringExpense"
+}

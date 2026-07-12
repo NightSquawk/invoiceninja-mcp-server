@@ -1,0 +1,45 @@
+{
+  "slug": "get_client_gateway_tokens",
+  "operationId": "getClientGatewayTokens",
+  "method": "GET",
+  "path": "/api/v1/client_gateway_tokens",
+  "name": "List of client payment tokens",
+  "category": "client_gateway_tokens",
+  "mutating": false,
+  "description": "Lists client_gateway_tokens, search and filters allow fine grained lists to be generated.\n\n    Query parameters can be added to performed more fine grained filtering of the client_gateway_tokens, these are handled by the ClientGatewayTokenFilters class which defines the methods available",
+  "whenToUse": "List or filter many client payment gateway tokens with pagination and includes; use to browse them, not to fetch one by id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ClientGatewayToken[]"
+}

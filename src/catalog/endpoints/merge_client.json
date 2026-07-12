@@ -1,0 +1,54 @@
+{
+  "slug": "merge_client",
+  "operationId": "mergeClient",
+  "method": "POST",
+  "path": "/api/v1/clients/{id}/{mergeable_client_hashed_id}/merge",
+  "name": "Merge client",
+  "category": "clients",
+  "mutating": true,
+  "description": "##  POST /api/v1/clients/{id}/{mergeable_client_hashed_id}/merge\n\nHandles merging 2 clients\n\nThe id parameter is the client that will be the primary client after the merge has completed.\n\nThe mergeable_client_hashed_id is the client that will be merged into the primary client, this clients records will be updated and associated with the primary client.\n\n> 🚨 **Important**\nThis action requires elevated permissions, please note the X-API-PASSWORD header requirements for this route.",
+  "whenToUse": "Merge a secondary client into a primary by their two ids (needs X-API-PASSWORD); use to consolidate duplicate client records (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Client Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    },
+    {
+      "name": "mergeable_client_hashed_id",
+      "type": "string",
+      "required": true,
+      "description": "The Mergeable Client Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relationships of the Client Object. ie ?include=documents,system_logs\n\n```html\nAvailable includes:\n\ncontacts [All contacts related to the client]\ndocuments [All documents related to the client]\ngateway_tokens [All payment tokens related to the client]\nactivities [All activities related to the client]\nledger [The client ledger]\nsystem_logs [System logs related to the client]\ngroup_settings [The group settings object the client is assigned to]\n\n```\n\nUsage:\n\n```html\n/api/v1/clients?include=contacts,documents,activities\n```"
+    }
+  ],
+  "headerParameters": [
+    {
+      "name": "X-API-PASSWORD",
+      "type": "string",
+      "required": true,
+      "description": "The login password when challenged on certain protected routes",
+      "example": "supersecretpassword"
+    }
+  ],
+  "requestBody": null
+}

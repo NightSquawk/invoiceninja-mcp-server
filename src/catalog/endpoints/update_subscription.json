@@ -1,0 +1,33 @@
+{
+  "slug": "update_subscription",
+  "operationId": "updateSubscription",
+  "method": "PUT",
+  "path": "/api/v1/subscriptions/{id}",
+  "name": "Updates an subscriptions",
+  "category": "subscriptions",
+  "mutating": true,
+  "description": "Handles the updating of an subscriptions by id",
+  "whenToUse": "Modify an existing subscription by its hashed id to change its plan settings or fields (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Subscription Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Subscription"
+}

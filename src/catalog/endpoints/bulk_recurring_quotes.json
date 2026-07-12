@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_recurring_quotes",
+  "operationId": "bulkRecurringQuotes",
+  "method": "POST",
+  "path": "/api/v1/recurring_quotes/bulk",
+  "name": "Performs bulk actions on an array of recurring_quotes",
+  "category": "recurring_quotes",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of recurring_quotes",
+  "whenToUse": "Apply a batch action across many recurring quote ids in one call; use for mass archive/delete/email instead of acting on one record (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "RecurringQuote"
+}

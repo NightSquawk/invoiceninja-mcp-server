@@ -1,0 +1,15 @@
+{
+  "slug": "get_task_schedulers",
+  "operationId": "getTaskSchedulers",
+  "method": "GET",
+  "path": "/api/v1/task_schedulers",
+  "name": "Task Scheduler Index",
+  "category": "task_schedulers",
+  "mutating": false,
+  "description": "Get all schedulers with associated jobs",
+  "whenToUse": "List all task schedulers with their associated jobs; use to browse or find scheduled recurring jobs.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

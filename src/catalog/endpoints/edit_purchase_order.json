@@ -1,0 +1,33 @@
+{
+  "slug": "edit_purchase_order",
+  "operationId": "editPurchaseOrder",
+  "method": "GET",
+  "path": "/api/v1/purchase_orders/{id}/edit",
+  "name": "Edit purchase order",
+  "category": "purchase_orders",
+  "mutating": false,
+  "description": "Displays an purchase order by id",
+  "whenToUse": "Fetch one purchase order by id prepared for editing in a form; read-only, use update_purchase_order to actually save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The purchase order Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "PurchaseOrder"
+}

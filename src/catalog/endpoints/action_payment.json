@@ -1,0 +1,41 @@
+{
+  "slug": "action_payment",
+  "operationId": "actionPayment",
+  "method": "GET",
+  "path": "/api/v1/payments/{id}/{action}",
+  "name": "Custom payment actions",
+  "category": "payments",
+  "mutating": true,
+  "description": "Performs a custom action on an Payment.\n\n    The current range of actions are as follows\n    - clone_to_Payment\n    - clone_to_quote\n    - history\n    - delivery_note\n    - mark_paid\n    - download\n    - archive\n    - delete\n    - email",
+  "whenToUse": "Run a named action (mark_paid, email, download, clone, archive) on one payment by id and action string (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Payment Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    },
+    {
+      "name": "action",
+      "type": "string",
+      "required": true,
+      "description": "The action string to be performed",
+      "format": "string",
+      "example": "clone_to_quote"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Payment"
+}

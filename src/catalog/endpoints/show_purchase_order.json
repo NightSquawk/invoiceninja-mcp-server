@@ -1,0 +1,33 @@
+{
+  "slug": "show_purchase_order",
+  "operationId": "showPurchaseOrder",
+  "method": "GET",
+  "path": "/api/v1/purchase_orders/{id}",
+  "name": "Show purchase order",
+  "category": "purchase_orders",
+  "mutating": false,
+  "description": "Displays an purchase order by id",
+  "whenToUse": "Fetch one purchase order's full details by its hashed id when you already know the specific PO you need.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Purchase order Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "PurchaseOrder"
+}

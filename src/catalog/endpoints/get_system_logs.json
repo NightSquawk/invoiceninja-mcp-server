@@ -1,0 +1,47 @@
+{
+  "slug": "get_system_logs",
+  "operationId": "getSystemLogs",
+  "method": "GET",
+  "path": "/api/v1/system_logs",
+  "name": "Gets a list of system logs",
+  "category": "system_logs",
+  "mutating": false,
+  "description": "Lists system logs, search and filters allow fine grained lists to be generated.\n\n     Query parameters can be added to performed more fine grained filtering of the system logs, these are handled by the SystemLogFilters class which defines the methods available",
+  "whenToUse": "List and filter many system log records with pagination and sorting; reach for it to audit events or search logs broadly rather than fetch one by id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=created_at|desc`.\n\n*Multiple sorts** — for example\n`sort[]=id|desc&sort[]=created_at|desc`.\n\nLog rows sort by columns exposed through `SystemLogFilters`. Unsupported keys are ignored.",
+      "example": [
+        "created_at|desc"
+      ]
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "SystemLog[]"
+}

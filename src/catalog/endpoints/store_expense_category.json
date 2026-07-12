@@ -1,0 +1,24 @@
+{
+  "slug": "store_expense_category",
+  "operationId": "storeExpenseCategory",
+  "method": "POST",
+  "path": "/api/v1/expense_categories",
+  "name": "Adds a expense category",
+  "category": "expense_categories",
+  "mutating": true,
+  "description": "Adds an expense category to the system",
+  "whenToUse": "Create a new expense category when adding a classification bucket for expenses (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ExpenseCategory"
+}

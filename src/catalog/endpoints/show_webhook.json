@@ -1,0 +1,33 @@
+{
+  "slug": "show_webhook",
+  "operationId": "showWebhook",
+  "method": "GET",
+  "path": "/api/v1/webhooks/{id}",
+  "name": "Shows a Webhook",
+  "category": "webhooks",
+  "mutating": false,
+  "description": "Displays a Webhook by id",
+  "whenToUse": "Fetch one webhook by its hashed id when you know the id and need that single subscription's details.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Webhook Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Webhook"
+}

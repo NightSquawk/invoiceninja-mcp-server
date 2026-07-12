@@ -1,0 +1,32 @@
+{
+  "slug": "delete_task",
+  "operationId": "deleteTask",
+  "method": "DELETE",
+  "path": "/api/v1/tasks/{id}",
+  "name": "Delete task",
+  "category": "tasks",
+  "mutating": true,
+  "description": "Handles the deletion of a task by id",
+  "whenToUse": "Archive/soft-delete one task by id; use to remove a single task while keeping it recoverable (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Task Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "get_refresh_accounts",
+  "operationId": "getRefreshAccounts",
+  "method": "POST",
+  "path": "/api/v1/bank_integrations/refresh_accounts",
+  "name": "Gets the list of accounts from the remote server",
+  "category": "bank_integrations",
+  "mutating": true,
+  "description": "Adds an bank_integration to a company",
+  "whenToUse": "Refresh the list of accounts from the remote bank provider; use to re-sync available bank accounts into integrations (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankIntegration"
+}

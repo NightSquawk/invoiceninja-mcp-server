@@ -1,0 +1,47 @@
+{
+  "slug": "upload_quote",
+  "operationId": "uploadQuote",
+  "method": "POST",
+  "path": "/api/v1/quotes/{id}/upload",
+  "name": "Upload a quote document",
+  "category": "quotes",
+  "mutating": true,
+  "description": "Handles the uploading of a document to a quote",
+  "whenToUse": "Attach a document/file to an existing quote by id via multipart upload; use to add supporting files to a quote (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Quote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "multipart/form-data",
+    "fields": [
+      {
+        "name": "_method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "documents",
+        "type": "array",
+        "required": false
+      }
+    ]
+  },
+  "responseSchema": "Quote"
+}

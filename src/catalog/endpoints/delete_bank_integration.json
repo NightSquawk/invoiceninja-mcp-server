@@ -1,0 +1,32 @@
+{
+  "slug": "delete_bank_integration",
+  "operationId": "deleteBankIntegration",
+  "method": "DELETE",
+  "path": "/api/v1/bank_integrations/{id}",
+  "name": "Deletes a bank_integration",
+  "category": "bank_integrations",
+  "mutating": true,
+  "description": "Handles the deletion of a bank_integration by id",
+  "whenToUse": "Archive/soft-delete one bank integration by its hashed id; use to remove a bank integration, not to update it (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The BankIntegration Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "post_activities_notes",
+  "operationId": "postActivitiesNotes",
+  "method": "POST",
+  "path": "/api/v1/activities/notes",
+  "name": "Activity note",
+  "category": "activities",
+  "mutating": true,
+  "description": "Creates or updates an activity note",
+  "whenToUse": "Create or update a note attached to an activity when you need to annotate the activity log (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

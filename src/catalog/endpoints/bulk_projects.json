@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_projects",
+  "operationId": "bulkProjects",
+  "method": "POST",
+  "path": "/api/v1/projects/bulk",
+  "name": "Bulk project actions",
+  "category": "projects",
+  "mutating": true,
+  "description": "Bulk project actions",
+  "whenToUse": "Run a named action over many project ids at once (archive, restore, delete); use for batch operations, not single edits (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "Project"
+}

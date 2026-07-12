@@ -1,0 +1,25 @@
+{
+  "slug": "update_expense_category",
+  "operationId": "updateExpenseCategory",
+  "method": "PUT",
+  "path": "/api/v1/expense_categories/{id}",
+  "name": "Updates a tax rate",
+  "category": "expense_categories",
+  "mutating": true,
+  "description": "Handles the updating of a tax rate by id",
+  "whenToUse": "Modify an existing expense category by id to rename or adjust it after you have its id (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The ExpenseCategory Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ExpenseCategory"
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "update_payment_term",
+  "operationId": "updatePaymentTerm",
+  "method": "PUT",
+  "path": "/api/v1/payment_terms/{id}",
+  "name": "Updates a Payment Term",
+  "category": "payment_terms",
+  "mutating": true,
+  "description": "Handles the updating of an Payment Termby id",
+  "whenToUse": "Modify an existing payment term by its hashed id (mutating); use edit_payment_terms to GET it prepared for editing.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Payment Term Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "PaymentTerm"
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "process_apple_webhook",
+  "operationId": "processAppleWebhook",
+  "method": "POST",
+  "path": "/api/v1/apple/process_webhook",
+  "name": "Processing event webhooks from Apple for in purchase / subscription status update",
+  "category": "postmark",
+  "mutating": true,
+  "description": "Adds an credit to the system",
+  "whenToUse": "Process Apple subscription/purchase-status event webhooks for ongoing updates, distinct from confirming a single purchase (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

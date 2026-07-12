@@ -1,0 +1,33 @@
+{
+  "slug": "show_location",
+  "operationId": "showLocation",
+  "method": "GET",
+  "path": "/api/v1/locations/{id}",
+  "name": "Show location",
+  "category": "locations",
+  "mutating": false,
+  "description": "##  GET /api/v1/locations/{id}\n\nDisplays a location by id",
+  "whenToUse": "Fetch one location's full details by its hashed id; use get_locations to search across many instead.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Location Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Location"
+}

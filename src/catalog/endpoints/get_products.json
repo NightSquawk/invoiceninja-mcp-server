@@ -1,0 +1,118 @@
+{
+  "slug": "get_products",
+  "operationId": "getProducts",
+  "method": "GET",
+  "path": "/api/v1/products",
+  "name": "List products",
+  "category": "products",
+  "mutating": false,
+  "description": "##  GET /api/v1/products\nLists products within your company.\n\nYou can search and filter the result set using query parameters. These can be chained together allowing fine grained lists to be generated.",
+  "whenToUse": "List and filter many products in your company, with search, sorting, and pagination; reach for it to browse or find products by criteria.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=product_key|asc`.\n\n*Multiple sorts** — for example\n`sort[]=id|desc&sort[]=product_key|asc`.\n\nOnly real columns on the `products` table are recognized (for example `id`, `product_key`, `cost`, `price`). Relationship sorts are not available here. Unsupported keys are ignored.",
+      "example": [
+        "product_key|asc",
+        "id|desc"
+      ]
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "required": false,
+      "description": "Filter the entity based on their status. ie active / archived / deleted. Format is a comma separated string with any of the following options:\n- active\n- archived\n- deleted\n\n```html\nGET /api/v1/invoices?status=archived,deleted\nReturns only archived and deleted invoices\n```",
+      "example": "?status=archived,deleted"
+    },
+    {
+      "name": "client_id",
+      "type": "string",
+      "required": false,
+      "description": "Filters the entity list by client_id. Suitable when you only want the entities of a specific client.\n\n```html\nGET /api/v1/invoices?client_id=AxB7Hjk9\nReturns only invoices for the specified client\n```",
+      "example": "?client_id={client_id}"
+    },
+    {
+      "name": "created_at",
+      "type": "integer",
+      "required": false,
+      "description": "Filters the entity list by the created at timestamp. Parameter value can be a datetime string or unix timestamp\n\n```html\nGET /api/v1/invoices?created_at=2022-01-10\nReturns entities created on January 10th, 2022\n```",
+      "example": 1641772800
+    },
+    {
+      "name": "updated_at",
+      "type": "integer",
+      "required": false,
+      "description": "Filters the entity list by the updated at timestamp. Parameter value can be a datetime string or unix timestamp\n\n```html\nGET /api/v1/invoices?updated_at=2022-01-10\nReturns entities last updated on January 10th, 2022\n```",
+      "example": 1641772800
+    },
+    {
+      "name": "is_deleted",
+      "type": "boolean",
+      "required": false,
+      "description": "Filters the entity list by entities that have been deleted.\n\n```html\nGET /api/v1/invoices?is_deleted=true\nReturns only soft-deleted entities\n```",
+      "example": true
+    },
+    {
+      "name": "filter_deleted_clients",
+      "type": "string",
+      "required": false,
+      "description": "Filters the entity list and only returns entities for clients that have not been deleted\n\n```html\nGET /api/v1/invoices?filter_deleted_clients=true\nReturns only invoices for active (non-deleted) clients\n```",
+      "example": "?filter_deleted_clients=true"
+    },
+    {
+      "name": "vendor_id",
+      "type": "string",
+      "required": false,
+      "description": "Filters the entity list by an associated vendor\n\n```html\nGET /api/v1/purchases?vendor_id=AxB7Hjk9\nReturns only purchases for the specified vendor\n```",
+      "example": "?vendor_id={vendor_id}"
+    },
+    {
+      "name": "filter",
+      "type": "string",
+      "required": false,
+      "description": "Filter by product name",
+      "example": "bob"
+    },
+    {
+      "name": "product_key",
+      "type": "string",
+      "required": false,
+      "description": "Filter by product key",
+      "example": "bob"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Product[]"
+}

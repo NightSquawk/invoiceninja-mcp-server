@@ -1,0 +1,32 @@
+{
+  "slug": "delete_task_status",
+  "operationId": "deleteTaskStatus",
+  "method": "DELETE",
+  "path": "/api/v1/task_statuses/{id}",
+  "name": "Deletes a TaskStatus Term",
+  "category": "task_status",
+  "mutating": true,
+  "description": "Handles the deletion of an TaskStatus by id",
+  "whenToUse": "Archive or soft-delete one existing task status by its hashed id when removing it from use (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The TaskStatusHashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

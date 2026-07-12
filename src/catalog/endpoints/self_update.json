@@ -1,0 +1,31 @@
+{
+  "slug": "self_update",
+  "operationId": "selfUpdate",
+  "method": "POST",
+  "path": "/api/v1/self-update",
+  "name": "Performs a system update",
+  "category": "update",
+  "mutating": true,
+  "description": "Performs a system update",
+  "whenToUse": "Trigger the self-hosted Invoice Ninja system to install an available update; requires the X-API-PASSWORD header (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [
+    {
+      "name": "X-API-PASSWORD",
+      "type": "string",
+      "required": true,
+      "description": "The login password when challenged on certain protected routes",
+      "example": "supersecretpassword"
+    }
+  ],
+  "requestBody": null
+}

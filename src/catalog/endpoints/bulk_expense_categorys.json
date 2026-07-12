@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_expense_categorys",
+  "operationId": "bulkExpenseCategorys",
+  "method": "POST",
+  "path": "/api/v1/expense_categories/bulk",
+  "name": "Performs bulk actions on an array of ExpenseCategorys",
+  "category": "expense_categories",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of ExpenseCategorys",
+  "whenToUse": "Apply one action across an array of expense category ids in a single batch instead of per-record calls (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "Webhook"
+}

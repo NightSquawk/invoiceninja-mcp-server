@@ -1,0 +1,24 @@
+{
+  "slug": "delete_location",
+  "operationId": "deleteLocation",
+  "method": "DELETE",
+  "path": "/api/v1/locations/{id}",
+  "name": "Delete location",
+  "category": "locations",
+  "mutating": true,
+  "description": "##  DELETE /api/v1/locations/{id}\n\nHandles the deletion of a location by id",
+  "whenToUse": "Archive/soft-delete one location by its hashed id (mutating); use update_location to modify or bulk_locations for many.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Location Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

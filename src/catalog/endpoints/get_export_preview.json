@@ -1,0 +1,25 @@
+{
+  "slug": "get_export_preview",
+  "operationId": "getExportPreview",
+  "method": "POST",
+  "path": "/api/v1/exports/preview/{hash}",
+  "name": "Export preview",
+  "category": "reports",
+  "mutating": false,
+  "description": "Preview an export by hash",
+  "whenToUse": "Preview the contents of a generated data export by its export hash before downloading or finalizing it",
+  "pathParameters": [
+    {
+      "name": "hash",
+      "type": "string",
+      "required": true,
+      "description": "The export hash"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

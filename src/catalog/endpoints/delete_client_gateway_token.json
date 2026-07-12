@@ -1,0 +1,32 @@
+{
+  "slug": "delete_client_gateway_token",
+  "operationId": "deleteClientGatewayToken",
+  "method": "DELETE",
+  "path": "/api/v1/client_gateway_tokens/{id}",
+  "name": "Deletes a client",
+  "category": "client_gateway_tokens",
+  "mutating": true,
+  "description": "Handles the deletion of a client payment token by id",
+  "whenToUse": "Archive or soft-delete one existing client payment gateway token by its hashed id to remove a saved card (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The ClientGatewayToken Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

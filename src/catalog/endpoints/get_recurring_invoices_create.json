@@ -1,0 +1,24 @@
+{
+  "slug": "get_recurring_invoices_create",
+  "operationId": "getRecurringInvoicesCreate",
+  "method": "GET",
+  "path": "/api/v1/recurring_invoices/create",
+  "name": "Blank recurring invoice",
+  "category": "recurring_invoices",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank recurring invoice with default values; use to pre-populate a new-record form before calling store.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringInvoice"
+}

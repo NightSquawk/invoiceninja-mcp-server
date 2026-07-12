@@ -1,0 +1,24 @@
+{
+  "slug": "delete_tax_rate",
+  "operationId": "deleteTaxRate",
+  "method": "DELETE",
+  "path": "/api/v1/tax_rates/{id}",
+  "name": "Deletes a TaxRate",
+  "category": "tax_rates",
+  "mutating": true,
+  "description": "Handles the deletion of an TaxRate by id",
+  "whenToUse": "Archive/soft-delete one tax rate by its hashed id when removing a single rate from active use (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The TaxRate Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

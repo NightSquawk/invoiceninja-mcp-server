@@ -1,0 +1,33 @@
+{
+  "slug": "show_company_gateway",
+  "operationId": "showCompanyGateway",
+  "method": "GET",
+  "path": "/api/v1/company_gateways/{id}",
+  "name": "Shows an CompanyGateway",
+  "category": "company_gateways",
+  "mutating": false,
+  "description": "Displays an CompanyGateway by id",
+  "whenToUse": "Fetch one company gateway by its id; reach for it when you already know the gateway's id and need its configuration.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The CompanyGateway Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "CompanyGateway"
+}

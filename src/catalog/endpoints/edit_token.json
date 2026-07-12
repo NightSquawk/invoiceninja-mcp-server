@@ -1,0 +1,33 @@
+{
+  "slug": "edit_token",
+  "operationId": "editToken",
+  "method": "GET",
+  "path": "/api/v1/tokens/{id}/edit",
+  "name": "Shows a token for editting",
+  "category": "tokens",
+  "mutating": false,
+  "description": "Displays a token by id",
+  "whenToUse": "Fetch one company API token by id prepared for an edit form; read-only, use before update_token, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Token Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "CompanyToken"
+}

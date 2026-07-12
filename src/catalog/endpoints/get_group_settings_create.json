@@ -1,0 +1,24 @@
+{
+  "slug": "get_group_settings_create",
+  "operationId": "getGroupSettingsCreate",
+  "method": "GET",
+  "path": "/api/v1/group_settings/create",
+  "name": "Gets a new blank GroupSetting object",
+  "category": "group_settings",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank group setting template with default values; read-only, use to prefill before storing a new group.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "GroupSetting"
+}

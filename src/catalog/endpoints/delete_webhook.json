@@ -1,0 +1,32 @@
+{
+  "slug": "delete_webhook",
+  "operationId": "deleteWebhook",
+  "method": "DELETE",
+  "path": "/api/v1/webhooks/{id}",
+  "name": "Deletes a Webhook",
+  "category": "webhooks",
+  "mutating": true,
+  "description": "Handles the deletion of a Webhook by id",
+  "whenToUse": "Call to archive/soft-delete one existing webhook subscription by its hashed id; use list/show to inspect webhooks instead (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Webhook Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

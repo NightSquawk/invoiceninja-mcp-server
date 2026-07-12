@@ -1,0 +1,33 @@
+{
+  "slug": "show_user",
+  "operationId": "showUser",
+  "method": "GET",
+  "path": "/api/v1/users/{id}",
+  "name": "Shows an User",
+  "category": "users",
+  "mutating": false,
+  "description": "Displays an User by id",
+  "whenToUse": "Fetch one user's full record by id; use when you already know the id and need that user's details.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The User Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "User"
+}

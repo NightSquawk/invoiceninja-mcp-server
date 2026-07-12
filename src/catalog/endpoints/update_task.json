@@ -1,0 +1,122 @@
+{
+  "slug": "update_task",
+  "operationId": "updateTask",
+  "method": "PUT",
+  "path": "/api/v1/tasks/{id}",
+  "name": "Update task",
+  "category": "tasks",
+  "mutating": true,
+  "description": "Handles the updating of a task by id",
+  "whenToUse": "Modify fields on an existing task identified by id; use to change an already-created task such as status or time log (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The task Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "description",
+        "type": "string",
+        "required": true,
+        "description": "Task description"
+      },
+      {
+        "name": "client_id",
+        "type": "string",
+        "required": false,
+        "description": "The hashed ID of the client"
+      },
+      {
+        "name": "project_id",
+        "type": "string",
+        "required": false,
+        "description": "The hashed ID of the project"
+      },
+      {
+        "name": "time_log",
+        "type": "string",
+        "required": false,
+        "description": "Time logged for the task"
+      },
+      {
+        "name": "status_id",
+        "type": "integer",
+        "required": false,
+        "description": "Status ID of the task"
+      },
+      {
+        "name": "custom_value1",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 1"
+      },
+      {
+        "name": "custom_value2",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 2"
+      },
+      {
+        "name": "custom_value3",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 3"
+      },
+      {
+        "name": "custom_value4",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 4"
+      },
+      {
+        "name": "is_deleted",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the task is deleted"
+      },
+      {
+        "name": "archived_at",
+        "type": "integer",
+        "required": false,
+        "description": "Timestamp when task was archived"
+      },
+      {
+        "name": "due_date",
+        "type": "string",
+        "required": false,
+        "description": "Due date for the task"
+      },
+      {
+        "name": "priority",
+        "type": "integer",
+        "required": false,
+        "description": "Priority level of the task"
+      },
+      {
+        "name": "tags",
+        "type": "array",
+        "required": false,
+        "description": "Full sync array of hashed tag IDs. Omit to leave existing tags unchanged; send [] to detach all tags."
+      }
+    ],
+    "schemaRef": "TaskRequest"
+  },
+  "responseSchema": "Task"
+}

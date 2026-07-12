@@ -1,0 +1,33 @@
+{
+  "slug": "show_credit",
+  "operationId": "showCredit",
+  "method": "GET",
+  "path": "/api/v1/credits/{id}",
+  "name": "Show credit",
+  "category": "credits",
+  "mutating": false,
+  "description": "Displays an credit by id",
+  "whenToUse": "Fetch one credit by its id; reach for it when you already know the credit's id and need its full details.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Credit Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Credit"
+}

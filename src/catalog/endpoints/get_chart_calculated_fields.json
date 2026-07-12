@@ -1,0 +1,18 @@
+{
+  "slug": "get_chart_calculated_fields",
+  "operationId": "getChartCalculatedFields",
+  "method": "POST",
+  "path": "/api/v1/charts/calculated_fields",
+  "name": "Get calculated fields",
+  "category": "charts",
+  "mutating": false,
+  "description": "Get chart calculated fields",
+  "whenToUse": "Retrieve dashboard chart calculated fields via POST when you need derived/computed chart metrics rather than raw totals or summaries",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "get_user_sales_report",
+  "operationId": "getUserSalesReport",
+  "method": "POST",
+  "path": "/api/v1/reports/user_sales_report",
+  "name": "User sales report",
+  "category": "reports",
+  "mutating": false,
+  "description": "Export user sales report",
+  "whenToUse": "Export a report of sales/revenue attributed to each user (staff) over a date range; use to compare salesperson performance, not client sales",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "date_range",
+        "type": "string",
+        "required": false,
+        "description": "The string representation of the date range of data to be returned"
+      },
+      {
+        "name": "date_key",
+        "type": "string",
+        "required": false,
+        "description": "The date column to search between."
+      },
+      {
+        "name": "start_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date to search between"
+      },
+      {
+        "name": "end_date",
+        "type": "string",
+        "required": false,
+        "description": "The end date to search between"
+      },
+      {
+        "name": "report_keys",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "GenericReportSchema"
+  }
+}

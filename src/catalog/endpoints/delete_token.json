@@ -1,0 +1,32 @@
+{
+  "slug": "delete_token",
+  "operationId": "deleteToken",
+  "method": "DELETE",
+  "path": "/api/v1/tokens/{id}",
+  "name": "Deletes a token",
+  "category": "tokens",
+  "mutating": true,
+  "description": "Handles the deletion of a token by id",
+  "whenToUse": "Archive or soft-delete one existing company API token by its hashed id to revoke it (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Token Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

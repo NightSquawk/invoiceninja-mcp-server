@@ -1,0 +1,24 @@
+{
+  "slug": "store_bank_transaction",
+  "operationId": "storeBankTransaction",
+  "method": "POST",
+  "path": "/api/v1/bank_transactions",
+  "name": "Adds a bank_transaction",
+  "category": "bank_transactions",
+  "mutating": true,
+  "description": "Adds an bank_transaction to a company",
+  "whenToUse": "Create a new bank transaction record for the company; use when adding a fresh transaction, not matching or editing one (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankTransaction"
+}

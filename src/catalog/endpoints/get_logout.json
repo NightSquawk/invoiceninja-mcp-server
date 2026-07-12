@@ -1,0 +1,30 @@
+{
+  "slug": "get_logout",
+  "operationId": "getLogout",
+  "method": "POST",
+  "path": "/api/v1/logout",
+  "name": "Logs the user out of their current session",
+  "category": "logout",
+  "mutating": true,
+  "description": "Logs the user out of their current session",
+  "whenToUse": "Call to log out the current user and invalidate their active session token when ending an authenticated session (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

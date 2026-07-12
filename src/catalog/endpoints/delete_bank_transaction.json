@@ -1,0 +1,32 @@
+{
+  "slug": "delete_bank_transaction",
+  "operationId": "deleteBankTransaction",
+  "method": "DELETE",
+  "path": "/api/v1/bank_transactions/{id}",
+  "name": "Deletes a bank_transaction",
+  "category": "bank_transactions",
+  "mutating": true,
+  "description": "Handles the deletion of a bank_transaction by id",
+  "whenToUse": "Archive or soft-delete one bank transaction by its hashed id; use to remove a single transaction you already identified (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The BankTransaction Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

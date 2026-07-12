@@ -1,0 +1,33 @@
+{
+  "slug": "show_vendor",
+  "operationId": "showVendor",
+  "method": "GET",
+  "path": "/api/v1/vendors/{id}",
+  "name": "Show vendor",
+  "category": "vendors",
+  "mutating": false,
+  "description": "Displays a vendor by id",
+  "whenToUse": "Fetch one vendor by its hashed id; use when you already know the id and need that single vendor's details.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The vendor Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Vendor"
+}

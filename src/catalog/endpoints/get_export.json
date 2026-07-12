@@ -1,0 +1,15 @@
+{
+  "slug": "get_export",
+  "operationId": "getExport",
+  "method": "POST",
+  "path": "/api/v1/export",
+  "name": "Export data from the system",
+  "category": "export",
+  "mutating": true,
+  "description": "Export data from the system",
+  "whenToUse": "Export system data out of Invoice Ninja for backup or migration; use to bulk-extract records rather than read individual entities (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

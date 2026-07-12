@@ -1,0 +1,16 @@
+{
+  "slug": "get_invoice_create",
+  "operationId": "getInvoiceCreate",
+  "method": "GET",
+  "path": "/api/v1/invoices/create",
+  "name": "Blank invoice",
+  "category": "invoices",
+  "mutating": false,
+  "description": "## GET /api/v1/invoices/create\n\nReturns a blank object with default values",
+  "whenToUse": "GET a blank invoice object with default values to seed a new-invoice form; read-only, use before store_invoice.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Invoice"
+}

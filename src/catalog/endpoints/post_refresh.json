@@ -1,0 +1,46 @@
+{
+  "slug": "post_refresh",
+  "operationId": "postRefresh",
+  "method": "POST",
+  "path": "/api/v1/refresh",
+  "name": "Refresh data by timestamp",
+  "category": "refresh",
+  "mutating": true,
+  "description": "Refreshes the dataset.\n\nThis endpoint can be used if you only need to access the most recent data from a certain point in time. For example, if you only want to retrieve The\nmost recent data from the last time you accessed the system, you would pass the query parameter ?updated_at=1676173763. (unix timestamp)",
+  "whenToUse": "Call to fetch only records changed since a given updated_at unix timestamp for incremental sync rather than re-pulling all data (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "updated_at",
+      "type": "number",
+      "required": true,
+      "description": "The unix timestamp from which the refreshed data should be sent from, if no value is passed the system will assume you require all data.",
+      "format": "integer",
+      "example": 1676173763
+    },
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "include_static",
+      "type": "string",
+      "required": false,
+      "description": "This include will return the full set of static variables used in the application including:\n  - Currencies\n  - Countries\n  - Languages\n  - Payment Types\n  - Email Templatees\n  - Industries",
+      "example": "include_static=true"
+    },
+    {
+      "name": "clear_cache",
+      "type": "string",
+      "required": false,
+      "description": "Clears cache\n\nClears (and rebuilds) the static variable cache.",
+      "example": "clear_cache=true"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "CompanyUser"
+}

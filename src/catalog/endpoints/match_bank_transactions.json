@@ -1,0 +1,26 @@
+{
+  "slug": "match_bank_transactions",
+  "operationId": "matchBankTransactions",
+  "method": "POST",
+  "path": "/api/v1/bank_transactions/match",
+  "name": "Match transactions",
+  "category": "bank_transactions",
+  "mutating": true,
+  "description": "Matching invoices or a payment to a bank transactions.\n\nThe API expects the id of the transaction along with either a comma separated list of invoice ids OR the payment id to associate the transaction to.\n\nExample for matching a transaction to two invoices:\n\n{\"transactions\":[{\"id\":\"olejRl5ejN\",\"invoice_ids\":\"JxboYBLegw,JxboYBLeXX\"}]}\n\nExample for matching a transaction and a paymente:\n\n{\"transactions\":[{\"id\":\"olejRl5ejN\",\"payment_id\":\"JxboYBLeXf\"}]}\n\nMatching expenses.\n\nYou can match an existing expense within Invoice Ninja - or - create a new expense using the following:\n\n{\"transactions\":[{\"id\":\"open5pld7A\",\"vendor_id\":\"gl9avJnaG1\",\"ninja_category_id\":\"\"}]}\n\nTo match to an existing expense:\n\n{\"transactions\":[{\"id\":\"Jxbo2qKagw\",\"expense_id\":\"7N1aMM1aWm\"}]}",
+  "whenToUse": "Link bank transactions to invoices, payments, or expenses by id; use to reconcile imported transactions against records (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

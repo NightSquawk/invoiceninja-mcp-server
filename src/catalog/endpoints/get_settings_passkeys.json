@@ -1,0 +1,15 @@
+{
+  "slug": "get_settings_passkeys",
+  "operationId": "getSettingsPasskeys",
+  "method": "GET",
+  "path": "/api/v1/settings/passkeys",
+  "name": "List passkeys",
+  "category": "auth",
+  "mutating": false,
+  "description": "List passkeys",
+  "whenToUse": "List the current authenticated user's registered passkeys when reviewing or managing their saved credentials (read-only).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

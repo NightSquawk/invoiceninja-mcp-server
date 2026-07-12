@@ -1,0 +1,32 @@
+{
+  "slug": "delete_product",
+  "operationId": "deleteProduct",
+  "method": "DELETE",
+  "path": "/api/v1/products/{id}",
+  "name": "Delete product",
+  "category": "products",
+  "mutating": true,
+  "description": "##  DELETE /api/v1/products/{id}\nHandles the deletion of a product by id",
+  "whenToUse": "Archive/soft-delete a single product by id; use to remove or retire one product without permanently purging it (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Product Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

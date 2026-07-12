@@ -1,0 +1,49 @@
+{
+  "slug": "get_arsummary_report",
+  "operationId": "getARSummaryReport",
+  "method": "POST",
+  "path": "/api/v1/reports/ar_summary_report",
+  "name": "AR summary report",
+  "category": "reports",
+  "mutating": false,
+  "description": "Export AR summary report",
+  "whenToUse": "Export a summarized accounts-receivable report of total balances owed per client over a date range; use for high-level AR totals, not line detail",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "date_range",
+        "type": "string",
+        "required": false,
+        "description": "The string representation of the date range of data to be returned"
+      },
+      {
+        "name": "date_key",
+        "type": "string",
+        "required": false,
+        "description": "The date column to search between."
+      },
+      {
+        "name": "start_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date to search between"
+      },
+      {
+        "name": "end_date",
+        "type": "string",
+        "required": false,
+        "description": "The end date to search between"
+      },
+      {
+        "name": "report_keys",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "GenericReportSchema"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "get_preview_purchase_order",
+  "operationId": "getPreviewPurchaseOrder",
+  "method": "POST",
+  "path": "/api/v1/preview/purchase_order",
+  "name": "Returns a pdf preview for purchase order",
+  "category": "preview",
+  "mutating": false,
+  "description": "Returns a pdf preview for purchase order.",
+  "whenToUse": "Generate an on-the-fly PDF preview specifically for a purchase order from posted data; use this instead of get_preview when the entity is a purchase order",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

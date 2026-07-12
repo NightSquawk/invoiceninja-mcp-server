@@ -1,0 +1,24 @@
+{
+  "slug": "store_recurring_quote",
+  "operationId": "storeRecurringQuote",
+  "method": "POST",
+  "path": "/api/v1/recurring_quotes",
+  "name": "Adds a RecurringQuote",
+  "category": "recurring_quotes",
+  "mutating": true,
+  "description": "Adds an RecurringQuote to the system",
+  "whenToUse": "Create a new recurring quote from scratch; use when adding a recurring quote, not when editing an existing one (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringQuote"
+}

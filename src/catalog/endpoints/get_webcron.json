@@ -1,0 +1,15 @@
+{
+  "slug": "get_webcron",
+  "operationId": "getWebcron",
+  "method": "GET",
+  "path": "/api/v1/webcron",
+  "name": "Executes the task scheduler via a webcron service",
+  "category": "webcron",
+  "mutating": false,
+  "description": "Executes the task scheduler via a webcron service",
+  "whenToUse": "Call to trigger execution of the task scheduler as a webcron tick, running due scheduled jobs now rather than just reading status.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

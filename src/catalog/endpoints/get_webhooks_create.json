@@ -1,0 +1,24 @@
+{
+  "slug": "get_webhooks_create",
+  "operationId": "getWebhooksCreate",
+  "method": "GET",
+  "path": "/api/v1/webhooks/create",
+  "name": "Gets a new blank Webhook object",
+  "category": "webhooks",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank webhook template with default values to prefill a new-webhook form (read-only); use store_webhook to create it.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Webhook"
+}

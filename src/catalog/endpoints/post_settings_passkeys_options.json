@@ -1,0 +1,15 @@
+{
+  "slug": "post_settings_passkeys_options",
+  "operationId": "postSettingsPasskeysOptions",
+  "method": "POST",
+  "path": "/api/v1/settings/passkeys/options",
+  "name": "Passkey registration options",
+  "category": "auth",
+  "mutating": true,
+  "description": "Passkey registration options",
+  "whenToUse": "Request WebAuthn registration challenge options to begin enrolling a new passkey before calling post_settings_passkeys (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

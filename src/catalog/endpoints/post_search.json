@@ -1,0 +1,18 @@
+{
+  "slug": "post_search",
+  "operationId": "postSearch",
+  "method": "POST",
+  "path": "/api/v1/search",
+  "name": "Search",
+  "category": "search",
+  "mutating": false,
+  "description": "Performs a search across entities",
+  "whenToUse": "Call to run a global keyword search spanning multiple entity types when you need cross-resource matches, not single-resource list filters",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

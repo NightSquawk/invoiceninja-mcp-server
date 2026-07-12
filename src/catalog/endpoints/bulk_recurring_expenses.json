@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_recurring_expenses",
+  "operationId": "bulkRecurringExpenses",
+  "method": "POST",
+  "path": "/api/v1/recurring_expenses/bulk",
+  "name": "Performs bulk actions on an array of recurring_expenses",
+  "category": "recurring_expenses",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of recurring_expenses",
+  "whenToUse": "Perform a batch action over many recurring expenses by passing an array of ids in one request (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "RecurringExpense"
+}

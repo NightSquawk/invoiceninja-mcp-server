@@ -1,0 +1,33 @@
+{
+  "slug": "update_expense",
+  "operationId": "updateExpense",
+  "method": "PUT",
+  "path": "/api/v1/expenses/{id}",
+  "name": "Updates a expense",
+  "category": "expenses",
+  "mutating": true,
+  "description": "Handles the updating of a expense by id",
+  "whenToUse": "Modify an existing expense by id to correct its amount, date, or details after you have its id (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Expense Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Expense"
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "store_project",
+  "operationId": "storeProject",
+  "method": "POST",
+  "path": "/api/v1/projects",
+  "name": "Create project",
+  "category": "projects",
+  "mutating": true,
+  "description": "Adds an project to a company",
+  "whenToUse": "Create a brand-new project record with its details; use when adding a project that does not yet exist (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "description": "Project name"
+      },
+      {
+        "name": "client_id",
+        "type": "string",
+        "required": true,
+        "description": "The hashed ID of the client"
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "description": "Project description"
+      },
+      {
+        "name": "budgeted_hours",
+        "type": "number",
+        "required": false,
+        "description": "Budgeted hours for the project"
+      },
+      {
+        "name": "task_rate",
+        "type": "number",
+        "required": false,
+        "description": "Hourly rate for tasks in this project"
+      },
+      {
+        "name": "due_date",
+        "type": "string",
+        "required": false,
+        "description": "Due date for the project"
+      },
+      {
+        "name": "custom_value1",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 1"
+      },
+      {
+        "name": "custom_value2",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 2"
+      },
+      {
+        "name": "custom_value3",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 3"
+      },
+      {
+        "name": "custom_value4",
+        "type": "string",
+        "required": false,
+        "description": "Custom field value 4"
+      },
+      {
+        "name": "is_deleted",
+        "type": "boolean",
+        "required": false,
+        "description": "Whether the project is deleted"
+      },
+      {
+        "name": "archived_at",
+        "type": "integer",
+        "required": false,
+        "description": "Timestamp when project was archived"
+      },
+      {
+        "name": "color",
+        "type": "string",
+        "required": false,
+        "description": "Project color for UI display"
+      },
+      {
+        "name": "tags",
+        "type": "array",
+        "required": false,
+        "description": "Full sync array of hashed tag IDs. Omit to leave existing tags unchanged; send [] to detach all tags."
+      }
+    ],
+    "schemaRef": "ProjectRequest"
+  },
+  "responseSchema": "Project"
+}

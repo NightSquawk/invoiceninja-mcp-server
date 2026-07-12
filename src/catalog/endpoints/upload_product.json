@@ -1,0 +1,46 @@
+{
+  "slug": "upload_product",
+  "operationId": "uploadProduct",
+  "method": "POST",
+  "path": "/api/v1/products/{id}/upload",
+  "name": "Add product document",
+  "category": "products",
+  "mutating": true,
+  "description": "##  POST /api/v1/products/{id}/upload\nHandles the uploading of a document to a product\"",
+  "whenToUse": "Attach a document or file to an existing product by id; use to add supporting attachments to one product (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Product Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relationships of the Client Object. ie ?include=documents,system_logs\n\n```html\nAvailable includes:\n\ncontacts [All contacts related to the client]\ndocuments [All documents related to the client]\ngateway_tokens [All payment tokens related to the client]\nactivities [All activities related to the client]\nledger [The client ledger]\nsystem_logs [System logs related to the client]\ngroup_settings [The group settings object the client is assigned to]\n\n```\n\nUsage:\n\n```html\n/api/v1/clients?include=contacts,documents,activities\n```"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "multipart/form-data",
+    "fields": [
+      {
+        "name": "_method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "documents",
+        "type": "array",
+        "required": false
+      }
+    ]
+  },
+  "responseSchema": "Product"
+}

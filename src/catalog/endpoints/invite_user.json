@@ -1,0 +1,32 @@
+{
+  "slug": "invite_user",
+  "operationId": "inviteUser",
+  "method": "POST",
+  "path": "/api/v1/users/{user}/invite",
+  "name": "Reconfirm an existing user to a company",
+  "category": "users",
+  "mutating": true,
+  "description": "Reconfirm an existing user from a company",
+  "whenToUse": "Send the initial invite to an existing user by id (the /invite endpoint); use for a first-time invitation rather than reconfirm (mutating).",
+  "pathParameters": [
+    {
+      "name": "user",
+      "type": "string",
+      "required": true,
+      "description": "The user hashed_id",
+      "format": "string",
+      "example": "FD767dfd7"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

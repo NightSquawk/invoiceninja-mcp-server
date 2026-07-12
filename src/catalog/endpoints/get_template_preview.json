@@ -1,0 +1,25 @@
+{
+  "slug": "get_template_preview",
+  "operationId": "getTemplatePreview",
+  "method": "POST",
+  "path": "/api/v1/templates/preview/{hash}",
+  "name": "Preview template by hash",
+  "category": "templates",
+  "mutating": false,
+  "description": "Returns a template preview for the given hash",
+  "whenToUse": "Preview a template identified by its hash with supplied data; use when you have a template hash and want to see its rendered result",
+  "pathParameters": [
+    {
+      "name": "hash",
+      "type": "string",
+      "required": true,
+      "description": "The template hash"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

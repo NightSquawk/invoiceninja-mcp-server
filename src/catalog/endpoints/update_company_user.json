@@ -1,0 +1,16 @@
+{
+  "slug": "update_company_user",
+  "operationId": "updateCompanyUser",
+  "method": "POST",
+  "path": "/api/v1/company_users",
+  "name": "Update a company user record",
+  "category": "company_user",
+  "mutating": true,
+  "description": "Attempts to update a company user record. A company user can modify only their settings fields. Full access for Admin users",
+  "whenToUse": "Modify a company-user record's settings (full access for admins, own settings otherwise); use to change user/company preferences (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "CompanyUser"
+}

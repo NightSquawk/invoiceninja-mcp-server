@@ -1,0 +1,24 @@
+{
+  "slug": "get_client_gateway_tokens_create",
+  "operationId": "getClientGatewayTokensCreate",
+  "method": "GET",
+  "path": "/api/v1/client_gateway_tokens/create",
+  "name": "Gets a new blank client payment token object",
+  "category": "client_gateway_tokens",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Get a blank client payment gateway token template with default values to prefill a create form; read-only, saves nothing.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ClientGatewayToken"
+}

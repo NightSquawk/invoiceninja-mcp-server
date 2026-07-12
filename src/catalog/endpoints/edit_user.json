@@ -1,0 +1,33 @@
+{
+  "slug": "edit_user",
+  "operationId": "editUser",
+  "method": "GET",
+  "path": "/api/v1/users/{id}/edit",
+  "name": "Shows an User for editting",
+  "category": "users",
+  "mutating": false,
+  "description": "Displays an User by id",
+  "whenToUse": "Fetch one user prepared for editing by id; use to preload a form's values, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The User Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "User"
+}

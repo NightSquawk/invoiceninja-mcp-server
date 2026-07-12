@@ -1,0 +1,32 @@
+{
+  "slug": "download_invoice_by_invitation",
+  "operationId": "downloadInvoiceByInvitation",
+  "method": "GET",
+  "path": "/api/v1/invoice/{invitation_key}/download",
+  "name": "Download invoice PDF",
+  "category": "invoices",
+  "mutating": false,
+  "description": "## GET /api/v1/invoice/{invitation_key}/download\n\nDownloads a specific invoice",
+  "whenToUse": "Download one invoice's PDF using its invitation_key (recipient link); use this client-facing route, not get_invoice_delivery_note or action download.",
+  "pathParameters": [
+    {
+      "name": "invitation_key",
+      "type": "string",
+      "required": true,
+      "description": "The Invoice Invitation Key",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

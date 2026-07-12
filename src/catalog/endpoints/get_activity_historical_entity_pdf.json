@@ -1,0 +1,31 @@
+{
+  "slug": "get_activity_historical_entity_pdf",
+  "operationId": "getActivityHistoricalEntityPdf",
+  "method": "GET",
+  "path": "/api/v1/activities/download_entity/{activity_id}",
+  "name": "Returns a PDF for the given activity",
+  "category": "activities",
+  "mutating": false,
+  "description": "Returns a PDF for the given activity",
+  "whenToUse": "Download the historical PDF snapshot of the entity tied to one activity, identified by activity_id, when you need that point-in-time document.",
+  "pathParameters": [
+    {
+      "name": "activity_id",
+      "type": "string",
+      "required": true,
+      "description": "The Activity Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relations of the Activity object, format is comma separated. **Note** it is possible to chain multiple includes together, ie. include=account,token"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

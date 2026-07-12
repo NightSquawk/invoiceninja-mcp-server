@@ -1,0 +1,39 @@
+{
+  "slug": "bulk_quotes",
+  "operationId": "bulkQuotes",
+  "method": "POST",
+  "path": "/api/v1/quotes/bulk",
+  "name": "Bulk quote actions",
+  "category": "quotes",
+  "mutating": true,
+  "description": "## POST /api/v1/quotes/bulk\n\nPerforms bulk actions on an array of quotes",
+  "whenToUse": "Run a batch action (approve, convert, send_email, mark_sent) over an array of quote ids; use for multi-quote operations (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "action",
+        "type": "string",
+        "required": false,
+        "description": "The action to be performed, options include:\n- `approve`\n  Bulk approve an array of quotes\n- `convert`\n  Bulk convert an array of quotes to invoices\n- `send_email`\n  Bulk send an array of quotes as emails\n- `mark_sent`\n  Bulk mark an array "
+      },
+      {
+        "name": "ids",
+        "type": "array",
+        "required": false
+      }
+    ]
+  },
+  "responseSchema": "Quote"
+}

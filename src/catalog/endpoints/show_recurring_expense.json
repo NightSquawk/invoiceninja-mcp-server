@@ -1,0 +1,33 @@
+{
+  "slug": "show_recurring_expense",
+  "operationId": "showRecurringExpense",
+  "method": "GET",
+  "path": "/api/v1/recurring_expenses/{id}",
+  "name": "Shows a recurring expense",
+  "category": "recurring_expenses",
+  "mutating": false,
+  "description": "Displays a recurring expense by id",
+  "whenToUse": "Fetch one recurring expense by its hashed id to read its full details; use when you already know the id.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringExpense Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringExpense"
+}

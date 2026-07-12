@@ -1,0 +1,33 @@
+{
+  "slug": "edit_expense",
+  "operationId": "editExpense",
+  "method": "GET",
+  "path": "/api/v1/expenses/{id}/edit",
+  "name": "Shows a expense for editing",
+  "category": "expenses",
+  "mutating": false,
+  "description": "Displays a client by id",
+  "whenToUse": "Fetch one expense by id prepared for editing in a form; read-only, use update_expense to actually save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Expense Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Expense"
+}

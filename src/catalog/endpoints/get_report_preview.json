@@ -1,0 +1,25 @@
+{
+  "slug": "get_report_preview",
+  "operationId": "getReportPreview",
+  "method": "POST",
+  "path": "/api/v1/reports/preview/{hash}",
+  "name": "Report preview",
+  "category": "reports",
+  "mutating": false,
+  "description": "Preview a report by hash",
+  "whenToUse": "Preview a generated report by its report hash before exporting or downloading it; use after queuing a report to inspect results",
+  "pathParameters": [
+    {
+      "name": "hash",
+      "type": "string",
+      "required": true,
+      "description": "The report hash"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

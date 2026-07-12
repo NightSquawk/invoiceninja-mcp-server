@@ -1,0 +1,24 @@
+{
+  "slug": "store_bank_transaction_rule",
+  "operationId": "storeBankTransactionRule",
+  "method": "POST",
+  "path": "/api/v1/bank_transaction_rules",
+  "name": "Adds a bank_transaction rule",
+  "category": "bank_transaction_rules",
+  "mutating": true,
+  "description": "Adds an bank_transaction to a company",
+  "whenToUse": "Create a new bank transaction rule; reach for it when adding a fresh categorization rule to the company (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankTransactionRule"
+}

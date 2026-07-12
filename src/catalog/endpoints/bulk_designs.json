@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_designs",
+  "operationId": "bulkDesigns",
+  "method": "POST",
+  "path": "/api/v1/designs/bulk",
+  "name": "Performs bulk actions on an array of designs",
+  "category": "designs",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of designs",
+  "whenToUse": "Apply one action across an array of design ids in a single batch instead of per-record calls (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "Design"
+}

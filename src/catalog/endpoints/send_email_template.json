@@ -1,0 +1,73 @@
+{
+  "slug": "send_email_template",
+  "operationId": "sendEmailTemplate",
+  "method": "POST",
+  "path": "/api/v1/emails",
+  "name": "Sends an email for an entity",
+  "category": "emails",
+  "mutating": true,
+  "description": "Sends an email for an entity",
+  "whenToUse": "Email an entity (invoice, quote, credit, payment, reminder, PO) using a named template by entity and entity_id; use to dispatch templated client emails (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "subject",
+        "type": "string",
+        "required": false,
+        "description": "The email subject"
+      },
+      {
+        "name": "body",
+        "type": "string",
+        "required": false,
+        "description": "The email body"
+      },
+      {
+        "name": "entity",
+        "type": "string",
+        "required": true,
+        "description": "The entity name"
+      },
+      {
+        "name": "entity_id",
+        "type": "string",
+        "required": true,
+        "description": "The entity_id"
+      },
+      {
+        "name": "cc_email",
+        "type": "string",
+        "required": false,
+        "description": "The email address of a user to be CC'd on the email"
+      },
+      {
+        "name": "template",
+        "type": "string",
+        "required": true,
+        "description": "The template required",
+        "enum": [
+          "email_template_invoice",
+          "email_template_quote",
+          "email_template_credit",
+          "email_template_payment",
+          "email_template_payment_partial",
+          "email_template_statement",
+          "email_template_reminder1",
+          "email_template_reminder2",
+          "email_template_reminder3",
+          "email_template_reminder_endless",
+          "email_template_custom1",
+          "email_template_custom2",
+          "email_template_custom3",
+          "email_template_purchase_order",
+          "email_quote_template_reminder1"
+        ]
+      }
+    ]
+  },
+  "responseSchema": "Template"
+}

@@ -1,0 +1,16 @@
+{
+  "slug": "get_expense_category_create",
+  "operationId": "getExpenseCategoryCreate",
+  "method": "GET",
+  "path": "/api/v1/expense_categories/create",
+  "name": "Gets a new blank Expens Category object",
+  "category": "expense_categories",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank expense category object with defaults to prefill a new-category form before calling store_expense_category.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ExpenseCategory"
+}

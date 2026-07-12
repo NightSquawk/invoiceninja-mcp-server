@@ -1,0 +1,48 @@
+{
+  "slug": "get_users",
+  "operationId": "getUsers",
+  "method": "GET",
+  "path": "/api/v1/users",
+  "name": "Gets a list of users",
+  "category": "users",
+  "mutating": false,
+  "description": "Lists users, search and filters allow fine grained lists to be generated.\n\n    Query parameters can be added to performed more fine grained filtering of the users, these are handled by the UserFilters class which defines the methods available",
+  "whenToUse": "List or filter many users with paging and sorting; use to browse or search the user directory, not to fetch one.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=email|asc`.\n\n*Multiple sorts** — for example\n`sort[]=last_name|asc&sort[]=first_name|asc`.\n\nOnly `users` table columns are recognized. Unsupported keys are ignored.",
+      "example": [
+        "first_name|asc",
+        "email|asc"
+      ]
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "User[]"
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "edit_vendor",
+  "operationId": "editVendor",
+  "method": "GET",
+  "path": "/api/v1/vendors/{id}/edit",
+  "name": "Edit vendor",
+  "category": "vendors",
+  "mutating": false,
+  "description": "Displays a vendor by id",
+  "whenToUse": "Fetch one vendor by id prepared for editing; use to load current values before an update, not to perform the update itself.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Vendor Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Vendor"
+}

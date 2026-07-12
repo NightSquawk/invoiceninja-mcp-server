@@ -1,0 +1,33 @@
+{
+  "slug": "edit_invoice",
+  "operationId": "editInvoice",
+  "method": "GET",
+  "path": "/api/v1/invoices/{id}/edit",
+  "name": "Edit invoice",
+  "category": "invoices",
+  "mutating": false,
+  "description": "## GET /api/v1/invoices/{id}/edit\n\nDisplays an invoice by id for editting",
+  "whenToUse": "GET one invoice by id prepared for editing; read-only, use before update_invoice, not the update itself.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Invoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Invoice"
+}

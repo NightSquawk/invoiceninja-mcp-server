@@ -1,0 +1,32 @@
+{
+  "slug": "delete_payment_term",
+  "operationId": "deletePaymentTerm",
+  "method": "DELETE",
+  "path": "/api/v1/payment_terms/{id}",
+  "name": "Deletes a Payment Term",
+  "category": "payment_terms",
+  "mutating": true,
+  "description": "Handles the deletion of an PaymentTerm by id",
+  "whenToUse": "Call to archive/soft-delete one existing payment term by its hashed id; use list/show endpoints to read terms instead (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Payment Term Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

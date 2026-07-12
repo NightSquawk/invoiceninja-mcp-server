@@ -1,0 +1,24 @@
+{
+  "slug": "get_products_create",
+  "operationId": "getProductsCreate",
+  "method": "GET",
+  "path": "/api/v1/products/create",
+  "name": "Blank product",
+  "category": "products",
+  "mutating": false,
+  "description": "##  GET /api/v1/products/create\nReturns a blank product object with default values",
+  "whenToUse": "Fetch a blank product template with default values (read-only); use to prefill a new-product form before calling store_product.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Product"
+}

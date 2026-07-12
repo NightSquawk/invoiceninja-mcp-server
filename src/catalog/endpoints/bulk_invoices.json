@@ -1,0 +1,44 @@
+{
+  "slug": "bulk_invoices",
+  "operationId": "bulkInvoices",
+  "method": "POST",
+  "path": "/api/v1/invoices/bulk",
+  "name": "Bulk invoice actions",
+  "category": "invoices",
+  "mutating": true,
+  "description": "## POST /api/v1/invoices/bulk\n\nThere are multiple actions that are available including:",
+  "whenToUse": "Run a batch action (email, bulk_download/print, archive, delete) over an array of invoice ids in one request (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "email_type",
+        "type": "string",
+        "required": false,
+        "description": "The email type to be sent, when bulk emailing invoices options include:\n- `invoice` (default)\n- `quote`\n- `credit`\n- `payment`\n- `payment_partial`\n- `statement`\n- `reminder1`\n- `reminder2`\n- `reminder3`\n- `reminder_endless`\n- `custom1`\n- `c"
+      },
+      {
+        "name": "action",
+        "type": "string",
+        "required": false,
+        "description": "The action to be performed, options include:\n- `bulk_download`\n  Bulk download an array of invoice PDFs (These are sent to the admin via email.)\n- `download`\n  Download a single PDF. (Returns a single PDF object)\n- `bulk_print`\n  Merges an "
+      },
+      {
+        "name": "ids",
+        "type": "array",
+        "required": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "show_expense_category",
+  "operationId": "showExpenseCategory",
+  "method": "GET",
+  "path": "/api/v1/expense_categories/{id}",
+  "name": "Shows a Expens Category",
+  "category": "expense_categories",
+  "mutating": false,
+  "description": "Displays an ExpenseCategory by id",
+  "whenToUse": "Fetch one expense category by id to read its details when you already know the category's id.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The ExpenseCategory Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ExpenseCategory"
+}

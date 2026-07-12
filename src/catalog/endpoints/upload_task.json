@@ -1,0 +1,47 @@
+{
+  "slug": "upload_task",
+  "operationId": "uploadTask",
+  "method": "POST",
+  "path": "/api/v1/tasks/{id}/upload",
+  "name": "Uploads a task document",
+  "category": "tasks",
+  "mutating": true,
+  "description": "Handles the uploading of a document to a task",
+  "whenToUse": "Attach a document/file to an existing task by id via multipart upload; use to add attachments, not to edit task fields (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Task Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "multipart/form-data",
+    "fields": [
+      {
+        "name": "_method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "documents",
+        "type": "array",
+        "required": false
+      }
+    ]
+  },
+  "responseSchema": "Task"
+}

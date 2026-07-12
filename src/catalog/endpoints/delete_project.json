@@ -1,0 +1,32 @@
+{
+  "slug": "delete_project",
+  "operationId": "deleteProject",
+  "method": "DELETE",
+  "path": "/api/v1/projects/{id}",
+  "name": "Delete project",
+  "category": "projects",
+  "mutating": true,
+  "description": "Handles the deletion of a project by id",
+  "whenToUse": "Archive/soft-delete a single project by id; use to remove or retire one project without permanently purging it (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Project Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

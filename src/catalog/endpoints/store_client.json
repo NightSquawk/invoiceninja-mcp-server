@@ -1,0 +1,237 @@
+{
+  "slug": "store_client",
+  "operationId": "storeClient",
+  "method": "POST",
+  "path": "/api/v1/clients",
+  "name": "Create client",
+  "category": "clients",
+  "mutating": true,
+  "description": "##  POST /api/v1/clients\nAdds a client to a company\n\n> 🚨 Important\nWhen creating (or updating) a client you must include the child contacts with all mutating requests. Client contacts cannot be modified in isolation.",
+  "whenToUse": "Create a new client record (contacts array required); use to add a client that does not yet exist, not to edit one (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relationships of the Client Object. ie ?include=documents,system_logs\n\n```html\nAvailable includes:\n\ncontacts [All contacts related to the client]\ndocuments [All documents related to the client]\ngateway_tokens [All payment tokens related to the client]\nactivities [All activities related to the client]\nledger [The client ledger]\nsystem_logs [System logs related to the client]\ngroup_settings [The group settings object the client is assigned to]\n\n```\n\nUsage:\n\n```html\n/api/v1/clients?include=contacts,documents,activities\n```"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "The unique identifier of the client"
+      },
+      {
+        "name": "contacts",
+        "type": "array",
+        "required": true,
+        "description": "A list of contacts associated with the client"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false,
+        "description": "The name of the client company or organization"
+      },
+      {
+        "name": "website",
+        "type": "string",
+        "required": false,
+        "description": "The website URL of the client company or organization"
+      },
+      {
+        "name": "private_notes",
+        "type": "string",
+        "required": false,
+        "description": "Notes that are only visible to the user who created the client"
+      },
+      {
+        "name": "industry_id",
+        "type": "number",
+        "required": false,
+        "description": "The unique identifier of the industry the client operates in"
+      },
+      {
+        "name": "size_id",
+        "type": "number",
+        "required": false,
+        "description": "The unique identifier for the size category of the client company or organization"
+      },
+      {
+        "name": "address1",
+        "type": "string",
+        "required": false,
+        "description": "First line of the client's address"
+      },
+      {
+        "name": "address2",
+        "type": "string",
+        "required": false,
+        "description": "Second line of the client's address, if needed"
+      },
+      {
+        "name": "city",
+        "type": "string",
+        "required": false,
+        "description": "The city the client is located in"
+      },
+      {
+        "name": "state",
+        "type": "string",
+        "required": false,
+        "description": "The state, province, or locality the client is located in"
+      },
+      {
+        "name": "postal_code",
+        "type": "string",
+        "required": false,
+        "description": "The postal code or ZIP code of the client"
+      },
+      {
+        "name": "phone",
+        "type": "string",
+        "required": false,
+        "description": "The client's phone number"
+      },
+      {
+        "name": "country_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "custom_value1",
+        "type": "string",
+        "required": false,
+        "description": "A custom field for storing additional information"
+      },
+      {
+        "name": "custom_value2",
+        "type": "string",
+        "required": false,
+        "description": "A custom field for storing additional information"
+      },
+      {
+        "name": "custom_value3",
+        "type": "string",
+        "required": false,
+        "description": "A custom field for storing additional information"
+      },
+      {
+        "name": "custom_value4",
+        "type": "string",
+        "required": false,
+        "description": "A custom field for storing additional information"
+      },
+      {
+        "name": "vat_number",
+        "type": "string",
+        "required": false,
+        "description": "The client's VAT (Value Added Tax) number, if applicable"
+      },
+      {
+        "name": "id_number",
+        "type": "string",
+        "required": false,
+        "description": "A unique identification number for the client, such as a tax ID or business registration number"
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "required": false,
+        "description": "A system-assigned unique number for the client, typically used for invoicing purposes"
+      },
+      {
+        "name": "shipping_address1",
+        "type": "string",
+        "required": false,
+        "description": "First line of the client's shipping address"
+      },
+      {
+        "name": "shipping_address2",
+        "type": "string",
+        "required": false,
+        "description": "Second line of the client's shipping address, if needed"
+      },
+      {
+        "name": "shipping_city",
+        "type": "string",
+        "required": false,
+        "description": "The city of the client's shipping address"
+      },
+      {
+        "name": "shipping_state",
+        "type": "string",
+        "required": false,
+        "description": "The state, province, or locality of the client's shipping address"
+      },
+      {
+        "name": "shipping_postal_code",
+        "type": "string",
+        "required": false,
+        "description": "The postal code or ZIP code of the client's shipping address"
+      },
+      {
+        "name": "shipping_country_id",
+        "type": "number",
+        "required": false,
+        "description": "The unique identifier of the client's shipping country expressed by the countries ISO number.\n\nOptionally, instead of the shipping_country_id you can pass either the iso_3166_2 or iso_3166_3 country code into the shipping_country_code prope"
+      },
+      {
+        "name": "is_deleted",
+        "type": "boolean",
+        "required": false,
+        "description": "A boolean value indicating whether the client has been deleted or not"
+      },
+      {
+        "name": "group_settings_id",
+        "type": "string",
+        "required": false,
+        "description": "The group settings assigned to the client"
+      },
+      {
+        "name": "routing_id",
+        "type": "string",
+        "required": false,
+        "description": "The routing address id for e-invoicing for this client"
+      },
+      {
+        "name": "is_tax_exempt",
+        "type": "boolean",
+        "required": false,
+        "description": "Flag which defines if the client is exempt from taxes"
+      },
+      {
+        "name": "has_valid_vat_number",
+        "type": "boolean",
+        "required": false,
+        "description": "Flag which defines if the client has a valid VAT number"
+      },
+      {
+        "name": "classification",
+        "type": "string",
+        "required": false,
+        "description": "The classification of the client"
+      },
+      {
+        "name": "settings",
+        "type": "object",
+        "required": false
+      }
+    ],
+    "schemaRef": "ClientRequest"
+  },
+  "responseSchema": "Client"
+}

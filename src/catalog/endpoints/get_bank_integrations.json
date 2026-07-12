@@ -1,0 +1,61 @@
+{
+  "slug": "get_bank_integrations",
+  "operationId": "getBankIntegrations",
+  "method": "GET",
+  "path": "/api/v1/bank_integrations",
+  "name": "Returns a list of Bank Integrations",
+  "category": "bank_integrations",
+  "mutating": false,
+  "description": "Lists all bank integrations",
+  "whenToUse": "List or paginate all bank integrations; use to browse or find connected bank integrations, not to fetch one by id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relations of the BankIntegration object. Format is comma separated."
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "rows",
+      "type": "number",
+      "required": false,
+      "description": "The number of bank integrations to return",
+      "format": "integer",
+      "example": 50
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=id|desc`.\n\n*Multiple sorts** — for example\n`sort[]=id|desc&sort[]=created_at|asc`.\n\nOnly columns on `bank_integrations` are recognized. Unsupported keys are ignored.",
+      "example": [
+        "id|desc"
+      ]
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankIntegration[]"
+}

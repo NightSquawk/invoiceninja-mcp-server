@@ -1,0 +1,15 @@
+{
+  "slug": "get_scheduler",
+  "operationId": "getScheduler",
+  "method": "GET",
+  "path": "/api/v1/scheduler",
+  "name": "Get scheduler status",
+  "category": "scheduler",
+  "mutating": false,
+  "description": "Returns the task scheduler status and job list",
+  "whenToUse": "Call to read the task scheduler status and its current job list; read-only, does not trigger or run any jobs.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

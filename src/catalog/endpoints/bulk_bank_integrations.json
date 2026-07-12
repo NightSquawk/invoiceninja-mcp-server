@@ -1,0 +1,26 @@
+{
+  "slug": "bulk_bank_integrations",
+  "operationId": "bulkBankIntegrations",
+  "method": "POST",
+  "path": "/api/v1/bank_integrations/bulk",
+  "name": "Performs bulk actions on an array of bank_integrations",
+  "category": "bank_integrations",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of bank_integrations",
+  "whenToUse": "Run a batch action over an array of bank integration ids; use for multi-record bank integration operations (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "delete_recurring_quote",
+  "operationId": "deleteRecurringQuote",
+  "method": "DELETE",
+  "path": "/api/v1/recurring_quotes/{id}",
+  "name": "Deletes a RecurringQuote",
+  "category": "recurring_quotes",
+  "mutating": true,
+  "description": "Handles the deletion of an RecurringQuote by id",
+  "whenToUse": "Archive/soft-delete one recurring quote by id; use to remove a single recurring quote rather than batch-deleting many (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringQuote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

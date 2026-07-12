@@ -1,0 +1,43 @@
+{
+  "slug": "store_tag",
+  "operationId": "storeTag",
+  "method": "POST",
+  "path": "/api/v1/tags",
+  "name": "Create tag",
+  "category": "tags",
+  "mutating": true,
+  "description": "Creates a tag catalog entry for a supported entity type.",
+  "whenToUse": "Create a new tag catalog entry with name, color, and immutable entity_type for a supported entity (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "entity_type",
+        "type": "string",
+        "required": true,
+        "description": "Required on create. Immutable after creation.",
+        "enum": [
+          "App\\Models\\Task",
+          "App\\Models\\Project"
+        ]
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": true,
+        "description": "The tag name. Unique per company and entity type, including archived tags."
+      },
+      {
+        "name": "color",
+        "type": "string",
+        "required": false,
+        "description": "The tag color as a 3 or 6 digit hex value, or null to clear it."
+      }
+    ],
+    "schemaRef": "TagRequest"
+  },
+  "responseSchema": "Tag"
+}

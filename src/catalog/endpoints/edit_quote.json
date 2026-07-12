@@ -1,0 +1,33 @@
+{
+  "slug": "edit_quote",
+  "operationId": "editQuote",
+  "method": "GET",
+  "path": "/api/v1/quotes/{id}/edit",
+  "name": "Edit quote",
+  "category": "quotes",
+  "mutating": false,
+  "description": "## GET /api/v1/quotes/{id}/edit\n\nDisplays an Quote by id for editting",
+  "whenToUse": "Fetch one quote by id prepared for editing (read-only); use to load form data before calling update_quote, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Quote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Quote"
+}

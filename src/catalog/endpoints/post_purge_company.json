@@ -1,0 +1,24 @@
+{
+  "slug": "post_purge_company",
+  "operationId": "postPurgeCompany",
+  "method": "POST",
+  "path": "/api/v1/migration/purge/{company}",
+  "name": "Attempts to purge a company record and all its child records",
+  "category": "migration",
+  "mutating": true,
+  "description": "Attempts to purge a company record and all its child records",
+  "whenToUse": "Permanently purge a company and ALL its child records by company id; use only for full deletion, not the settings-preserving purge (mutating).",
+  "pathParameters": [
+    {
+      "name": "company",
+      "type": "string",
+      "required": true,
+      "description": "The Company Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

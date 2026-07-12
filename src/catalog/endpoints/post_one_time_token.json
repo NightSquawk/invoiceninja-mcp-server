@@ -1,0 +1,15 @@
+{
+  "slug": "post_one_time_token",
+  "operationId": "postOneTimeToken",
+  "method": "POST",
+  "path": "/api/v1/one_time_token",
+  "name": "Attempts to create a one time token",
+  "category": "one_time_token",
+  "mutating": true,
+  "description": "Attempts to create a one time token",
+  "whenToUse": "Call to mint a short-lived one-time token for a single privileged action like a redirect or hosted-page handoff (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

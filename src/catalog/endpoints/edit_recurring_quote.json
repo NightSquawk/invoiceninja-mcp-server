@@ -1,0 +1,33 @@
+{
+  "slug": "edit_recurring_quote",
+  "operationId": "editRecurringQuote",
+  "method": "GET",
+  "path": "/api/v1/recurring_quotes/{id}/edit",
+  "name": "Shows an RecurringQuote for editting",
+  "category": "recurring_quotes",
+  "mutating": false,
+  "description": "Displays an RecurringQuote by id",
+  "whenToUse": "Fetch one recurring quote by id prepared for editing; use to load current values before an update, not to perform the update itself.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringQuote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringQuote"
+}

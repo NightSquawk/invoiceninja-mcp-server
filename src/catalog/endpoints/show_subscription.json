@@ -1,0 +1,33 @@
+{
+  "slug": "show_subscription",
+  "operationId": "showSubscription",
+  "method": "GET",
+  "path": "/api/v1/subscriptions/{id}",
+  "name": "Shows an subscriptions",
+  "category": "subscriptions",
+  "mutating": false,
+  "description": "Displays an subscriptions by id",
+  "whenToUse": "Fetch one subscription by its hashed id to read its full details; use when you already know the id.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Subscription Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Subscription"
+}

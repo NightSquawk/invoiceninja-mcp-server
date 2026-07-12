@@ -1,0 +1,33 @@
+{
+  "slug": "update_invoice",
+  "operationId": "updateInvoice",
+  "method": "PUT",
+  "path": "/api/v1/invoices/{id}",
+  "name": "Update invoice",
+  "category": "invoices",
+  "mutating": true,
+  "description": "## PUT /api/v1/invoices/{id}\nHandles the updating of an invoice by id.\n\nTriggered actions are available when updating or creating an invoice.\nThese are query parameters that can be chained in order to perform additional actions on the entity, these include:\n\n  ```\n  ?send_email=true [Saves and sends the invoice]\n  ?mark_sent=true [Saves and marks the invoice as sent]\n  ?paid=true [Saves and marks the invoice as paid]\n  ?amount_paid=100 [Saves and marks the invoice as paid with the given amount]\n  ?cancel=true [Saves and marks the invoice as cancelled]\n  ?save_default_footer=true [Saves the current footer as the default footer]\n  ?save_default_terms=true [Saves the current terms as the default terms]\n  ?retry_e_send=true [Saves and retries the e-send for the invoice]\n  ?redirect=https://example.com [Saves and redirects to the given url]\n  ```",
+  "whenToUse": "Modify an existing invoice by id, optionally chaining ?send_email/?mark_sent/?paid actions; use to edit, not store_invoice which creates new (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Invoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Invoice"
+}

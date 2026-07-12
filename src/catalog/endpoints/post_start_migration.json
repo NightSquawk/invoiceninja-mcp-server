@@ -1,0 +1,31 @@
+{
+  "slug": "post_start_migration",
+  "operationId": "postStartMigration",
+  "method": "POST",
+  "path": "/api/v1/migration/start",
+  "name": "Starts the migration from previous version of Invoice Ninja",
+  "category": "migration",
+  "mutating": true,
+  "description": "Starts the migration from previous version of Invoice Ninja",
+  "whenToUse": "Start importing a v4 Invoice Ninja migration file (requires X-API-PASSWORD) when migrating a whole prior install, not mapping a CSV (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "migration",
+      "type": "object",
+      "required": true,
+      "description": "The migraton file",
+      "format": "file"
+    }
+  ],
+  "headerParameters": [
+    {
+      "name": "X-API-PASSWORD",
+      "type": "string",
+      "required": true,
+      "description": "The login password when challenged on certain protected routes",
+      "example": "supersecretpassword"
+    }
+  ],
+  "requestBody": null
+}

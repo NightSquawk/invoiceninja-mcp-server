@@ -1,0 +1,33 @@
+{
+  "slug": "show_product",
+  "operationId": "showProduct",
+  "method": "GET",
+  "path": "/api/v1/products/{id}",
+  "name": "Show product",
+  "category": "products",
+  "mutating": false,
+  "description": "##  GET /api/v1/products/{id}\nDisplays a product by id",
+  "whenToUse": "Fetch one specific product by its id when you already know the id and need its full details, not a filtered list.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Product Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Product"
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "edit_subscription",
+  "operationId": "editSubscription",
+  "method": "GET",
+  "path": "/api/v1/subscriptions/{id}/edit",
+  "name": "Shows an subscriptions for editting",
+  "category": "subscriptions",
+  "mutating": false,
+  "description": "Displays an subscriptions by id",
+  "whenToUse": "Fetch one subscription by id prepared for editing (read-only); use to preload a form, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Subscription Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Subscription"
+}

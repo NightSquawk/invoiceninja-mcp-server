@@ -1,0 +1,33 @@
+{
+  "slug": "update_payment",
+  "operationId": "updatePayment",
+  "method": "PUT",
+  "path": "/api/v1/payments/{id}",
+  "name": "Update payment",
+  "category": "payments",
+  "mutating": true,
+  "description": "Handles the updating of an Payment by id",
+  "whenToUse": "Modify an existing payment by its hashed id when changing fields on a record that already exists (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Payment Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Payment"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "store_expense",
+  "operationId": "storeExpense",
+  "method": "POST",
+  "path": "/api/v1/expenses",
+  "name": "Adds an expense",
+  "category": "expenses",
+  "mutating": true,
+  "description": "Adds a expense to a company",
+  "whenToUse": "Create a new expense record when logging a company purchase or cost (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Expense"
+}

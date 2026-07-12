@@ -1,0 +1,77 @@
+{
+  "slug": "store_task_status",
+  "operationId": "storeTaskStatus",
+  "method": "POST",
+  "path": "/api/v1/task_statuses",
+  "name": "Adds a TaskStatus",
+  "category": "task_status",
+  "mutating": true,
+  "description": "Adds a TaskStatusto the system",
+  "whenToUse": "Create a new task status with name, color, and order; reach for it to add a status that does not yet exist (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false,
+        "description": "The task status hashed id"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false,
+        "description": "The task status name"
+      },
+      {
+        "name": "color",
+        "type": "string",
+        "required": false,
+        "description": "The task status color - hex value"
+      },
+      {
+        "name": "task_status_order",
+        "type": "integer",
+        "required": false,
+        "description": "The order of the task status"
+      },
+      {
+        "name": "created_at",
+        "type": "number",
+        "required": false,
+        "description": "Timestamp"
+      },
+      {
+        "name": "is_deleted",
+        "type": "boolean",
+        "required": false,
+        "description": "A boolean flag determining if the task status has been deleted"
+      },
+      {
+        "name": "updated_at",
+        "type": "number",
+        "required": false,
+        "description": "Timestamp"
+      },
+      {
+        "name": "archived_at",
+        "type": "number",
+        "required": false,
+        "description": "Timestamp"
+      }
+    ],
+    "schemaRef": "TaskStatus"
+  },
+  "responseSchema": "TaskStatus"
+}

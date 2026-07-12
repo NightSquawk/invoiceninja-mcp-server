@@ -1,0 +1,47 @@
+{
+  "slug": "get_expense_categorys",
+  "operationId": "getExpenseCategorys",
+  "method": "GET",
+  "path": "/api/v1/expense_categories",
+  "name": "Gets a list of expense_categories",
+  "category": "expense_categories",
+  "mutating": false,
+  "description": "Lists tax rates",
+  "whenToUse": "List or filter many expense categories with paging and sorting when browsing categories or finding a category id.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=name|asc`.\n\n*Multiple sorts** — for example\n`sort[]=id|desc&sort[]=name|asc`.\n\nOnly columns on `expense_categories` are recognized. Unsupported keys are ignored.",
+      "example": [
+        "name|asc"
+      ]
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "ExpenseCategory[]"
+}

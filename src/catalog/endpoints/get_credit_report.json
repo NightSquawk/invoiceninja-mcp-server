@@ -1,0 +1,49 @@
+{
+  "slug": "get_credit_report",
+  "operationId": "getCreditReport",
+  "method": "POST",
+  "path": "/api/v1/reports/credits",
+  "name": "Credit reports",
+  "category": "reports",
+  "mutating": false,
+  "description": "Export credit reports",
+  "whenToUse": "Export a report of credit (credit note) records over a date range; use for credits issued, not invoices, payments, or quotes",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "date_range",
+        "type": "string",
+        "required": false,
+        "description": "The string representation of the date range of data to be returned"
+      },
+      {
+        "name": "date_key",
+        "type": "string",
+        "required": false,
+        "description": "The date column to search between."
+      },
+      {
+        "name": "start_date",
+        "type": "string",
+        "required": false,
+        "description": "The start date to search between"
+      },
+      {
+        "name": "end_date",
+        "type": "string",
+        "required": false,
+        "description": "The end date to search between"
+      },
+      {
+        "name": "report_keys",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "GenericReportSchema"
+  }
+}

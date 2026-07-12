@@ -1,0 +1,16 @@
+{
+  "slug": "get_tags_create",
+  "operationId": "getTagsCreate",
+  "method": "GET",
+  "path": "/api/v1/tags/create",
+  "name": "Blank tag",
+  "category": "tags",
+  "mutating": false,
+  "description": "Returns a blank tag object with default values.",
+  "whenToUse": "Fetch a blank tag object with default values (read-only) to seed a new-tag form before storing.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Tag"
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "edit_bank_transaction",
+  "operationId": "editBankTransaction",
+  "method": "GET",
+  "path": "/api/v1/bank_transactions/{id}/edit",
+  "name": "Shows a bank_transaction for editing",
+  "category": "bank_transactions",
+  "mutating": false,
+  "description": "Displays a bank_transaction by id",
+  "whenToUse": "Fetch one bank transaction prepared for editing by hashed id; read-only retrieval to populate a form, not the update itself.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The BankTransaction Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "BankTransaction"
+}

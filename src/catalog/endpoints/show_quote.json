@@ -1,0 +1,33 @@
+{
+  "slug": "show_quote",
+  "operationId": "showQuote",
+  "method": "GET",
+  "path": "/api/v1/quotes/{id}",
+  "name": "Show quote",
+  "category": "quotes",
+  "mutating": false,
+  "description": "## GET /api/v1/quotes/{id}\n\nDisplays an Quote by id",
+  "whenToUse": "Fetch one quote's full record by its hashed id; use when you already know the id, not for listing or editing.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Quote Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Quote"
+}

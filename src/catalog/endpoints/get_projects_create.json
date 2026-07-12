@@ -1,0 +1,24 @@
+{
+  "slug": "get_projects_create",
+  "operationId": "getProjectsCreate",
+  "method": "GET",
+  "path": "/api/v1/projects/create",
+  "name": "Blank project",
+  "category": "projects",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank project template with default values (read-only); use to prefill a new-project form before calling store_project.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Project"
+}

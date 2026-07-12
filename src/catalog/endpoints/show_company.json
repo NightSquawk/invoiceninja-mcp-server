@@ -1,0 +1,33 @@
+{
+  "slug": "show_company",
+  "operationId": "showCompany",
+  "method": "GET",
+  "path": "/api/v1/companies/{id}",
+  "name": "Shows an company",
+  "category": "companies",
+  "mutating": false,
+  "description": "Displays an company by id",
+  "whenToUse": "Fetch one company by its hashed id; use when you already know the id and need that single record's details.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Company Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Company"
+}

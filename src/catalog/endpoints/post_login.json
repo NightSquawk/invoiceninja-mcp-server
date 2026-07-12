@@ -1,0 +1,79 @@
+{
+  "slug": "post_login",
+  "operationId": "postLogin",
+  "method": "POST",
+  "path": "/api/v1/login",
+  "name": "Login",
+  "category": "auth",
+  "mutating": true,
+  "description": "Login",
+  "whenToUse": "Authenticate a user with email plus password, 2FA, or passkey assertion to obtain a CompanyUser session (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Include child relations of the CompanyUser object, format is comma separated.\n\n<br />\n\n> ### **Note**: it is possible to chain multiple includes together, ie. include=account,token\n\n<br />\n\n```html\n\nAvailable includes:\n\n  user\n  company\n  token\n  account\n```"
+    },
+    {
+      "name": "include_static",
+      "type": "string",
+      "required": false,
+      "description": "This include will return the full set of static variables used in the application including:\n  - Currencies\n  - Countries\n  - Languages\n  - Payment Types\n  - Email Templatees\n  - Industries",
+      "example": "include_static=true"
+    },
+    {
+      "name": "clear_cache",
+      "type": "string",
+      "required": false,
+      "description": "Clears cache\n\nClears (and rebuilds) the static variable cache.",
+      "example": "clear_cache=true"
+    }
+  ],
+  "headerParameters": [
+    {
+      "name": "X-API-SECRET",
+      "type": "string",
+      "required": false,
+      "description": "The API secret as defined by the .env variable API_SECRET. Only needed for self hosted users, and only applicable on the login route.",
+      "example": "password"
+    }
+  ],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "email",
+        "type": "string",
+        "required": true,
+        "description": "The users email address."
+      },
+      {
+        "name": "password",
+        "type": "string",
+        "required": false,
+        "description": "The user password. Optional when performing passkey passwordless login."
+      },
+      {
+        "name": "one_time_password",
+        "type": "string",
+        "required": false,
+        "description": "The one time password if 2FA is enabled"
+      },
+      {
+        "name": "passkey_challenge_token",
+        "type": "string",
+        "required": false,
+        "description": "Challenge token returned by passkey login options or second-factor challenge."
+      },
+      {
+        "name": "passkey_authentication",
+        "type": "object",
+        "required": false,
+        "description": "WebAuthn assertion payload."
+      }
+    ]
+  },
+  "responseSchema": "CompanyUser"
+}

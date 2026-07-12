@@ -1,0 +1,46 @@
+{
+  "slug": "sort_tasks",
+  "operationId": "sortTasks",
+  "method": "POST",
+  "path": "/api/v1/tasks/sort",
+  "name": "Sort tasks on KanBan",
+  "category": "tasks",
+  "mutating": true,
+  "description": "Sorts tasks after drag and drop on the KanBan.",
+  "whenToUse": "Reorder tasks and set their KanBan status after a drag-and-drop; use to persist task ordering on the board, not to edit task content (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "task_ids",
+        "type": "array",
+        "required": true,
+        "description": "Array of task IDs to be sorted"
+      },
+      {
+        "name": "status_id",
+        "type": "integer",
+        "required": false,
+        "description": "Status ID to assign to sorted tasks"
+      },
+      {
+        "name": "sort_order",
+        "type": "array",
+        "required": false,
+        "description": "Array of task IDs in the desired sort order"
+      }
+    ],
+    "schemaRef": "TaskSortRequest"
+  }
+}

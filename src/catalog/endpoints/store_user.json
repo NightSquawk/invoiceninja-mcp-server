@@ -1,0 +1,24 @@
+{
+  "slug": "store_user",
+  "operationId": "storeUser",
+  "method": "POST",
+  "path": "/api/v1/users",
+  "name": "Adds a User",
+  "category": "users",
+  "mutating": true,
+  "description": "Adds an User to the system",
+  "whenToUse": "Create a new user in the system; use to add a team member account (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "User"
+}

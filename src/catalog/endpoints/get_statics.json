@@ -1,0 +1,23 @@
+{
+  "slug": "get_statics",
+  "operationId": "getStatics",
+  "method": "GET",
+  "path": "/api/v1/statics",
+  "name": "Gets a list of statics",
+  "category": "statics",
+  "mutating": false,
+  "description": "Lists all statics",
+  "whenToUse": "Call to fetch the app's static reference data (currencies, countries, languages, payment types, industries) for populating selectors; read-only.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

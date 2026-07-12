@@ -1,0 +1,15 @@
+{
+  "slug": "get_preview",
+  "operationId": "getPreview",
+  "method": "POST",
+  "path": "/api/v1/preview",
+  "name": "Returns a pdf preview",
+  "category": "preview",
+  "mutating": false,
+  "description": "Returns a pdf preview.",
+  "whenToUse": "Generate an on-the-fly PDF preview of an invoice/quote/credit from posted entity data without saving it; use for general entities, not purchase orders",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

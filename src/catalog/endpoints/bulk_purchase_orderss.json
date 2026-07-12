@@ -1,0 +1,26 @@
+{
+  "slug": "bulk_purchase_orderss",
+  "operationId": "bulkPurchaseOrderss",
+  "method": "POST",
+  "path": "/api/v1/purchase_orders/bulk",
+  "name": "Bulk purchase order action",
+  "category": "purchase_orders",
+  "mutating": true,
+  "description": "Bulk purchase order action",
+  "whenToUse": "Apply one batch action across many purchase order ids at once instead of acting on a single PO (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  }
+}

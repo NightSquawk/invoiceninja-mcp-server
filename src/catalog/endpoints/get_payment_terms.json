@@ -1,0 +1,54 @@
+{
+  "slug": "get_payment_terms",
+  "operationId": "getPaymentTerms",
+  "method": "GET",
+  "path": "/api/v1/payment_terms",
+  "name": "Gets a list of payment terms",
+  "category": "payment_terms",
+  "mutating": false,
+  "description": "Lists payment terms",
+  "whenToUse": "List or filter many payment terms with sorting and pagination; use to browse or find available net-day terms.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    },
+    {
+      "name": "sort",
+      "type": "array",
+      "required": false,
+      "description": "Order the list by choosing a column and direction. Each value uses the form `column|asc` or `column|desc`.\n\n*Single sort** — for example `sort=number_of_days|asc`.\n\n*Multiple sorts** — for example\n`sort[]=name|asc&sort[]=number_of_days|asc`.\n\nSorting follows the payment term table schema. Unsupported keys are ignored.",
+      "example": [
+        "number_of_days|asc"
+      ]
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "PaymentTerm[]"
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "edit_credit",
+  "operationId": "editCredit",
+  "method": "GET",
+  "path": "/api/v1/credits/{id}/edit",
+  "name": "Edit credit",
+  "category": "credits",
+  "mutating": false,
+  "description": "Displays an credit by id",
+  "whenToUse": "Fetch one credit by id prepared for editing (read-only); reach for it to preload a credit form, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Invoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Invoice"
+}

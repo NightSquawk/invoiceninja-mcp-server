@@ -1,0 +1,40 @@
+{
+  "slug": "bulk_locations",
+  "operationId": "bulkLocations",
+  "method": "POST",
+  "path": "/api/v1/locations/bulk",
+  "name": "Bulk location actions",
+  "category": "locations",
+  "mutating": true,
+  "description": "##  POST /api/v1/locations/bulk\n\nBulk actions allow to make changes to multiple locations in a single request. The following actions are supported:\n\n- archive\n- restore\n- delete\n\nAll of these actions require an array of location ids to perform the requested action on ie.\n\n\"ids\":['id1','id2']",
+  "whenToUse": "Archive, restore, or delete many locations at once by passing an array of ids plus an action (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "action",
+        "type": "string",
+        "required": false,
+        "description": "The action to perform ie. archive / restore / delete"
+      },
+      {
+        "name": "ids",
+        "type": "array",
+        "required": false
+      }
+    ],
+    "schemaRef": "GenericBulkAction"
+  },
+  "responseSchema": "Location"
+}

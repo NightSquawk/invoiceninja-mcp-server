@@ -1,0 +1,24 @@
+{
+  "slug": "get_locations_create",
+  "operationId": "getLocationsCreate",
+  "method": "GET",
+  "path": "/api/v1/locations/create",
+  "name": "Blank Location",
+  "category": "locations",
+  "mutating": false,
+  "description": "##  GET /api/v1/locations/create\n\nReturns a blank object with default values",
+  "whenToUse": "Fetch a blank location object with default values to prefill a new-location form before calling store_location.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Location"
+}

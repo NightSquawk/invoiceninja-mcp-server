@@ -1,0 +1,38 @@
+{
+  "slug": "get_task_scheduler",
+  "operationId": "getTaskScheduler",
+  "method": "GET",
+  "path": "/api/v1/task_schedulers/create",
+  "name": "Gets a new blank scheduler object",
+  "category": "task_schedulers",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank scheduler object with default values to prefill a new scheduler before calling create_task_scheduler.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "per_page",
+      "type": "integer",
+      "required": false,
+      "description": "The number of records to return for each request, default is 20",
+      "example": 20
+    },
+    {
+      "name": "page",
+      "type": "integer",
+      "required": false,
+      "description": "The page number to return for this request (when performing pagination), default is 1",
+      "example": 1
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaskSchedulerSchema"
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "upload_group_setting",
+  "operationId": "uploadGroupSetting",
+  "method": "POST",
+  "path": "/api/v1/group_settings/{id}/upload",
+  "name": "Uploads a document to a group setting",
+  "category": "group_settings",
+  "mutating": true,
+  "description": "Handles the uploading of a document to a group setting",
+  "whenToUse": "Attach a document or file to one group setting by hashed id; use to add supporting documents to a group (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Group Setting Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "multipart/form-data",
+    "fields": [
+      {
+        "name": "_method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "documents",
+        "type": "array",
+        "required": false
+      }
+    ]
+  },
+  "responseSchema": "Invoice"
+}

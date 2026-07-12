@@ -1,0 +1,40 @@
+{
+  "slug": "delete_user",
+  "operationId": "deleteUser",
+  "method": "DELETE",
+  "path": "/api/v1/users/{id}",
+  "name": "Deletes a User",
+  "category": "users",
+  "mutating": true,
+  "description": "Handles the deletion of an User by id",
+  "whenToUse": "Archive/soft-delete one user by id; use to remove a user account rather than detach them from a company (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The User Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    },
+    {
+      "name": "token_name",
+      "type": "string",
+      "required": false,
+      "description": "Customized name for the Users API Token",
+      "format": "string",
+      "example": "iOS Device 11 iPad"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

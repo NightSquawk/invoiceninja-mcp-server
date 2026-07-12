@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_users",
+  "operationId": "bulkUsers",
+  "method": "POST",
+  "path": "/api/v1/users/bulk",
+  "name": "Performs bulk actions on an array of users",
+  "category": "users",
+  "mutating": true,
+  "description": "Performs bulk actions on an array of users",
+  "whenToUse": "Apply a batch action across many user ids at once; use for multi-user operations instead of single-user calls (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "User"
+}

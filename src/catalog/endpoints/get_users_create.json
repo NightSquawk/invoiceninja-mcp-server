@@ -1,0 +1,24 @@
+{
+  "slug": "get_users_create",
+  "operationId": "getUsersCreate",
+  "method": "GET",
+  "path": "/api/v1/users/create",
+  "name": "Gets a new blank User object",
+  "category": "users",
+  "mutating": false,
+  "description": "Returns a blank object with default values",
+  "whenToUse": "Fetch a blank user with default values; use to pre-populate a new-user form before calling store.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "User"
+}

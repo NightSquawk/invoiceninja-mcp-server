@@ -1,0 +1,15 @@
+{
+  "slug": "self_update_check_version",
+  "operationId": "selfUpdateCheckVersion",
+  "method": "POST",
+  "path": "/api/v1/self-update/check_version",
+  "name": "Check for available update",
+  "category": "update",
+  "mutating": true,
+  "description": "Checks for an available system update",
+  "whenToUse": "Check whether a newer Invoice Ninja version is available before deciding to run self_update; does not install anything (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

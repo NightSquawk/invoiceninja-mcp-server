@@ -1,0 +1,33 @@
+{
+  "slug": "edit_recurring_invoice",
+  "operationId": "editRecurringInvoice",
+  "method": "GET",
+  "path": "/api/v1/recurring_invoices/{id}/edit",
+  "name": "Edit recurring invoice",
+  "category": "recurring_invoices",
+  "mutating": false,
+  "description": "Displays an RecurringInvoice by id",
+  "whenToUse": "Fetch one recurring invoice prepared for editing by id; use to preload a form's values, not to save changes.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringInvoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringInvoice"
+}

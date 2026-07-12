@@ -1,0 +1,34 @@
+{
+  "slug": "post_settings_passkeys",
+  "operationId": "postSettingsPasskeys",
+  "method": "POST",
+  "path": "/api/v1/settings/passkeys",
+  "name": "Create passkey",
+  "category": "auth",
+  "mutating": true,
+  "description": "Create passkey",
+  "whenToUse": "Register a new passkey for the signed-in user by submitting the challenge token and WebAuthn credential (mutating).",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "challenge_token",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "credential",
+        "type": "object",
+        "required": true
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false
+      }
+    ]
+  }
+}

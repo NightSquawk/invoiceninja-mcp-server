@@ -1,0 +1,32 @@
+{
+  "slug": "delete_recurring_invoice",
+  "operationId": "deleteRecurringInvoice",
+  "method": "DELETE",
+  "path": "/api/v1/recurring_invoices/{id}",
+  "name": "Delete recurring invoice",
+  "category": "recurring_invoices",
+  "mutating": true,
+  "description": "Handles the deletion of an RecurringInvoice by id",
+  "whenToUse": "Archive/soft-delete one recurring invoice by id; use to remove a recurring schedule rather than edit or stop it (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringInvoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

@@ -1,0 +1,33 @@
+{
+  "slug": "update_group_setting",
+  "operationId": "updateGroupSetting",
+  "method": "PUT",
+  "path": "/api/v1/group_settings/{id}",
+  "name": "Updates an GroupSetting",
+  "category": "group_settings",
+  "mutating": true,
+  "description": "Handles the updating of an GroupSetting by id",
+  "whenToUse": "Modify an existing group setting by its hashed id; use to change fields on one known group (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The GroupSetting Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "GroupSetting"
+}

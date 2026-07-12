@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_payments",
+  "operationId": "bulkPayments",
+  "method": "POST",
+  "path": "/api/v1/payments/bulk",
+  "name": "Bulk payment actions",
+  "category": "payments",
+  "mutating": true,
+  "description": "Bulk payment actions",
+  "whenToUse": "Apply one batch action across many payment ids at once instead of acting on a single payment (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "Payment"
+}

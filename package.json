@@ -1,0 +1,52 @@
+{
+  "name": "@nightsquawktech/invoiceninja-mcp-server",
+  "version": "0.0.1",
+  "description": "MCP server for Invoice Ninja v5 (self-hosted): generic reads + report catalog, guarded writes.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "COMMERCIAL.md"
+  ],
+  "scripts": {
+    "build": "tsc && shx mkdir -p dist/catalog && shx cp -r src/catalog/endpoints dist/catalog && shx cp src/catalog/index.json dist/catalog",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "generate": "node scripts/generate-catalog.mjs",
+    "catalog": "node scripts/assemble-catalog.mjs",
+    "smoke": "node scripts/smoke-test.mjs",
+    "clean": "rimraf dist"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "@nightsquawktech/mcp-core": "^0.1.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "rimraf": "^6.0.1",
+    "shx": "^0.3.4",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "yaml": "^2.6.1"
+  },
+  "license": "AGPL-3.0-only",
+  "author": "Kevin Reyes (NightSquawk Tech) <hello@nightsquawk.tech>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NightSquawk/invoiceninja-mcp-server.git"
+  },
+  "homepage": "https://github.com/NightSquawk/invoiceninja-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/NightSquawk/invoiceninja-mcp-server/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

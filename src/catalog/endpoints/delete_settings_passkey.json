@@ -1,0 +1,22 @@
+{
+  "slug": "delete_settings_passkey",
+  "operationId": "deleteSettingsPasskey",
+  "method": "DELETE",
+  "path": "/api/v1/settings/passkeys/{passkey}",
+  "name": "Delete passkey",
+  "category": "auth",
+  "mutating": true,
+  "description": "Delete passkey",
+  "whenToUse": "Remove one registered passkey by its identifier when revoking a credential from the signed-in user's account (mutating).",
+  "pathParameters": [
+    {
+      "name": "passkey",
+      "type": "string",
+      "required": true,
+      "description": ""
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

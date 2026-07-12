@@ -1,0 +1,25 @@
+{
+  "slug": "update_tax_rate",
+  "operationId": "updateTaxRate",
+  "method": "PUT",
+  "path": "/api/v1/tax_rates/{id}",
+  "name": "Updates a tax rate",
+  "category": "tax_rates",
+  "mutating": true,
+  "description": "Handles the updating of a tax rate by id",
+  "whenToUse": "Modify an existing tax rate by its hashed id to change its name or rate value (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The TaxRate Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaxRate"
+}

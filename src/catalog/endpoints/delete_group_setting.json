@@ -1,0 +1,32 @@
+{
+  "slug": "delete_group_setting",
+  "operationId": "deleteGroupSetting",
+  "method": "DELETE",
+  "path": "/api/v1/group_settings/{id}",
+  "name": "Deletes a GroupSetting",
+  "category": "group_settings",
+  "mutating": true,
+  "description": "Handles the deletion of an GroupSetting by id",
+  "whenToUse": "Archive or soft-delete one group setting by its hashed id; use to remove a single known group (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The GroupSetting Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

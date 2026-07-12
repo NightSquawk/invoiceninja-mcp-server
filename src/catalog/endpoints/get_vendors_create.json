@@ -1,0 +1,24 @@
+{
+  "slug": "get_vendors_create",
+  "operationId": "getVendorsCreate",
+  "method": "GET",
+  "path": "/api/v1/vendors/create",
+  "name": "Blank vendor",
+  "category": "vendors",
+  "mutating": false,
+  "description": "Returns a blank vendor with default values",
+  "whenToUse": "Fetch a blank vendor with default values; use to prefill a new-record form before calling store_vendor.",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Vendor"
+}

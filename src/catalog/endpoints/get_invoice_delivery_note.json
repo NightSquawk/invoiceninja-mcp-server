@@ -1,0 +1,32 @@
+{
+  "slug": "get_invoice_delivery_note",
+  "operationId": "getInvoiceDeliveryNote",
+  "method": "GET",
+  "path": "/api/v1/invoices/{id}/delivery_note",
+  "name": "Download delivery note",
+  "category": "invoices",
+  "mutating": false,
+  "description": "## GET /api/v1/invoices/{id}/delivery_note\n\nDownloads a specific invoice delivery notes",
+  "whenToUse": "Download one invoice's delivery-note PDF by id; use for the delivery note specifically, not download_invoice_by_invitation for the invoice PDF.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Invoice Hahsed Id",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

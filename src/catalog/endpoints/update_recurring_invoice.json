@@ -1,0 +1,33 @@
+{
+  "slug": "update_recurring_invoice",
+  "operationId": "updateRecurringInvoice",
+  "method": "PUT",
+  "path": "/api/v1/recurring_invoices/{id}",
+  "name": "Update recurring invoice",
+  "category": "recurring_invoices",
+  "mutating": true,
+  "description": "Handles the updating of an RecurringInvoice by id",
+  "whenToUse": "Modify an existing recurring invoice by id (dates, frequency, line items); use to change an established schedule (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The RecurringInvoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "RecurringInvoice"
+}

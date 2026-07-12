@@ -1,0 +1,33 @@
+{
+  "slug": "show_invoice",
+  "operationId": "showInvoice",
+  "method": "GET",
+  "path": "/api/v1/invoices/{id}",
+  "name": "Show invoice",
+  "category": "invoices",
+  "mutating": false,
+  "description": "## GET /api/v1/invoices/{id}\n\nDisplays an invoice by id",
+  "whenToUse": "Fetch one invoice by id with optional includes; use when you have the hashed id, not get_invoices for searching.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Invoice Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "Invoice"
+}

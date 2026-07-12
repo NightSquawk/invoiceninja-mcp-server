@@ -1,0 +1,39 @@
+{
+  "slug": "bulk_recurring_invoices",
+  "operationId": "bulkRecurringInvoices",
+  "method": "POST",
+  "path": "/api/v1/recurring_invoices/bulk",
+  "name": "Bulk recurring invoice actions",
+  "category": "recurring_invoices",
+  "mutating": true,
+  "description": "There are multiple actions that are available including:",
+  "whenToUse": "Apply a batch action (start, archive, delete) across many recurring invoice ids at once; use for multi-record operations (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": [
+      {
+        "name": "action",
+        "type": "string",
+        "required": false,
+        "description": "The action to be performed, options include:\n- `start`\n  Starts (or restarts) the recurring invoice. **note** if the recurring invoice has been stopped for a long time, it will attempt to catch back up firing a new Invoice every hour per in"
+      },
+      {
+        "name": "ids",
+        "type": "array",
+        "required": false
+      }
+    ]
+  },
+  "responseSchema": "RecurringInvoice"
+}

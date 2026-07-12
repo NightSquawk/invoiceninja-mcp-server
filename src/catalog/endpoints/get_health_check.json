@@ -1,0 +1,15 @@
+{
+  "slug": "get_health_check",
+  "operationId": "getHealthCheck",
+  "method": "GET",
+  "path": "/api/v1/health_check",
+  "name": "Attempts to get a health check from the API",
+  "category": "health_check",
+  "mutating": false,
+  "description": "Attempts to get a health check from the API",
+  "whenToUse": "Ping the API health check to verify the instance is up and responding; use for liveness/diagnostics, not for any business data.",
+  "pathParameters": [],
+  "queryParameters": [],
+  "headerParameters": [],
+  "requestBody": null
+}

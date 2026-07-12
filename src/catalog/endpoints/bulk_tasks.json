@@ -1,0 +1,27 @@
+{
+  "slug": "bulk_tasks",
+  "operationId": "bulkTasks",
+  "method": "POST",
+  "path": "/api/v1/tasks/bulk",
+  "name": "Bulk task actions",
+  "category": "tasks",
+  "mutating": true,
+  "description": "Bulk task actions",
+  "whenToUse": "Apply a batch action over many task ids at once; use to archive, restore, or delete multiple tasks in one call (mutating).",
+  "pathParameters": [],
+  "queryParameters": [
+    {
+      "name": "index",
+      "type": "string",
+      "required": false,
+      "description": "Replaces the default response index from data to a user specific string\n\nie.\n\n```html\n  ?index=new_index\n```\n\nresponse is wrapped\n\n```json\n  {\n    'new_index' : [\n      .....\n    ]\n  }\n```",
+      "example": "user"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": {
+    "contentType": "application/json",
+    "fields": []
+  },
+  "responseSchema": "Task"
+}

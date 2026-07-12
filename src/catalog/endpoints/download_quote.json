@@ -1,0 +1,32 @@
+{
+  "slug": "download_quote",
+  "operationId": "downloadQuote",
+  "method": "GET",
+  "path": "/api/v1/quote/{invitation_key}/download",
+  "name": "Download quote PDF",
+  "category": "quotes",
+  "mutating": false,
+  "description": "Downloads a specific quote",
+  "whenToUse": "Download a quote's PDF by its quote invitation key; use for quotes specifically, not credits or invoices.",
+  "pathParameters": [
+    {
+      "name": "invitation_key",
+      "type": "string",
+      "required": true,
+      "description": "The Quote Invitation Key",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

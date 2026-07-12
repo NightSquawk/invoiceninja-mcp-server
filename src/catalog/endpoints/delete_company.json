@@ -1,0 +1,32 @@
+{
+  "slug": "delete_company",
+  "operationId": "deleteCompany",
+  "method": "DELETE",
+  "path": "/api/v1/companies/{id}",
+  "name": "Deletes a company",
+  "category": "companies",
+  "mutating": true,
+  "description": "Handles the deletion of an company by id",
+  "whenToUse": "Archive/soft-delete one company by id; use to remove a company while keeping its record recoverable (mutating).",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The Company Hashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null
+}

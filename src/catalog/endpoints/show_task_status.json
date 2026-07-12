@@ -1,0 +1,33 @@
+{
+  "slug": "show_task_status",
+  "operationId": "showTaskStatus",
+  "method": "GET",
+  "path": "/api/v1/task_statuses/{id}",
+  "name": "Shows a TaskStatus Term",
+  "category": "task_status",
+  "mutating": false,
+  "description": "Displays an TaskStatusby id",
+  "whenToUse": "Fetch one task status by its hashed id to read its details; use instead of the list when you already know the id.",
+  "pathParameters": [
+    {
+      "name": "id",
+      "type": "string",
+      "required": true,
+      "description": "The TaskStatusHashed ID",
+      "format": "string",
+      "example": "D2J234DFA"
+    }
+  ],
+  "queryParameters": [
+    {
+      "name": "include",
+      "type": "string",
+      "required": false,
+      "description": "Includes child relationships in the response, format is comma separated. Check each model for the list of associated includes",
+      "example": "first_load"
+    }
+  ],
+  "headerParameters": [],
+  "requestBody": null,
+  "responseSchema": "TaskStatus"
+}
