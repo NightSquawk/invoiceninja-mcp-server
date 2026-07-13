@@ -1,7 +1,7 @@
 {
   "name": "@nightsquawktech/invoiceninja-mcp-server",
   "version": "0.1.0",
-  "description": "MCP server for Invoice Ninja v5 (self-hosted): generic reads + report catalog, guarded writes.",
+  "description": "Invoice Ninja v5 MCP server for Claude, Cursor, and AI agents: all 379 API endpoints behind 3 catalog-backed tools, mutations authorized per call and backed up.",
   "keywords": [
     "mcp",
     "mcp-server",
