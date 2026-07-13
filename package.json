@@ -1,7 +1,22 @@
 {
   "name": "@nightsquawktech/invoiceninja-mcp-server",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "MCP server for Invoice Ninja v5 (self-hosted): generic reads + report catalog, guarded writes.",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "modelcontextprotocol",
+    "claude",
+    "cursor",
+    "ai-agent",
+    "llm",
+    "invoiceninja",
+    "invoice-ninja",
+    "invoicing",
+    "billing",
+    "self-hosted"
+  ],
   "type": "module",
   "main": "dist/index.js",
   "bin": "./dist/index.js",

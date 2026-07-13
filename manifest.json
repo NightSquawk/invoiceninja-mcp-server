@@ -1,0 +1,67 @@
+{
+  "manifest_version": "0.4",
+  "name": "invoiceninja-mcp-server",
+  "display_name": "Invoice Ninja MCP Server",
+  "version": "0.1.0",
+  "description": "MCP server for self-hosted Invoice Ninja v5 instances.",
+  "long_description": "Connect Claude to your self-hosted [Invoice Ninja](https://invoiceninja.com) v5 instance. 379 API endpoints (invoices, clients, payments, quotes, expenses, reports, and more) behind 3 catalog-backed tools. Reads execute freely; mutating endpoints require explicit per-call authorization and are backed up before execution.",
+  "author": {
+    "name": "NightSquawk Tech",
+    "email": "hello@nightsquawk.tech",
+    "url": "https://nightsquawk.tech"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NightSquawk/invoiceninja-mcp-server"
+  },
+  "homepage": "https://github.com/NightSquawk/invoiceninja-mcp-server",
+  "documentation": "https://github.com/NightSquawk/invoiceninja-mcp-server#readme",
+  "support": "https://github.com/NightSquawk/invoiceninja-mcp-server/issues",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/index.js"],
+      "env": {
+        "INVOICENINJA_BASE_URL": "${user_config.base_url}",
+        "INVOICENINJA_API_TOKEN": "${user_config.api_token}",
+        "INVOICENINJA_TIMEOUT_MS": "${user_config.timeout_ms}"
+      }
+    }
+  },
+  "user_config": {
+    "base_url": {
+      "type": "string",
+      "title": "Invoice Ninja Base URL",
+      "description": "Your Invoice Ninja v5 instance URL, no trailing slash, no /api/v1, for example https://invoicing.yourdomain.com",
+      "required": true
+    },
+    "api_token": {
+      "type": "string",
+      "title": "API Token",
+      "description": "Create one in Invoice Ninja under Settings > Account Management > Integrations > API tokens",
+      "sensitive": true,
+      "required": true
+    },
+    "timeout_ms": {
+      "type": "number",
+      "title": "Request Timeout (ms)",
+      "description": "HTTP timeout for Invoice Ninja API requests, minimum 1000",
+      "default": 30000,
+      "min": 1000,
+      "required": false
+    }
+  },
+  "tools": [
+    { "name": "list_endpoints", "description": "List/filter all 379 endpoints by category, read-vs-mutating, or search term" },
+    { "name": "describe_endpoint", "description": "Full spec for one endpoint: method, path, params, body fields, mutating flag" },
+    { "name": "call_endpoint", "description": "Execute an endpoint; mutating calls need per-call authorization and are backed up first" }
+  ],
+  "compatibility": {
+    "platforms": ["darwin", "win32", "linux"],
+    "runtimes": { "node": ">=20" }
+  },
+  "keywords": ["invoiceninja", "invoice-ninja", "invoicing", "billing", "mcp", "self-hosted"],
+  "license": "AGPL-3.0-only"
+}
