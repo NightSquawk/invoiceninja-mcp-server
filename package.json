@@ -48,7 +48,7 @@
     "rimraf": "^6.0.1",
     "shx": "^0.3.4",
     "tsx": "^4.20.0",
-    "typescript": "^5.9.0",
+    "typescript": "^7.0.2",
     "yaml": "^2.6.1"
   },
   "license": "AGPL-3.0-only",
